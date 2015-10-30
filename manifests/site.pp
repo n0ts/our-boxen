@@ -8,9 +8,6 @@ Exec {
   user        => $boxen_user,
 
   path => [
-    "${boxen::config::home}/rbenv/shims",
-    "${boxen::config::home}/rbenv/bin",
-    "${boxen::config::home}/rbenv/plugins/ruby-build/bin",
     "${boxen::config::homebrewdir}/bin",
     '/usr/bin',
     '/bin',
@@ -64,28 +61,28 @@ node default {
   }
 
   # node versions
-  nodejs::version { '0.6': }
-  nodejs::version { '0.8': }
-  nodejs::version { '0.10': }
+  ##nodejs::version { '0.6': }
+  ##nodejs::version { '0.8': }
+  ##nodejs::version { '0.10': }
 
   # default ruby versions
-  ruby::version { '1.9.3': }
-  ruby::version { '2.0.0': }
-  ruby::version { '2.1.0': }
-  ruby::version { '2.1.1': }
-  ruby::version { '2.1.2': }
+  ##ruby::version { '1.9.3': }
+  ##ruby::version { '2.0.0': }
+  ##ruby::version { '2.1.0': }
+  ##ruby::version { '2.1.1': }
+  ##ruby::version { '2.1.2': }
 
   # common, useful packages
-  package {
-    [
-      'ack',
-      'findutils',
-      'gnu-tar'
-    ]:
-  }
+  ##package {
+  ##  [
+  ##    'ack',
+  ##    'findutils',
+  ##    'gnu-tar'
+  ##  ]:
+  ##}
 
-  file { "${boxen::config::srcdir}/our-boxen":
+  file { "${boxen::config::srcdir}/.our-boxen":
     ensure => link,
-    target => $boxen::config::repodir
+    target => "${boxen::config::repodir}/our-boxen",
   }
 }
