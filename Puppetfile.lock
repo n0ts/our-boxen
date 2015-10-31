@@ -1,19 +1,4 @@
 GITHUBTARBALL
-  remote: boxen/puppet-boxen
-  specs:
-    boxen (3.11.0)
-
-GITHUBTARBALL
-  remote: boxen/puppet-brewcask
-  specs:
-    brewcask (0.0.6)
-
-GITHUBTARBALL
-  remote: boxen/puppet-dnsmasq
-  specs:
-    dnsmasq (2.0.1)
-
-GITHUBTARBALL
   remote: boxen/puppet-foreman
   specs:
     foreman (1.2.0)
@@ -26,7 +11,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-git
   specs:
-    git (2.7.92)
+    git (2.7.11)
 
 GITHUBTARBALL
   remote: boxen/puppet-go
@@ -44,14 +29,19 @@ GITHUBTARBALL
     hub (1.4.1)
 
 GITHUBTARBALL
+  remote: boxen/puppet-karabiner
+  specs:
+    karabiner (1.0.8)
+
+GITHUBTARBALL
   remote: boxen/puppet-nginx
   specs:
-    nginx (1.4.6)
+    nginx (1.6.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-nodejs
   specs:
-    nodejs (5.0.0)
+    nodejs (5.0.5)
 
 GITHUBTARBALL
   remote: boxen/puppet-openssl
@@ -74,14 +64,14 @@ GITHUBTARBALL
     repository (2.4.1)
 
 GITHUBTARBALL
-  remote: boxen/puppet-ruby
-  specs:
-    ruby (8.5.2)
-
-GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-wget
+  specs:
+    wget (1.0.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-xquartz
@@ -89,14 +79,49 @@ GITHUBTARBALL
     xquartz (1.2.1)
 
 GITHUBTARBALL
+  remote: n0ts/puppet-boxen
+  specs:
+    boxen (3.11.0a)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-brewcask
+  specs:
+    brewcask (0.0.6a)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-dnsmasq
+  specs:
+    dnsmasq (2.0.1a)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-java
+  specs:
+    java (1.8.4a)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-osx
+  specs:
+    osx (2.8.0a)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-python
+  specs:
+    python (3.0.1a)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-ruby
+  specs:
+    ruby (8.5.3a)
+
+GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
   specs:
-    inifile (1.4.1)
+    inifile (1.4.2)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-stdlib
   specs:
-    stdlib (4.7.0)
+    stdlib (4.9.0)
 
 GITHUBTARBALL
   remote: ripienaar/puppet-module-data
@@ -104,25 +129,30 @@ GITHUBTARBALL
     module_data (0.0.4)
 
 DEPENDENCIES
-  boxen (= 3.11.0)
-  brewcask (= 0.0.6)
-  dnsmasq (= 2.0.1)
+  boxen (= 3.11.0a)
+  brewcask (= 0.0.6a)
+  dnsmasq (= 2.0.1a)
   foreman (= 1.2.0)
   gcc (= 3.0.2)
-  git (= 2.7.92)
+  git (= 2.7.11)
   go (= 2.1.0)
   homebrew (= 1.13.0)
   hub (= 1.4.1)
-  inifile (= 1.4.1)
+  inifile (= 1.4.2)
+  java (= 1.8.4a)
+  karabiner (= 1.0.8)
   module_data (= 0.0.4)
-  nginx (= 1.4.6)
-  nodejs (= 5.0.0)
+  nginx (= 1.6.0)
+  nodejs (= 5.0.5)
   openssl (= 1.0.0)
+  osx (= 2.8.0a)
   phantomjs (= 3.0.0)
   pkgconfig (= 1.0.0)
+  python (= 3.0.1a)
   repository (= 2.4.1)
-  ruby (= 8.5.2)
-  stdlib (= 4.7.0)
+  ruby (= 8.5.3a)
+  stdlib (= 4.9.0)
   sudo (= 1.0.0)
+  wget (= 1.0.1)
   xquartz (= 1.2.1)
 
