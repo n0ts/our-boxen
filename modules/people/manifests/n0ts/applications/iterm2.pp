@@ -11,7 +11,7 @@ class people::n0ts::applications::iterm2 {
                        "open \"${::boxen_home}/cache/iterm2/${theme}\"",
                        ], "\n"),
       unless  => $unless,
-      require => File["${::boxen_home}/cache/iterm2"],
+      require => [ Package['iterm2'], File["${::boxen_home}/cache/iterm2"] ],
     }
   }
 
