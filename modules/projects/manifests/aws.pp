@@ -24,7 +24,7 @@ class projects::aws {
   file { "/Users/${::boxen_user}/.aws/config":
     content => '
 [default]
-region=
+;region=
 output=json
 ',
     mode    => 0640,
