@@ -70,7 +70,7 @@ class projects::terminal {
       'BirdsOfParadise',
       'Blazer',
       'Borland',
-      'Broadcast', 
+      'Broadcast',
       'Brogrammer',
       'C64',
       'CLRS',
@@ -198,25 +198,11 @@ class projects::terminal {
 
   # Encodings
   $encodings = [
-                4,
-                30,
-                1,
-                5,
-                2147484175,
-                12,
-                2,
-                9,
-                21,
-                2147486209,
-                3,
-                2147486214,
-                2147486000,
-                2147486016,
-                2147486210,
-                2147484165,
-                11,
-                2147484699,
-                2147483649
+                4,          # Unicode (UTF-8)
+                2147485224, # Japanese (Shift JIS X0213)
+                21,         # Japannse (ISO 2022-JP)
+                3,          # Japanese (EUC)
+                2147486209, # Japanese (Shift JIS)
                 ]
   boxen::osx_defaults { 'Terminal - Encodings':
     user    => $::boxen_user,
