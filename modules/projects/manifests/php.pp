@@ -21,11 +21,15 @@ class projects::php {
                  ],
   }
 
-  package { 'composer':
-    require => [
-                 Homebrew::Tap['homebrew/php'],
-                 Package['my-php56'],
-                ]
+  package {
+    [
+      'composer',
+      'phpunit',
+     ]:
+       require => [
+                    Homebrew::Tap['homebrew/php'],
+                    Package['my-php56'],
+                   ],
   }
 
   file { "${boxen::config::homebrewdir}/etc/php/5.6/_local.ini":
