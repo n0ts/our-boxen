@@ -29,11 +29,18 @@ BREW=brew
     require => File['/Users/Shared/w'],
   }
 
-  file { "/w":
+  file { '/w':
     ensure  => link,
     owner   => 'root',
     target  => '/Users/Shared/w',
     require => File['/Users/Shared/w'],
+  }
+
+  file { '/prj':
+    ensure  => link,
+    owner   => 'root',
+    target  => '/Users/Shared/prj',
+    require => File['/Users/Shared/prj'],
   }
 
   file { "/Users/${::boxen_user}/w":
