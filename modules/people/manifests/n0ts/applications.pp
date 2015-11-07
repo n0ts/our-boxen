@@ -251,7 +251,8 @@ class people::n0ts::applications {
      'bittorrent-sync',
      # Box Sync
      # https://sites.box.com/sync4/
-     'box-sync',
+     # sync4 is not working 10.11, so download from https://app.box.com/settings/sync
+     #'box-sync',
      # CheatSheet
      # http://www.cheatsheetapp.com/CheatSheet/
      'cheatsheet',
