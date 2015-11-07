@@ -103,11 +103,11 @@ class people::n0ts::config {
   if $is_macbook {
     class { 'osx::energy::disk_sleep':
       on_battery      => 10,
-      when_plugged_in => 30,
+      when_plugged_in => 60,
     }
     class { 'osx::energy::display_sleep':
       on_battery      => 5,
-      when_plugged_in => 15,
+      when_plugged_in => 30,
     }
     if versioncmp($::macosx_productversion_major, '10.10') < 0 {
       $mode = 7
