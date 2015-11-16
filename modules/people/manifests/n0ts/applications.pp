@@ -207,9 +207,6 @@ class people::n0ts::applications {
   homebrew::tap { 'homebrew/dupes': }
   package {
     [
-     # OpenBSD freely-licensed SSH connectivity tools
-     # http://www.openssh.com/
-     'openssh',
      # Utility that provides fast incremental file transfer
      # https://rsync.samba.org/
      'rsync',
