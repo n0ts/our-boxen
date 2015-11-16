@@ -3,12 +3,13 @@ class projects::web {
 
   package {
     [
+      'daemontools',
       'h2o',
       'hadoop',
       'haproxy',
       'imagemagick',
       'jemalloc',
       'jmeter',
-     ]: ;
+    ]: ;
   }
 }
