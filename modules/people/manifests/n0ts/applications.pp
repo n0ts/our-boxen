@@ -210,11 +210,20 @@ class people::n0ts::applications {
      # Utility that provides fast incremental file transfer
      # https://rsync.samba.org/
      'rsync',
+     # OpenBSD freely-licensed SSH connectivity tools
+     # http://www.openssh.com/
+     'openssh',
      # GNU screen
      # https://www.gnu.org/software/screen
      'screen',
      ]:
        require => Homebrew::Tap['homebrew/dupes'],
+  }
+
+  exec { 'unload built-in ssh-agent':
+    command => 'launchctl unload -w /System/Library/LaunchAgents/org.openbsd.ssh-agent.plist',
+    unless  => 'test `launchctl list | grep org.openbsd.ssh-agent | cut -f 1` = "-"',
+    require => Package['openssh'],
   }
 
   # Homebrew-cask packages
