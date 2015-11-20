@@ -6,8 +6,11 @@ class projects::docker {
   include brewcask
   package {
     [
+      # Docker Toolbox
+      # https://www.docker.com/toolbox
       'dockertoolbox',
-      'kitematic',
+      # Virtualbox
+      # https://www.virtualbox.org
       'virtualbox',
     ]:
     provider => 'brewcask',
