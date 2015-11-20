@@ -11,12 +11,16 @@ class people::n0ts::base {
     unless  => 'test -f /var/db/locate.database',
   }
 
+  include homebrew
+  include brewcask
+
 
   file { "${boxen::config::home}/bin/brew-update.sh":
-    content => '#!/bin/bash
+    content => "#!/bin/bash
 BREW=brew
-($BREW update) && ($BREW upgrade brew-cask) && ($BREW cleanup) && ($BREW cask cleanup)
-',
+(\$BREW update) && (\$BREW upgrade brew-cask) && (\$BREW cleanup) && (\$BREW cask cleanup)
+for c in \"${brewcask::config::cask_room}/\"*; do vl=(`ls -t \$c`) && for v in \"\${vl[@]:1}\"; do rm -rf \"\$c/\$v\"; done; done
+",
     mode    => 0755,
   }
 
