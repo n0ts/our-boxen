@@ -1,3 +1,4 @@
 #!/bin/bash
 
-export PGHOST=<%= @var_run_dir %>
+# The database server name
+export PGHOST=<%= scope.lookupvar "boxen::config::homebrewdir" %>/var/run

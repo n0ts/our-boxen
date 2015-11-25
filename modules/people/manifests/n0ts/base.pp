@@ -53,7 +53,7 @@ for c in \"${brewcask::config::cask_room}/\"*; do vl=(`ls -t \$c`) && for v in \
     require => File['/Users/Shared/w'],
   }
 
-  file { '/Users/Shared/prj':
+  file { "/Users/${::boxen_user}/Library/LaunchAgents":
     ensure => directory,
   }
 
@@ -61,6 +61,10 @@ for c in \"${brewcask::config::cask_room}/\"*; do vl=(`ls -t \$c`) && for v in \
     ensure  => link,
     target  => '/Users/Shared/prj',
     require => File['/Users/Shared/prj'],
+  }
+
+  file { '/Users/Shared/prj':
+    ensure => directory,
   }
 
   repository { "/Users/${::boxen_user}/.env":
