@@ -34,11 +34,6 @@ GITHUBTARBALL
     karabiner (1.0.8)
 
 GITHUBTARBALL
-  remote: boxen/puppet-nginx
-  specs:
-    nginx (1.6.0)
-
-GITHUBTARBALL
   remote: boxen/puppet-nodejs
   specs:
     nodejs (5.0.5)
@@ -99,6 +94,11 @@ GITHUBTARBALL
     java (1.8.4a)
 
 GITHUBTARBALL
+  remote: n0ts/puppet-nginx
+  specs:
+    nginx (1.6.0a)
+
+GITHUBTARBALL
   remote: n0ts/puppet-osx
   specs:
     osx (2.8.0a)
@@ -142,7 +142,7 @@ DEPENDENCIES
   java (= 1.8.4a)
   karabiner (= 1.0.8)
   module_data (= 0.0.4)
-  nginx (= 1.6.0)
+  nginx (= 1.6.0a)
   nodejs (= 5.0.5)
   openssl (= 1.0.0)
   osx (= 2.8.0a)
