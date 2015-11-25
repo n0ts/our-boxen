@@ -29,6 +29,8 @@ class projects::elasticsearch {
       plugin => 'analysis-kuromoji';
     'mobz/elasticsearch-head':
       plugin => 'head';
+    'lmenezes/elasticsearch-kopf/2.0.1':
+      plugin => 'kopf';
     'polyfractal/elasticsearch-inquisitor':
       plugin => 'inquisitor';
   }
