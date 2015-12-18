@@ -13,6 +13,7 @@ class projects::aws {
   python::install_package {
     'awscli': ;
     'awsebcli': ;
+    'aws-shell': ;
     'ec2-ssh':
       url => 'https://github.com/n0ts/ec2-ssh/archive/my-develop.zip';
   }
