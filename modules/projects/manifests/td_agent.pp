@@ -37,11 +37,15 @@ class projects::td_agent {
 
   install_plugin {
     [
-      's3',
-      'forest',
-      'typecast',
       'elasticsearch',
-      'dstat',
+      'dogstatsd',
+      'file-alternative',
+      'filter_typecast',
+      'flowcounter',
+      'forest',
+      'record-reformer',
+      's3',
+      'typecast',
     ]: ;
   }
 }
