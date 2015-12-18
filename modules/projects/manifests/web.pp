@@ -27,6 +27,9 @@ class projects::web {
       # Load testing and performance measurement application
       # https://jmeter.apache.org/
       'jmeter',
+      # Parallel bzip2
+      # http://compression.ca/pbzip2/
+      'pbzip2',
     ]: ;
   }
 
