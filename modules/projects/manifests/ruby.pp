@@ -1,10 +1,12 @@
 class projects::ruby {
   notify { 'class project::ruby declared': }
 
-  define latest_install_package() {
-    ruby_gem { "${name} for 2.2.3":
+  # brew install ruby-build --force --HEAD
+
+  define latest_install_package($ruby_version = '2.3.0') {
+    ruby_gem { "${name} for ${ruby_version}":
       gem          => $name,
-      ruby_version => '2.2.3',
+      ruby_version => $ruby_version,
     }
   }
 
@@ -28,7 +30,7 @@ class projects::ruby {
 
   # latest stable
   class { 'ruby::global':
-     version => '2.2.3',
+     version => '2.3.0',
   }
 
   latest_install_package {
