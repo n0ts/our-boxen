@@ -7,14 +7,13 @@ class projects::ansible {
 
   python::install_package { 'ansible-lint': }
 
-  file { "/Users/${::boxen_user}/.ansible":
+  file {
+    [
+      "/Users/${::boxen_user}/.ansible",
+      "/Users/${::boxen_user}/.ansible/plugins",
+      "/Users/${::boxen_user}/.ansible/plugins/callback_plugins"
+     ]:
       ensure  => directory,
-  }
-
-  file { "/Users/${::boxen_user}/.ansible/plugins/callback_plugins":
-      ensure  => directory,
-      recurse => true,
-      require => File["/Users/${::boxen_user}/.ansible"],
   }
 
   file { "/Users/${::boxen_user}/.ansible/ansible.cfg":
