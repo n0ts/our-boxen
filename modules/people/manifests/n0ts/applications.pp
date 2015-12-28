@@ -337,6 +337,9 @@ class people::n0ts::applications {
      # Jumpcut
      # http://jumpcut.sourceforge.net/
      'jumpcut',
+     # LICEcap
+     # http://www.cockos.com/licecap/
+     'licecap',
      # LibreOffice
      # https://www.libreoffice.org/
      'libreoffice',
