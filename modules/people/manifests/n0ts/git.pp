@@ -66,34 +66,6 @@ class people::n0ts::git {
       value => 'auto';
   }
 
-  git::config::global { 'init.templatedir':
-    value => '~/.gitconfig.d/templates',
-  }
-
-  file {
-    [
-     "/Users/${::boxen_user}/.gitconfig.d",
-     "/Users/${::boxen_user}/.gitconfig.d/templates"
-     ]:
-       ensure  => directory,
-  }
-
-  file { "/Users/${::boxen_user}/.gitconfig.d/templates/pre-commit":
-    content => '#!/bin/sh
-
-if [ -z "`git config --local user.name`" ]; then
-    echo "fatal: user.name is not set locally"
-    exit 1
-fi
-if [ -z "`git config --local user.email`" ]; then
-    echo "fatal: user.email is not set locally"
-    exit 1
-fi
-',
-    mode    => 0755,
-    require => File["/Users/${::boxen_user}/.gitconfig.d/templates"],
-  }
-
   git::config::global {
     'filter "lfs".clean':
       value => 'git-lfs clean %f';

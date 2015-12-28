@@ -95,6 +95,9 @@ class people::n0ts::applications {
      # Multi-threaded malloc() and performance analysis tools
      # https://code.google.com/p/gperftools/
      'google-perftools',
+     # git-secrets
+     # https://github.com/awslabs/git-secrets
+     'git-secrets',
      # The grep
      # https://www.gnu.org/software/grep/
      'grep',
