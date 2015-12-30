@@ -1,7 +1,13 @@
 class projects::docker {
   notify { 'class project::docker declared': }
 
-  package { [ 'docker', 'docker-machine' ]: }
+  package {
+    [
+      'docker',
+       'docker-machine'
+    ]:
+    ensure => latest,
+  }
 
   include brewcask
   package {

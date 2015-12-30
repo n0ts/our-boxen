@@ -5,6 +5,7 @@ class projects::memcached {
     [
      'memcached',
      'libmemcached'
-     ]: ;
+     ]:
+    ensure => latest,
   }
 }

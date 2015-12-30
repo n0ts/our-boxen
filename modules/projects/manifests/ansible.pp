@@ -1,7 +1,9 @@
 class projects::ansible {
   notify { 'class project::ansible declared': }
 
-  package { 'ansible': }
+  package { 'ansible':
+    ensure => latest,
+  }
 
   include projects::python
 
@@ -29,5 +31,5 @@ retry_files_enabled = False
   exec { 'get human_log.py':
     command => "wget -q https://raw.githubusercontent.com/redhat-openstack/khaleesi/master/plugins/callbacks/human_log.py -O /Users/${::boxen_user}/.ansible/plugins/callback_plugins",
     creates => "/Users/${::boxen_user}/.ansible/plugins/callback_plugins/human_log.py",
-}
+  }
 }

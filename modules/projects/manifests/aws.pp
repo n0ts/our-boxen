@@ -7,7 +7,8 @@ class projects::aws {
     [
       'ec2-ami-tools',
       'ec2-api-tools',
-     ]: ;
+     ]:
+    ensure => latest,
   }
 
   python::install_package {

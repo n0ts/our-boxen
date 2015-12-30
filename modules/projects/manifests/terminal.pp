@@ -18,7 +18,9 @@ class projects::terminal {
 
   $shell = "${boxen::config::homebrewdir}/bin/zsh"
 
-  package { 'zsh': }
+  package { 'zsh':
+    ensure => latest,
+  }
 
   class { 'osx::terminal::shell':
     shell   => $shell,

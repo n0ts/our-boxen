@@ -7,5 +7,6 @@ class projects::scala {
       'sbt',
       'typesafe-activator',
      ]:
+    ensure => latest,
   }
 }

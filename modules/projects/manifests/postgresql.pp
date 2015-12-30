@@ -1,7 +1,9 @@
 class projects::postgresql {
   notify { 'class project::postgresql declared': }
 
-  package { 'postgresql': }
+  package { 'postgresql':
+    ensure => '9.4.5',
+  }
 
   file { "${boxen::config::homebrewdir}/var/postgres/postgresql.conf":
     content => template('projects/shared/postgresql.conf.erb'),

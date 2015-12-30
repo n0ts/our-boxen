@@ -22,7 +22,7 @@ class people::n0ts::applications {
 
   # java
   class { 'java':
-    update_version => '65',
+    update_version => '66',
     minor_version  => 'b17',
   }
 
@@ -204,6 +204,7 @@ class people::n0ts::applications {
      # https://github.com/zsh-users/zsh-completions
      'zsh-completions',
     ]:
+    ensure => latest,
   }
 
   # Homebrew-dupes packages
@@ -432,14 +433,8 @@ class people::n0ts::applications {
   move_to_applications {
     'bartender':
       app_name => 'Bartender 2';
-    'firefox':
-      app_name => 'Firefox';
     'firefoxdeveloperedition':
       app_name => 'FirefoxDeveloperEdition';
-    'google-chrome':
-      app_name => 'Google Chrome';
-    'google-chrome-canary':
-      app_name => 'Google Chrome Canary';
   }
 
   if versioncmp($::macosx_productversion_major, '10.10') < 0 {
