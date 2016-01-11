@@ -53,8 +53,11 @@ fi
 set -e
 
 # FIX: only sudo if gem home isn't writable
-BUNDLER_VERSION=1.10.6
+BUNDLER_VERSION=1.11.2
 (/usr/bin/gem spec bundler -v "~> $BUNDLER_VERSION" >/dev/null 2>&1) || {
+    log "====> Uninstalling bundler to system ruby"
+    /usr/bin/sudo -p "Password for sudo to install bundler: " \
+        /usr/bin/gem uninstall bundler -ax
     log "====> Installing bundler to system ruby"
     /usr/bin/sudo -p "Password for sudo to install bundler: " \
         /usr/bin/gem install bundler -v "$BUNDLER_VERSION" --no-rdoc --no-ri
