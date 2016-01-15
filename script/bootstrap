@@ -60,7 +60,7 @@ BUNDLER_VERSION=1.11.2
         /usr/bin/gem uninstall bundler -ax
     log "====> Installing bundler to system ruby"
     /usr/bin/sudo -p "Password for sudo to install bundler: " \
-        /usr/bin/gem install bundler -v "$BUNDLER_VERSION" --no-rdoc --no-ri
+        /usr/bin/gem install bundler -v "$BUNDLER_VERSION" --no-document
 }
 PATH="/usr/local/bin:$PATH"
 
