@@ -30,7 +30,8 @@ class projects::web {
       # Parallel bzip2
       # http://compression.ca/pbzip2/
       'pbzip2',
-    ]: ;
+    ]:
+      ensure => latest,
   }
 
   include brewcask
