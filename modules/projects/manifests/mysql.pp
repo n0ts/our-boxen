@@ -2,5 +2,8 @@ class projects::mysql {
   notify { 'class project::mysql declared': }
 
   # mysql
-  package { 'mariadb': }
+  package { 'mariadb':
+    ensure => latest,
+  }
+
 }
