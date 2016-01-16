@@ -12,7 +12,7 @@ class projects::php {
   # Homebrew n0ts
   homebrew::tap { 'n0ts/myformula': }
 
-  package { 'my-php56':
+  package { 'my-php70':
      require => [
                    Homebrew::Tap['homebrew/php'],
                    Homebrew::Tap['n0ts/myformula'],
@@ -27,19 +27,20 @@ class projects::php {
       'phpunit',
      ]:
        require => [
-                    Homebrew::Tap['homebrew/php'],
-                    Package['my-php56'],
+                   Homebrew::Tap['homebrew/php'],
+                   Package['my-php70'],
                    ],
+       ensure => latest,
   }
 
-  file { "${boxen::config::homebrewdir}/etc/php/5.6/_local.ini":
+  file { "${boxen::config::homebrewdir}/etc/php/7.0/_local.ini":
     content => template('projects/shared/php-local.ini.erb'),
-    require => Package['my-php56'],
+    require => Package['my-php70'],
   }
 
   # Fix for PHP Warning:  Module 'pdo_pgsql' already loaded in Unknown on line 0
-  file { "${boxen::config::homebrewdir}/etc/php/5.6/conf.d/ext-pdo_pgsql.ini":
+  file { "${boxen::config::homebrewdir}/etc/php/7.0/conf.d/ext-pdo_pgsql.ini":
     ensure  => absent,
-    require => Package['my-php56'],
+    require => Package['my-php70'],
   }
 }
