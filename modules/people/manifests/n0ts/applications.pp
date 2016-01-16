@@ -101,6 +101,9 @@ class people::n0ts::applications {
      # The grep
      # https://www.gnu.org/software/grep/
      'grep',
+     # HTTP/2 C Library h2load
+     # https://nghttp2.org/
+     'nghttp2',
      # Improved top (interactive process viewer) for OS X
      # https://github.com/max-horvath/htop-osx
      'htop-osx',
