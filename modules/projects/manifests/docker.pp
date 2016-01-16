@@ -16,7 +16,7 @@ class projects::docker {
      # https://github.com/docker/swarm
      'docker-swarm',
     ]:
-    ensure => latest,
+      ensure => latest,
   }
 
   include brewcask
