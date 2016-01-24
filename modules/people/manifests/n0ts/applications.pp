@@ -101,6 +101,9 @@ class people::n0ts::applications {
      # The grep
      # https://www.gnu.org/software/grep/
      'grep',
+     # Bash & Fish completion for brew-cask
+     #https://github.com/xyb/homebrew-cask-completion
+     'homebrew/completions/brew-cask-completion',
      # Improved top (interactive process viewer) for OS X
      # https://github.com/max-horvath/htop-osx
      'htop-osx',
@@ -125,6 +128,9 @@ class people::n0ts::applications {
      # Text-to-HTML conversion tool
      # https://daringfireball.net/projects/markdown/
      'markdown',
+     # mercurial
+     # http://mercurial.selenic.com/
+     'mercurial',
      # Remote terminal application
      # https://mosh.mit.edu/
      'mobile-shell',
@@ -350,9 +356,6 @@ class people::n0ts::applications {
      # MacZip4Win
      # http://ynomura.com/home/?page_id=116
      'maczip4win',
-     # mercurial
-     # http://mercurial.selenic.com/
-     'mercurial',
      # MindNode Pro
      # https://mindnode.com/
      'mindnode-pro',
@@ -435,6 +438,10 @@ class people::n0ts::applications {
       app_name => 'Bartender 2';
     'firefoxdeveloperedition':
       app_name => 'FirefoxDeveloperEdition';
+    'google-chrome':
+      app_name => 'Google Chrome';
+    'google-chrome-canary':
+      app_name => 'Google Chrome Canary';
   }
 
   if versioncmp($::macosx_productversion_major, '10.10') < 0 {
@@ -524,9 +531,6 @@ class people::n0ts::applications {
       # uqwifi-connect
       # http://wi2.co.jp/jp/uq/connect/
       'uqwifi-connect',
-      # yahoo-box
-      # http://info.box.yahoo.co.jp/
-      'yahoo-box',
      ]:
        provider => 'brewcask',
        require  => [
