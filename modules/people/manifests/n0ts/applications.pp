@@ -437,6 +437,8 @@ class people::n0ts::applications {
 
   # move to /Applications
   move_to_applications {
+    'archiver':
+      app_name => 'Archiver';
     'bartender':
       app_name => 'Bartender 2';
     'firefoxdeveloperedition':
