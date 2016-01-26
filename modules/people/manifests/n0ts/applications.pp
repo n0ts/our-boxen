@@ -101,9 +101,6 @@ class people::n0ts::applications {
      # The grep
      # https://www.gnu.org/software/grep/
      'grep',
-     # Bash & Fish completion for brew-cask
-     # https://github.com/xyb/homebrew-cask-completion
-     'homebrew/completions/brew-cask-completion',
      # HTTP/2 C Library h2load
      # https://nghttp2.org/
      'nghttp2',
@@ -231,6 +228,17 @@ class people::n0ts::applications {
      'screen',
      ]:
        require => Homebrew::Tap['homebrew/dupes'],
+  }
+
+  # Homebrew/completions
+  homebrew::tap { 'homebrew/completions': }
+  package {
+    [
+     # Bash & Fish completion for brew-cask
+     # https://github.com/xyb/homebrew-cask-completion
+     'homebrew/completions/brew-cask-completion',
+     ]:
+       require => Homebrew::Tap['homebrew/completions'],
   }
 
   exec { 'unload built-in ssh-agent':
