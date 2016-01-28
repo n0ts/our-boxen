@@ -76,7 +76,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-brewcask
   specs:
-    brewcask (0.0.6b)
+    brewcask (0.0.6c)
 
 GITHUBTARBALL
   remote: n0ts/puppet-dnsmasq
@@ -101,7 +101,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-osx
   specs:
-    osx (2.8.0a)
+    osx (2.8.0b)
 
 GITHUBTARBALL
   remote: n0ts/puppet-python
@@ -130,7 +130,7 @@ GITHUBTARBALL
 
 DEPENDENCIES
   boxen (= 3.11.0a)
-  brewcask (= 0.0.6b)
+  brewcask (= 0.0.6c)
   dnsmasq (= 2.0.1a)
   foreman (= 1.2.0)
   gcc (= 3.0.2)
@@ -145,7 +145,7 @@ DEPENDENCIES
   nginx (= 1.6.0a)
   nodejs (= 5.0.5)
   openssl (= 1.0.0)
-  osx (= 2.8.0a)
+  osx (= 2.8.0b)
   phantomjs (= 3.0.0)
   pkgconfig (= 1.0.0)
   python (= 3.0.1a)

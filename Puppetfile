@@ -38,7 +38,7 @@ github "module_data", "0.0.4", :repo => "ripienaar/puppet-module-data"
 # Core modules for a basic development environment. You can replace
 # some/most of these if you want, but it's not recommended.
 
-github "brewcask",    "0.0.6b", :repo => "n0ts/puppet-brewcask"
+github "brewcask",    "0.0.6c", :repo => "n0ts/puppet-brewcask"
 github "dnsmasq",     "2.0.1a", :repo => "n0ts/puppet-dnsmasq"
 github "foreman",     "1.2.0"
 github "gcc",         "3.0.2"
@@ -66,7 +66,7 @@ github "xquartz",     "1.2.1"
 # github "redis",         "3.1.0"
 # github "sysctl",        "1.0.1"
 
-github "osx",         "2.8.0a", :repo => "n0ts/puppet-osx"
+github "osx",         "2.8.0b", :repo => "n0ts/puppet-osx"
 github "wget",        "1.0.1"
 github "java",        "1.8.4a", :repo => "n0ts/puppet-java"
 github "karabiner",   "1.0.8"
