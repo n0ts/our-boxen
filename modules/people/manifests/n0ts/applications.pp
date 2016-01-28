@@ -94,7 +94,7 @@ class people::n0ts::applications {
      'gnu-tar',
      # Multi-threaded malloc() and performance analysis tools
      # https://code.google.com/p/gperftools/
-     'google-perftools',
+     'gperftools',
      # git-secrets
      # https://github.com/awslabs/git-secrets
      'git-secrets',
@@ -449,12 +449,18 @@ class people::n0ts::applications {
       app_name => 'Archiver';
     'bartender':
       app_name => 'Bartender 2';
+    'bettertouchtool':
+      app_name => 'BetterTouchTool';
     'firefoxdeveloperedition':
       app_name => 'FirefoxDeveloperEdition';
+    'flux':
+      app_name => 'Flux';
     'google-chrome':
       app_name => 'Google Chrome';
     'google-chrome-canary':
       app_name => 'Google Chrome Canary';
+    'totalspaces':
+      app_name => 'TotalSpaces2';
   }
 
   if versioncmp($::macosx_productversion_major, '10.10') < 0 {

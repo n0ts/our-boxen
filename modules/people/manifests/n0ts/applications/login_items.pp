@@ -14,8 +14,6 @@ class people::n0ts::applications::login_items {
     }
 
     if file_exists($application) {
-      notify { "open '${application}'": }
-
       exec { "n0ts-applications-login_items-open-${name}":
         command   => "open '${application}'",
         refreshonly => true,
@@ -42,6 +40,7 @@ class people::n0ts::applications::login_items {
        'BetterTouchTool',
        'BitTorrent Sync',
        'Caffeine',
+       'Display Menu',
        'Dropbox',
        'Flux',
        'Growl',
@@ -49,7 +48,6 @@ class people::n0ts::applications::login_items {
        'Plain Text - Remove Text Format',
        'TotalFinder',
        'TotalSpaces2',
-       'Display Menu',
        ]:
   }
 
