@@ -3,21 +3,21 @@ class projects::td_agent {
 
   define install_plugin() {
     $td_agent_root = '/opt/td-agent'
+    $td_agent_gems = "${td_agent_root}/embedded/lib/ruby/gems/2.1.0/gems"
     $gem = "${td_agent_root}/usr/sbin/td-agent-gem"
-    $unless = "${gem} list | grep \"fluent-plugin-${name}\""
+    $unless = "ls ${td_agent_gems}/fluent-plugin-${name}-*"
     exec { "install-pluguin-${name}":
-      command => "${gem} install fluent-plugin-${name}",
+      command => "${gem} install --no-document fluent-plugin-${name}",
       cwd => $td_agent_root,
       environment =>
         [
-          'BUNDLE_GEMFILE=${td_agent_root}',
+         "BUNDLE_GEMFILE=${td_agent_root}/Gemfile"
          ],
       user    => 'root',
-      unless  => $unless,
-      require => [ Package['td-agent'], Sudoers['td-agent-gem'] ],
+      unless  => "${unless} >/dev/null 2>&1",
+      require => [ Package['td-agent'], Sudoers['td-agent-gem'], File["${td_agent_root}/Gemfile"] ],
     }
   }
-
 
   include brewcask
   package { 'td-agent':
@@ -25,7 +25,12 @@ class projects::td_agent {
     require  => Homebrew::Tap['caskroom/cask'],
   }
 
-  # Require for td-agent-gem
+  $td_agent_root = '/opt/td-agent'
+  file { "${td_agent_root}/Gemfile":
+    content => template('projects/shared/td-agent-gemfile.erb'),
+    require => Package['td-agent'],
+  }
+
   sudoers { 'td-agent-gem':
     users    => $::boxen_user,
     hosts    => 'ALL',

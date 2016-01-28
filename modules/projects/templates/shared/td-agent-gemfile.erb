@@ -1,0 +1,14 @@
+#
+# GEM_HOME='/opt/td-agent/embedded/lib/ruby/gems/2.1.0/' gem list --local | grep "fluentd\|fluent-plugin" | ruby -ne 'gem = $_.split(" ");puts %Q{gem "#{gem[0]}", "#{gem[1].gsub("(","").gsub(")","")}"}
+#
+source "https://rubygems.org"
+
+gem "fluent-plugin-mongo", "0.7.11"
+gem "fluent-plugin-rewrite-tag-filter", "1.5.3"
+gem "fluent-plugin-s3", "0.6.4"
+gem "fluent-plugin-scribe", "0.10.14"
+gem "fluent-plugin-td", "0.10.28"
+gem "fluent-plugin-td-monitoring", "0.2.1"
+gem "fluent-plugin-webhdfs", "0.4.1"
+gem "fluentd", "0.12.19"
+gem "fluentd-ui", "0.4.2"
