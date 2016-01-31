@@ -9,7 +9,7 @@ class people::n0ts {
   }
 
 
-  if $::boxen_projects == '' {
+  if $::boxen_projects == '1' {
     include people::n0ts::base
     include people::n0ts::config
     include people::n0ts::git
@@ -21,6 +21,7 @@ class people::n0ts {
 
     include people::n0ts::applications
     include people::n0ts::applications::1password
+    include people::n0ts::applications::evernote
     include people::n0ts::applications::karabiner
     include people::n0ts::applications::flux
     include people::n0ts::applications::divvy
