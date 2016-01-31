@@ -198,6 +198,7 @@ class people::n0ts::config {
   include osx::mail::copy_email_addresses
   include osx::mail::disable_inline_attachments
   include osx::mail::disable_spell_checking 
+  include osx::mail::display_threaded_mode
 
   class { 'osx::mission_control::animation':
     speed => '0.15',
