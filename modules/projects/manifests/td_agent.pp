@@ -35,7 +35,7 @@ class projects::td_agent {
     users    => $::boxen_user,
     hosts    => 'ALL',
     commands => [
-      '(ALL) SETENV:NOPASSWD: /opt/td-agent/usr/sbin/td-agent-gem',
+      '(ALL) NOPASSWD : /opt/td-agent/usr/sbin/td-agent-gem',
     ],
     type     => 'user_spec',
   }
