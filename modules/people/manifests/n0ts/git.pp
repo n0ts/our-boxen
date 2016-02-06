@@ -80,7 +80,10 @@ class people::n0ts::git {
   }
 
   git::config::global { 'ghq.root':
-    value => '~/prj/src',
+    value => ['~/prj/src',
+              '~/prj/github',
+              '~/prj/bitbucket',
+              ],
   }
 
   git::config::global {'include.path':

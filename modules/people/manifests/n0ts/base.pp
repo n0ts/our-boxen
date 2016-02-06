@@ -14,7 +14,6 @@ class people::n0ts::base {
   include homebrew
   include brewcask
 
-
   file { "${boxen::config::home}/bin/brew-update.sh":
     content => "#!/bin/bash
 (brew update) && (brew cleanup) && (brew cask cleanup)
@@ -26,6 +25,11 @@ for c in \"${brewcask::config::cask_room}/\"*; do vl=(`ls -t \$c`) && for v in \
 
   file { '/Users/Shared/w':
     ensure => directory,
+  }
+
+  file { '/Users/Shared/w/etc':
+    ensure => directory,
+    require => File['/Users/Shared/w'],
   }
 
   file { '/Users/Shared/w/sync':
@@ -63,8 +67,24 @@ for c in \"${brewcask::config::cask_room}/\"*; do vl=(`ls -t \$c`) && for v in \
     require => File['/Users/Shared/prj'],
   }
 
+  file { "/Users/${::boxen_user}/src/boxen":
+    ensure  => link,
+    target  => "/Users/Shared/prj/github",
+    require => File["/Users/${::boxen_user}/src"],
+  }
+
   file { '/Users/Shared/prj':
     ensure => directory,
+  }
+
+  file { '/Users/Shared/prj/github':
+    ensure  => directory,
+    require => File['/Users/Shared/prj'],
+  }
+
+  file { '/Users/Shared/prj/bitbucket':
+    ensure  => directory,
+    require => File['/Users/Shared/prj'],
   }
 
   repository { "/Users/${::boxen_user}/.env":
