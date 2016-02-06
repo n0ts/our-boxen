@@ -67,16 +67,6 @@ for c in \"${brewcask::config::cask_room}/\"*; do vl=(`ls -t \$c`) && for v in \
     require => File['/Users/Shared/prj'],
   }
 
-  file { "/Users/${::boxen_user}/src":
-    ensure  => directory,
-  }
-
-  file { "/Users/${::boxen_user}/src/boxen":
-    ensure  => link,
-    target  => "/Users/Shared/prj/github",
-    require => File["/Users/${::boxen_user}/src"],
-  }
-
   file { '/Users/Shared/prj':
     ensure => directory,
   }

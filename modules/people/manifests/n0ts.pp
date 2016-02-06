@@ -11,6 +11,7 @@ class people::n0ts {
 
   if $::boxen_projects == '' {
     include people::n0ts::base
+    include people::n0ts::boxen
     include people::n0ts::config
     include people::n0ts::git
     include people::n0ts::ssh
