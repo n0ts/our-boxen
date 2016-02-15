@@ -4,18 +4,19 @@ class projects::ruby {
   $version_latest = '2.3.0'
   $version_boxen = '2.0.0-p647'
 
+  define install_latest_package($ruby_version = $projects::ruby::version_latest) {
+    ruby_gem { "${name} for ${ruby_version}":
+      gem          => $name,
+      ruby_version => $ruby_version,
+    }
+  }
+
+
   file { "${boxen::config::home}/bin/brew-ruby-update.sh":
     content => "#!/bin/bash
 brew install ruby-build --force --HEAD
 ",
     mode    => 0755,
-  }
-
-  define latest_install_package($ruby_version = $projects::ruby::version_latest) {
-    ruby_gem { "${name} for ${ruby_version}":
-      gem          => $name,
-      ruby_version => $ruby_version,
-    }
   }
 
   # rbenv plugins
@@ -41,7 +42,7 @@ brew install ruby-build --force --HEAD
      version => $version_latest,
   }
 
-  latest_install_package {
+  install_latest_package {
     [
       'bundler',
       'tmuxinator',
