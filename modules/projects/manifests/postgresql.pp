@@ -23,7 +23,7 @@ class projects::postgresql {
   }
 
   exec { 'load-postgresql':
-    command     => 'launchctl load /Users/${::boxen_user}/Library/LaunchAgents/homebrew.mxcl.postgresql.plist',
+    command     => "launchctl load /Users/${::boxen_user}/Library/LaunchAgents/homebrew.mxcl.postgresql.plist",
     require     => File["${boxen::config::homebrewdir}/var/postgres/postgresql.conf"],
     refreshonly => true,
   }
