@@ -10,7 +10,10 @@ class projects::mysql {
   }
 
 
+  # launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+  # rm -fr ${boxen::config::homebrewdir}/var/mysql
   # mysqld --defaults-file=${boxen::config::homebrewdir}/etc/my.cnf --initialize --log-error-verbosity=3
+  # random root passwod is "A temporary password is generated for root@localhost:"
   # ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';
   package { 'mysql':
     ensure => '5.7.11';
@@ -25,7 +28,7 @@ class projects::mysql {
     [
      'client',
      'mysqld',
-     'mysqld_safe'
+     'mysqld_safe',
      ]: ;
   }
 
