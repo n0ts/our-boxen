@@ -23,6 +23,13 @@ for c in \"${brewcask::config::cask_room}/\"*; do vl=(`ls -t \$c`) && for v in \
     mode    => 0755,
   }
 
+  file { "${boxen::config::home}/bin/merge-dup-open-with.sh":
+    content => "#!/bin/bash
+/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system -domain user
+",
+    mode    => 0755,
+  }
+
   file { '/Users/Shared/w':
     ensure => directory,
   }
