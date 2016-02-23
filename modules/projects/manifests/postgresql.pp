@@ -2,7 +2,7 @@ class projects::postgresql {
   notify { 'class project::postgresql declared': }
 
   package { 'postgresql':
-    ensure => '9.5.0',
+    ensure => '9.5.1',
   }
 
   file { "${boxen::config::homebrewdir}/var/postgres/postgresql.conf":
