@@ -2,7 +2,7 @@ class projects::postgresql {
   notify { 'class project::postgresql declared': }
 
   package { 'postgresql':
-    ensure => '9.5.0',
+    ensure => '9.5.1',
   }
 
   file { "${boxen::config::homebrewdir}/var/postgres/postgresql.conf":
@@ -23,7 +23,7 @@ class projects::postgresql {
   }
 
   exec { 'load-postgresql':
-    command     => 'launchctl load /Users/${::boxen_user}/Library/LaunchAgents/homebrew.mxcl.postgresql.plist',
+    command     => "launchctl load /Users/${::boxen_user}/Library/LaunchAgents/homebrew.mxcl.postgresql.plist",
     require     => File["${boxen::config::homebrewdir}/var/postgres/postgresql.conf"],
     refreshonly => true,
   }

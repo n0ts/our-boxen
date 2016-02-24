@@ -1,0 +1,5 @@
+[client]
+prompt ="\u@\h[\d] mysql> "
+show-warnings
+port = 3306
+socket = <%= scope.lookupvar "boxen::config::homebrewdir" %>/var/run/mysql.sock
