@@ -1,27 +1,27 @@
 class projects::mysql {
-  notify { 'class project::mysql declared': }
+  notify { 'class projects::mysql declared': }
 
   define install_conf() {
-    $confdir = '/opt/boxen/homebrew/etc/my.cnf.d'
+    $confdir = "${boxen::config::homebrewdir}/etc/my.cnf.d"
     file { "${confdir}/${name}.cnf":
       content => template("projects/shared/mysql-${name}.cnf.erb"),
-      require => Package['mysql'],
+      require => File["${boxen::config::homebrewdir}/etc/my.cnf.d"],
     }
   }
 
 
-  # launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-  # rm -fr ${boxen::config::homebrewdir}/var/mysql
-  # mysqld --defaults-file=${boxen::config::homebrewdir}/etc/my.cnf --initialize --log-error-verbosity=3
-  # random root passwod is "A temporary password is generated for root@localhost:"
-  # ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';
   package { 'mysql':
     ensure => '5.7.11';
   }
 
-  file { "${boxen::config::homebrewdir}/var/log/mysql":
+  file { "${boxen::config::homebrewdir}/etc/my.cnf":
+    content => template("projects/shared/my.cnf.erb"),
+    require => Package["mysql"],
+  }
+
+  file { "${boxen::config::homebrewdir}/etc/my.cnf.d":
     ensure  => directory,
-    require => Package['mysql'],
+    require => File["${boxen::config::homebrewdir}/etc/my.cnf"],
   }
 
   install_conf {
@@ -32,16 +32,32 @@ class projects::mysql {
      ]: ;
   }
 
+  file { "${boxen::config::homebrewdir}/var/log/mysql":
+    ensure  => directory,
+    require => File["${boxen::config::homebrewdir}/etc/my.cnf.d/mysqld.cnf"],
+  }
+
   file { "/Users/${::boxen_user}/Library/LaunchAgents/homebrew.mxcl.mysql.plist":
     ensure  => link,
     target  => "${boxen::config::homebrewdir}/opt/mysql/homebrew.mxcl.mysql.plist",
     require => File["${boxen::config::homebrewdir}/etc/my.cnf.d/mysqld.cnf"],
-    notify  => Exec['load-mysql'],
+    notify  => Exec['mysql'],
   }
 
-  exec { 'load-mysql':
-    command     => "launchctl load /Users/${::boxen_user}/Library/LaunchAgents/homebrew.mxcl.mysql.plist",
-    require     => File["${boxen::config::homebrewdir}/etc/my.cnf.d/mysqld.cnf"],
+  file { "${boxen::config::homebrewdir}/opt/mysql/bin/mysql.sh":
+    content => template("projects/shared/mysql.sh.erb"),
+    mode    => 0775,
+    require => Package["mysql"],
+  }
+
+  file { "${boxen::config::homebrewdir}/opt/mysql/bin/mysql.sql":
+    content => template("projects/shared/mysql.sql.erb"),
+    require => Package["mysql"],
+  }
+
+  exec { 'mysql':
+    command     => "${boxen::config::homebrewdir}/opt/mysql/bin/mysql.sh",
+    require     => Package["mysql"],
     refreshonly => true,
   }
 }

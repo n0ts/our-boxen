@@ -1,0 +1,31 @@
+#!/bin/bash
+
+MYSQL_ROOT_DIR=<%= scope.lookupvar "boxen::config::homebrewdir" %>
+MYSQL_DIR=${MYSQL_ROOT_DIR}/var/mysql
+MYSQL_CONF=${MYSQL_ROOT_DIR}/etc/my.cnf
+MYSQL_LOG=${MYSQL_ROOT_DIR}/var/log/mysql/mysql.log
+MYSQL_SOCK=${MYSQL_ROOT_DIR}/var/run/mysql.sock
+MYSQL_SQL=${MYSQL_ROOT_DIR}/opt/mysql/bin/mysql.sql
+
+# unload mysql
+launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+rm -f ${MYSQL_LOG}
+
+# remove mysql data directory
+rm -fr ${MYSQL_DIR}
+
+# initialize mysql data directory
+mysqld --defaults-file=${MYSQL_CONF} --initialize
+
+# load mysql
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+
+# reset mysql root password
+while [ true ]; do
+  if [ -S "${MYSQL_SOCK}" ]; then
+    MYSQL_OLD_PASSWORD=`cat ${MYSQL_LOG} | grep 'A temporary password is generated for' | tail -1 | awk '{print $NF}'`
+    mysql --connect-expired-password -u root -p"${MYSQL_OLD_PASSWORD}" mysql < $MYSQL_SQL
+    break
+  fi
+  sleep 1
+done

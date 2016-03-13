@@ -16,7 +16,8 @@ slow_query_log_file = <%= scope.lookupvar "boxen::config::homebrewdir" %>/var/lo
 
 explicit_defaults_for_timestamp
 lower_case_table_names = 2
-skip_name_resolve
+# [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+#skip_name_resolve
 skip_external_locking
 default_storage_engine = InnoDB
 transaction_isolation = READ-COMMITTED
