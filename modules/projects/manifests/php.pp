@@ -16,7 +16,7 @@ class projects::php {
      require => [
                    Homebrew::Tap['homebrew/php'],
                    Homebrew::Tap['n0ts/myformula'],
-                   Package['mariadb'],
+                   Package['mysql'],
                    Package['postgresql'],
                  ],
   }

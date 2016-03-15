@@ -34,21 +34,23 @@ for c in \"${brewcask::config::cask_room}/\"*; do vl=(`ls -t \$c`) && for v in \
     ensure => directory,
   }
 
-  file { '/Users/Shared/w/etc':
-    ensure => directory,
-    require => File['/Users/Shared/w'],
-  }
-
-  file { '/Users/Shared/w/sync':
-    ensure  => directory,
-    require => File['/Users/Shared/w'],
-  }
-
   file { '/w':
     ensure  => link,
     owner   => 'root',
     target  => '/Users/Shared/w',
     require => File['/Users/Shared/w'],
+  }
+
+  file {
+    [
+     '/w/etc',
+     '/w/var',
+     '/w/var/log',
+     '/w/var/run',
+     '/w/sync',
+     ]:
+       ensure => directory,
+       require => File['/w'],
   }
 
   file { '/prj':
@@ -62,10 +64,6 @@ for c in \"${brewcask::config::cask_room}/\"*; do vl=(`ls -t \$c`) && for v in \
     ensure  => link,
     target  => '/Users/Shared/w',
     require => File['/Users/Shared/w'],
-  }
-
-  file { "/Users/${::boxen_user}/Library/LaunchAgents":
-    ensure => directory,
   }
 
   file { "/Users/${::boxen_user}/prj":
@@ -86,6 +84,10 @@ for c in \"${brewcask::config::cask_room}/\"*; do vl=(`ls -t \$c`) && for v in \
   file { '/Users/Shared/prj/bitbucket':
     ensure  => directory,
     require => File['/Users/Shared/prj'],
+  }
+
+  file { "/Users/${::boxen_user}/Library/LaunchAgents":
+    ensure => directory,
   }
 
   repository { "/Users/${::boxen_user}/.env":
