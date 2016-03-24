@@ -7,15 +7,15 @@ class projects::td_agent {
     $gem = "${td_agent_root}/usr/sbin/td-agent-gem"
     $unless = "ls ${td_agent_gems}/fluent-plugin-${name}-*"
     exec { "install-pluguin-${name}":
-      command => "${gem} install --no-document fluent-plugin-${name}",
-      cwd => $td_agent_root,
+      command     => "${gem} install --no-document fluent-plugin-${name}",
+      cwd         => $td_agent_root,
       environment =>
         [
          "BUNDLE_GEMFILE=${td_agent_root}/Gemfile"
          ],
-      user    => 'root',
-      unless  => "${unless} >/dev/null 2>&1",
-      require => [ Package['td-agent'], Sudoers['td-agent-gem'], File["${td_agent_root}/Gemfile"] ],
+      user        => 'root',
+      unless      => "${unless} >/dev/null 2>&1",
+      require     => [ Package['td-agent'], Sudoers['td-agent-gem'], File["${td_agent_root}/Gemfile"] ],
     }
   }
 
@@ -43,14 +43,28 @@ class projects::td_agent {
   install_plugin {
     [
       'elasticsearch',
+      'datadog_event',
       'dogstatsd',
       'file-alternative',
       'filter_typecast',
       'flowcounter',
       'forest',
+      'grep',
+      'map',
+      'record-modifier',
       'record-reformer',
       's3',
       'typecast',
     ]: ;
+  }
+
+  file { "${boxen::config::home}/bin/td-agent-gems-update.sh":
+    content => "#!/bin/bash
+GEM=/opt/td-agent/usr/sbin/td-agent-gem
+for i in \$(\$GEM list | cut -d ' ' -f 1 | grep fluent); do
+  \$GEM install --no-document \$i
+done
+",
+    mode    => 0755,
   }
 }
