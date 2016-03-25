@@ -53,7 +53,6 @@ class projects::td_agent {
       'map',
       'record-modifier',
       'record-reformer',
-      's3',
       'typecast',
     ]: ;
   }
