@@ -43,11 +43,14 @@ class projects::hashitools {
      "sahara",
      "vagrant-aws",
      "vagrant-azure",
+     "vagrant-berkshelf",
      "vagrant-digitalocean",
      "vagrant-google",
      "vagrant-managed-servers",
+     "vagrant-omnibus",
      "vagrant-rackspace",
      "vagrant-softlayer",
+     "vagrant-vbguest",
      "vagrant-vmware-fusion",
      ]: ;
   }
