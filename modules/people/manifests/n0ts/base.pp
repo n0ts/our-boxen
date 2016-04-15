@@ -17,7 +17,7 @@ class people::n0ts::base {
   file { "${boxen::config::home}/bin/brew-update.sh":
     content => "#!/bin/bash
 (brew update) && (brew cleanup) && (brew cask cleanup)
-for c in `brew cask list`; do ! brew cask info \$c | grep -qF \"Not installed\" || brew cask install \$c; done
+for c in `brew cask list`; do brew cask info \$c | grep -qF \"Not installed\" || brew cask install \$c; done
 for c in \"${brewcask::config::cask_room}/\"*; do vl=(`ls -t \$c`) && for v in \"\${vl[@]:1}\"; do rm -rf \"\$c/\$v\"; done; done
 ",
     mode    => 0755,
