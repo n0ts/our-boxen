@@ -81,7 +81,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-homebrew
   specs:
-    homebrew (1.13.0b)
+    homebrew (2.0.2a)
 
 GITHUBTARBALL
   remote: n0ts/puppet-hub
@@ -96,7 +96,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-nginx
   specs:
-    nginx (1.6.0g)
+    nginx (1.6.0h)
 
 GITHUBTARBALL
   remote: n0ts/puppet-osx
@@ -136,13 +136,13 @@ DEPENDENCIES
   gcc (= 3.0.2)
   git (= 2.7.12a)
   go (= 2.1.0)
-  homebrew (= 1.13.0b)
+  homebrew (= 2.0.2a)
   hub (= 1.4.1a)
   inifile (= 1.4.3a)
   java (= 1.8.4a)
   karabiner (= 1.0.8)
   module_data (= 0.0.4)
-  nginx (= 1.6.0g)
+  nginx (= 1.6.0h)
   nodejs (= 5.0.5)
   openssl (= 1.0.0)
   osx (= 2.8.0d)
