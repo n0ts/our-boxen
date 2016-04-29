@@ -101,6 +101,9 @@ class people::n0ts::applications {
      # The grep
      # https://www.gnu.org/software/grep/
      'grep',
+     # GNU Privacy Guard: a free PGP replacement
+     # https://www.gnupg.org/
+     'gpg2',
      # HTTP/2 C Library h2load
      # https://nghttp2.org/
      'nghttp2',
