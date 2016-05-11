@@ -70,7 +70,7 @@ github "xquartz",     "1.2.1"
 # github "redis",         "3.1.0"
 # github "sysctl",        "1.0.1"
 
-github "osx",         "2.8.0d",  :repo => "n0ts/puppet-osx"
+github "osx",         "2.8.0e",  :repo => "n0ts/puppet-osx"
 github "wget",        "1.0.1"
 github "java",        "1.8.4a",  :repo => "n0ts/puppet-java"
 github "karabiner",   "1.0.8"
