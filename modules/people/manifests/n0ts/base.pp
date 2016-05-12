@@ -14,16 +14,16 @@ class people::n0ts::base {
   include homebrew
   include brewcask
 
-  file { "${boxen::config::home}/bin/brew-update.sh":
+  file { "${boxen::config::home}/bin/brew-update":
     content => "#!/bin/bash
 (brew update) && (brew cleanup) && (brew cask cleanup)
-for c in `brew cask list`; do brew cask info \$c | grep -qF \"Not installed\" || brew cask install \$c; done
-for c in \"${brewcask::config::cask_room}/\"*; do vl=(`ls -t \$c`) && for v in \"\${vl[@]:1}\"; do rm -rf \"\$c/\$v\"; done; done
+for c in \$(brew cask list); do ! brew cask info \$c | grep -qF \"Not installed\" || brew cask install \$c; done
+for c in \"${brewcask::config::cask_room}/\"*; do vl=(\$(ls -t \$c)) && for v in \"\${vl[@]:1}\"; do rm -rf \"\$c/\$v\"; done; done
 ",
     mode    => 0755,
   }
 
-  file { "${boxen::config::home}/bin/merge-dup-open-with.sh":
+  file { "${boxen::config::home}/bin/merge-dup-open-with":
     content => "#!/bin/bash
 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system -domain user
 ",
