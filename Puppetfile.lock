@@ -121,7 +121,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-stdlib
   specs:
-    stdlib (4.9.0)
+    stdlib (4.7.0)
 
 GITHUBTARBALL
   remote: ripienaar/puppet-module-data
@@ -151,7 +151,7 @@ DEPENDENCIES
   python (= 3.0.1a)
   repository (= 2.4.1)
   ruby (= 8.5.3a)
-  stdlib (= 4.9.0)
+  stdlib (= 4.7.0)
   sudo (= 1.0.0)
   wget (= 1.0.1)
   xquartz (= 1.2.1)

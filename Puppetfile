@@ -47,6 +47,7 @@ github "brewcask",    "0.0.6c",  :repo => "n0ts/puppet-brewcask"
 github "dnsmasq",     "2.0.1a",  :repo => "n0ts/puppet-dnsmasq"
 github "foreman",     "1.2.0"
 github "gcc",         "3.0.2"
+## TODO diff from master
 ## git upstream 2.8.1
 github "git",         "2.7.12a", :repo => "n0ts/puppet-git"
 github "go",          "2.1.0"
@@ -62,9 +63,7 @@ github "pkgconfig",   "1.0.0"
 github "repository",  "2.4.1"
 ## ruby upstream 8.5.4
 github "ruby",        "8.5.3a",  :repo => "n0ts/puppet-ruby"
-github "stdlib",      "4.9.0",   :repo => "puppetlabs/puppetlabs-stdlib"
-github "ruby",        "8.5.4"
-github "stdlib",      "4.7.0", :repo => "puppetlabs/puppetlabs-stdlib"
+github "stdlib",      "4.7.0",   :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
 github "xquartz",     "1.2.1"
 
