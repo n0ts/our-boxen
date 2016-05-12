@@ -33,6 +33,7 @@ end
 # Includes many of our custom types and providers, as well as global
 # config. Required.
 
+## boxen upstream 3.11.1
 github "boxen", "3.11.0a", :repo => "n0ts/puppet-boxen"
 
 # Support for default hiera data in modules
@@ -46,19 +47,24 @@ github "brewcask",    "0.0.6c",  :repo => "n0ts/puppet-brewcask"
 github "dnsmasq",     "2.0.1a",  :repo => "n0ts/puppet-dnsmasq"
 github "foreman",     "1.2.0"
 github "gcc",         "3.0.2"
+## git upstream 2.8.1
 github "git",         "2.7.12a", :repo => "n0ts/puppet-git"
 github "go",          "2.1.0"
 github "homebrew",    "2.0.2a",  :repo => "n0ts/puppet-homebrew"
 github "hub",         "1.4.1a",  :repo => "n0ts/puppet-hub"
 github "inifile",     "1.4.3a",  :repo => "n0ts/puppetlabs-inifile"
+## nginx upstream 1.7.0
 github "nginx",       "1.6.0h",  :repo => "n0ts/puppet-nginx"
 github "nodejs",      "5.0.5"
 github "openssl",     "1.0.0"
 github "phantomjs",   "3.0.0"
 github "pkgconfig",   "1.0.0"
 github "repository",  "2.4.1"
+## ruby upstream 8.5.4
 github "ruby",        "8.5.3a",  :repo => "n0ts/puppet-ruby"
 github "stdlib",      "4.9.0",   :repo => "puppetlabs/puppetlabs-stdlib"
+github "ruby",        "8.5.4"
+github "stdlib",      "4.7.0", :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
 github "xquartz",     "1.2.1"
 
