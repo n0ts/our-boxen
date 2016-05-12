@@ -6,6 +6,16 @@ class people::n0ts::ssh {
     mode   => 700,
   }
 
+  file {
+    [
+     "/Users/${::boxen_user}/.ssh/authorized_keys",
+     "/Users/${::boxen_user}/.ssh/known_hosts",
+     ]:
+      content => "",
+      mode    => 400,
+      replace => false,
+  }
+
   file { "/Users/${::boxen_user}/.ssh/config":
     content => 'Host *
   ServerAliveInterval 60

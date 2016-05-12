@@ -101,7 +101,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-osx
   specs:
-    osx (2.8.0d)
+    osx (2.8.0e)
 
 GITHUBTARBALL
   remote: n0ts/puppet-python
@@ -145,7 +145,7 @@ DEPENDENCIES
   nginx (= 1.6.0h)
   nodejs (= 5.0.5)
   openssl (= 1.0.0)
-  osx (= 2.8.0d)
+  osx (= 2.8.0e)
   phantomjs (= 3.0.0)
   pkgconfig (= 1.0.0)
   python (= 3.0.1a)

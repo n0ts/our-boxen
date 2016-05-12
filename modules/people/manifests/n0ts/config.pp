@@ -37,6 +37,9 @@ class people::n0ts::config {
   include osx::calendar::show_days
   include osx::calendar::first_day
   include osx::calendar::show_event_times
+  include osx::calendar::show_time_zone
+  include osx::calendar::show_week_numbers
+
   include osx::cd_dvd::disable_automatic_actions
 
   include osx::contacts::address_format
