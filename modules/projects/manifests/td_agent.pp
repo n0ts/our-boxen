@@ -57,7 +57,7 @@ class projects::td_agent {
     ]: ;
   }
 
-  file { "${boxen::config::home}/bin/td-agent-gems-update.sh":
+  file { "${boxen::config::home}/bin/td-agent-gems-update":
     content => "#!/bin/bash
 GEM=/opt/td-agent/usr/sbin/td-agent-gem
 for i in \$(\$GEM list | cut -d ' ' -f 1 | grep fluent); do
