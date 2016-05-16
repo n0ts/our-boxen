@@ -1,7 +1,7 @@
 class projects::ruby {
   notify { 'class project::ruby declared': }
 
-  $version_latest = '2.3.0'
+  $version_latest = '2.3.1'
   $version_boxen = '2.0.0-p647'
 
   define install_latest_package($ruby_version = $projects::ruby::version_latest) {
