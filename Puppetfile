@@ -73,6 +73,6 @@ github "xquartz",     "1.2.1"
 
 github "osx",         "2.8.0e",  :repo => "n0ts/puppet-osx"
 github "wget",        "1.0.1"
-github "java",        "1.8.4b",  :repo => "n0ts/puppet-java"
+github "java",        "1.8.4c",  :repo => "n0ts/puppet-java"
 github "karabiner",   "1.0.8"
 github "python",      "3.0.1a",  :repo => "n0ts/puppet-python"
