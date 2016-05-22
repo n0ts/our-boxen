@@ -3,9 +3,7 @@ class people::n0ts::boxen {
 
   require boxen::config
 
-  $dir = "${boxen::config::srcdir}/boxen"
-
-  file { $dir:
+  file { "${boxen::config::srcdir}/boxen":
     ensure => link,
     target => '/Users/Shared/prj/github',
     require => File['/Users/Shared/prj/github'],

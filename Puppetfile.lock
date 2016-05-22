@@ -91,7 +91,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-java
   specs:
-    java (1.8.4c)
+    java (1.8.4d)
 
 GITHUBTARBALL
   remote: n0ts/puppet-nginx
@@ -139,7 +139,7 @@ DEPENDENCIES
   homebrew (= 2.0.2a)
   hub (= 1.4.1a)
   inifile (= 1.4.3a)
-  java (= 1.8.4c)
+  java (= 1.8.4d)
   karabiner (= 1.0.8)
   module_data (= 0.0.4)
   nginx (= 1.7.0b)
