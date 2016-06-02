@@ -388,6 +388,9 @@ class people::n0ts::applications {
      # Paparazzi!
      # https://derailer.org/paparazzi/
      'paparazzi',
+     # Safari Technology Preview
+     # https://developer.apple.com/safari/technology-preview/
+     'safari-technology-preview',
      # Skype
      # http://www.skype.com
      'skype',

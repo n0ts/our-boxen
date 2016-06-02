@@ -96,7 +96,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-nginx
   specs:
-    nginx (1.7.0b)
+    nginx (1.7.0c)
 
 GITHUBTARBALL
   remote: n0ts/puppet-osx
@@ -142,7 +142,7 @@ DEPENDENCIES
   java (= 1.8.4d)
   karabiner (= 1.0.8)
   module_data (= 0.0.4)
-  nginx (= 1.7.0b)
+  nginx (= 1.7.0c)
   nodejs (= 5.0.5)
   openssl (= 1.0.0)
   osx (= 2.8.0e)

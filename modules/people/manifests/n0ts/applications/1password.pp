@@ -7,7 +7,7 @@ class people::n0ts::applications::1password {
     user    => $::boxen_user,
     domain  => '2BUA8C4S2C.com.agilebits.onepassword-osx-helper',
     key     => 'useOPVaultFormatByDefault',
-    type   => 'bool',
+    type    => 'bool',
     value   => true,
   }
 }

@@ -9,7 +9,7 @@ class projects::python {
     }
   }
 
-
+  # Lambda use python 2.7.10
   class { 'python::global':
     version => '2.7.10',
   }
