@@ -23,7 +23,7 @@ class people::n0ts::applications::widgets {
 
   boxen::zipped_widget {
     'Currency Converter':
-      source => 'http://www.palple.net/widgets/currencyconverter/CurrencyConverter.zip';
+      source => 'http://widgets.palple.net/currencyconverter/CurrencyConverter.zip';
     'DashKards':
       source =>  'http://dashkards.com/widget-data/dashkards.zip';
     'Delivery Status':
@@ -35,7 +35,7 @@ class people::n0ts::applications::widgets {
     'QR Code Generator':
       source => 'http://www.midwinter-dg.com/downloads/qr-code-generator.zip';
     'Percentages':
-      source => 'http://www.palple.net/widgets/percentuali/Percentages.zip';
+      source => 'http://widgets.palple.net/percentuali/Percentages.zip';
     'SoraMoyo':
       source => 'http://www.cyanworks.net/downloads/SoraMoyo1.5.3.zip';
     'iCal':
