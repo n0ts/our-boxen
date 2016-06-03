@@ -279,6 +279,9 @@ class people::n0ts::applications {
      # BitTorrent Sync
      # https://www.getsync.com/
      'bittorrent-sync',
+     # Brave
+     # https://brave.com/
+     'brave',
      # Box Sync
      # https://sites.box.com/sync4/
      # sync4 is not working 10.11, so download from https://app.box.com/settings/sync
