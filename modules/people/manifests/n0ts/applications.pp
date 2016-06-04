@@ -1,22 +1,6 @@
 class people::n0ts::applications {
   notify { 'class people::n0ts::applications declared': }
 
-  # move to /Applications
-  define move_to_applications($app_name) {
-    $cask_room = "brew cask info ${name} | grep \"^${brewcask::config::cask_room}\" | cut -d \" \" -f 1"
-    exec { "move ${name} ${app_name} to /Applications":
-      command     => "rm -f \"/Applications/${app_name}.app\" && mv \"`${cask_room}`/${app_name}.app\" /Applications/",
-      environment =>
-        [
-         "HOME=/Users/${boxen::config::boxen_user}",
-         "HOMEBREW_CASK_OPTS=\"--caskroom=${brewcask::config::cask_room}\"",
-         ],
-      refreshonly => true,
-      require     => Package[$name],
-      subscribe   => Package[$name],
-    }
-  }
-
   # xquartz
   include xquartz
 
@@ -104,9 +88,6 @@ class people::n0ts::applications {
      # GNU Privacy Guard: a free PGP replacement
      # https://www.gnupg.org/
      'gpg2',
-     # HTTP/2 C Library h2load
-     # https://nghttp2.org/
-     'nghttp2',
      # Improved top (interactive process viewer) for OS X
      # https://github.com/max-horvath/htop-osx
      'htop-osx',
@@ -283,9 +264,7 @@ class people::n0ts::applications {
      # https://brave.com/
      'brave',
      # Box Sync
-     # https://sites.box.com/sync4/
-     # sync4 is not working 10.11, so download from https://app.box.com/settings/sync
-     #'box-sync',
+     'box-sync',
      # CheatSheet
      # http://www.cheatsheetapp.com/CheatSheet/
      'cheatsheet',
@@ -450,26 +429,6 @@ class people::n0ts::applications {
      ]:
        provider => 'brewcask',
        require  => [ Homebrew::Tap['caskroom/cask'], Sudoers['installer'] ],
-  }
-
-  # move to /Applications
-  move_to_applications {
-    'archiver':
-      app_name => 'Archiver';
-    'bartender':
-      app_name => 'Bartender 2';
-    'bettertouchtool':
-      app_name => 'BetterTouchTool';
-    'firefoxdeveloperedition':
-      app_name => 'FirefoxDeveloperEdition';
-    'flux':
-      app_name => 'Flux';
-    'google-chrome':
-      app_name => 'Google Chrome';
-    'google-chrome-canary':
-      app_name => 'Google Chrome Canary';
-    'totalspaces':
-      app_name => 'TotalSpaces2';
   }
 
   if versioncmp($::macosx_productversion_major, '10.10') < 0 {
