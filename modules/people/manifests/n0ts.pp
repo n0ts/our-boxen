@@ -8,7 +8,7 @@ class people::n0ts {
     fail("This manifest support only OS X 10.9 or later - ${::macosx_productversion}")
   }
 
-  if $::boxen_projects == '111' {
+  if $::boxen_projects == '' {
     include people::n0ts::base
     include people::n0ts::boxen
     include people::n0ts::config
