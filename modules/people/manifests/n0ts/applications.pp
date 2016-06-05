@@ -376,6 +376,9 @@ class people::n0ts::applications {
      # Skype
      # http://www.skype.com
      'skype',
+     # Sketch
+     # http://www.sketchapp.com/
+     'sketch',
      # Silverlight
      # https://www.microsoft.com/silverlight/
      'silverlight',
