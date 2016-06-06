@@ -376,6 +376,9 @@ class people::n0ts::applications {
      # Skype
      # http://www.skype.com
      'skype',
+     # Sketch
+     # http://www.sketchapp.com/
+     'sketch',
      # Silverlight
      # https://www.microsoft.com/silverlight/
      'silverlight',
@@ -397,9 +400,6 @@ class people::n0ts::applications {
      # Simple Comic
      # https://github.com/techstoreclub/Simple-Comic
      'techstoreclub-simple-comic',
-     # Transmission
-     # http://www.transmissionbt.com/
-     'transmission',
      # TFTP Server
      # http://ww2.unime.it/flr/tftpserver/
      'tftpserver',
@@ -411,6 +411,9 @@ class people::n0ts::applications {
      # http://totalspaces.binaryage.com/
      # 10.11 SIP http://totalspaces.binaryage.com/elcapitan
      'totalspaces',
+     # Transmission
+     # https://www.transmissionbt.com/
+     'transmission',
      # VirtualBox
      # https://www.virtualbox.org
      'virtualbox',
@@ -457,28 +460,6 @@ class people::n0ts::applications {
        provider => 'brewcask',
        require  => [ Homebrew::Tap['caskroom/cask'], Sudoers['installer'] ],
     }
-  }
-
-  file { '/Applications/VMware Fusion.app':
-    ensure  => 'link',
-    target  => "/Users/${::boxen_user}/Applications/VMware Fusion.app",
-    require => Package['vmware-fusion'],
-  }
-
-  package { 'utorrent':
-    provider => 'brewcask',
-    require  => Homebrew::Tap['caskroom/cask'],
-    notify   => Exec['applications-utorrent-installer'],
-  }
-
-  exec { 'applications-utorrent-installer':
-    command     => "open ${brewcask::config::cask_room}/utorrent/latest/uTorrent.app",
-    user        => $::boxen_user,
-    refreshonly => true,
-  }
-
-  osx_login_item { 'uTorrent':
-    ensure  => 'absent',
   }
 
   # Homebrew-cask versions
