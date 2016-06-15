@@ -21,6 +21,7 @@ class people::n0ts {
 
     include people::n0ts::applications
     include people::n0ts::applications::1password
+    include people::n0ts::applications::caffeine
     include people::n0ts::applications::evernote
     include people::n0ts::applications::karabiner
     include people::n0ts::applications::flux
