@@ -310,6 +310,12 @@ class people::n0ts::applications {
      # Google Earth
      # https://www.google.com/earth/
      'google-earth',
+     # Google Hangouts
+     # https://www.google.com/tools/dlpage/hangoutplugin
+     'google-hangouts',
+     # Google Web Designer
+     # https://www.google.com/webdesigner/
+     'google-web-designer',
      # GrowlNotify
      # http://growl.info/downloads
      'growlnotify',
