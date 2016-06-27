@@ -193,6 +193,9 @@ class people::n0ts::applications {
      # Additional completion definitions for zsh
      # https://github.com/zsh-users/zsh-completions
      'zsh-completions',
+     # Wireshark
+     # https://www.wireshark.org/
+     'wireshark',
     ]:
     ensure => latest,
   }
@@ -280,9 +283,12 @@ class people::n0ts::applications {
      # Flickr Uploadr
      # https://www.flickr.com/tools/
      'flickr-uploadr',
-     # Firefox, Mozilla Firefox
+     # Mozilla Firefox
      # https://www.mozilla.org/en-US/firefox/
      'firefox',
+     # Mozilla Firefox beta
+     # https://www.mozilla.org/en-US/firefox/channel/#beta
+     'firefox-beta',
      # firefoxdeveloperedition
      # https://www.mozilla.org/en-US/firefox/developer/
      'firefoxdeveloperedition',
@@ -429,12 +435,12 @@ class people::n0ts::applications {
      # VLC, VLC media player
      # https://www.videolan.org/vlc/
      'vlc',
-     # Wireshark
-     # https://www.wireshark.org/
-     'wireshark',
      # Wondershare Player
      # http://www.wondershare.com/video-player/
      'wondershare-player',
+     # Zoom.us
+     # https://zoom.us
+     'zoomus',
      ]:
        provider => 'brewcask',
        require  => [ Homebrew::Tap['caskroom/cask'], Sudoers['installer'] ],
