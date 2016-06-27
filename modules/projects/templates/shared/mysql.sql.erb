@@ -1,2 +1,6 @@
 # reset root user password
 ALTER USER 'root'@'localhost' IDENTIFIED BY '';
+
+CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY '';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1';
+FLUSH PRIVILEGES;

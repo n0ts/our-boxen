@@ -6,6 +6,8 @@ port = 3306
 datadir = <%= scope.lookupvar "boxen::config::homebrewdir" %>/var/mysql
 character-set-server = utf8mb4
 
+default_password_lifetime = 0
+
 log-error = <%= scope.lookupvar "boxen::config::homebrewdir" %>/var/log/mysql/mysql.log
 log_timestamps = SYSTEM
 log_slow_admin_statements
