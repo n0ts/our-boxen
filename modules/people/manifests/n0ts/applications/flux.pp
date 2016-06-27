@@ -5,14 +5,21 @@ class people::n0ts::applications::flux {
     user   => $::boxen_user,
     domain => 'org.herf.Flux',
     key    => 'location',
-    value  => 0,
+    value  => '35.658100,139.701742',
   }
 
   boxen::osx_defaults { 'Flux - locationTextfield':
     user   => $::boxen_user,
     domain => 'org.herf.Flux',
     key    => 'locationTextField',
-    value  => 'Tokyo',
+    value  => 'Tokyo Station',
+  }
+
+  boxen::osx_defaults { 'Flux - locationType':
+    user   => $::boxen_user,
+    domain => 'org.herf.Flux',
+    key    => 'locationType',
+    value  => 'L',
   }
 
   boxen::osx_defaults { 'Flux - steptime':
@@ -20,6 +27,20 @@ class people::n0ts::applications::flux {
     domain => 'org.herf.Flux',
     key    => 'steptime',
     value  => 24,
+  }
+
+  boxen::osx_defaults { 'Flux - darkTheme':
+    user   => $::boxen_user,
+    domain => 'org.herf.Flux',
+    key    => 'darkTheme',
+    value  => 0,
+  }
+
+  boxen::osx_defaults { 'Flux - wakeNotifyDisable':
+    user   => $::boxen_user,
+    domain => 'org.herf.Flux',
+    key    => 'wakeNotifyDisable',
+    value  => "-1",
   }
 
   boxen::osx_defaults { 'Flux - wakeTime':
@@ -33,13 +54,13 @@ class people::n0ts::applications::flux {
     user   => $::boxen_user,
     domain => 'org.herf.Flux',
     key    => 'dayColorTemp',
-    value  => '4155.590160472973',
+    value  => 4200,
   }
 
   boxen::osx_defaults { 'Flux - lateColorTemp':
     user   => $::boxen_user,
     domain => 'org.herf.Flux',
     key    => 'lateColorTemp',
-    value  => '3371.062077702702',
+    value  => 2700,
   }
 }
