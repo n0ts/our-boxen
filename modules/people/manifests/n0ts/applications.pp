@@ -274,6 +274,9 @@ class people::n0ts::applications {
      # CloudApp
      # https://getcloudapp.com/
      'cloud',
+     # Docker
+     # https://www.docker.com/products/docker
+     'docker',
      # Dropbox
      # https://www.dropbox.com/
      'dropbox',
