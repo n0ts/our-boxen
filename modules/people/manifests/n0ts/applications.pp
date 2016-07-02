@@ -376,9 +376,9 @@ class people::n0ts::applications {
      # UNetbootin
      # http://unetbootin.github.io/
      'unetbootin',
-     # UnRarX
+     # UnRarX - temporary 403
      # http://www.unrarx.com
-     'unrarx',
+     #'unrarx',
      # Opera
      # http://www.opera.com/
      'opera',
@@ -511,9 +511,12 @@ class people::n0ts::applications {
   homebrew::tap { 'n0ts/mycask': }
   package {
     [
-      # uqwifi-connect
-      # http://wi2.co.jp/jp/uq/connect/
-      'uqwifi-connect',
+     # uqwifi-connect
+     # http://wi2.co.jp/jp/uq/connect/
+     'uqwifi-connect',
+     # UnRarX
+     # http://www.unrarx.com
+     'unrarx',
      ]:
        provider => 'brewcask',
        require  => [
