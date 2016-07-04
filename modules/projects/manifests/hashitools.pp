@@ -25,6 +25,7 @@ class projects::hashitools {
         command     => "${vagrant_bin} box add dummy-aws https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box",
         environment =>
           [
+           "VAGRANT_DEFAULT_PROVIDER=virtualbox",
            "VAGRANT_HOME=/Users/${::boxen_user}/.vagrant.d",
            "VAGRANT_NO_COLOR=1",
            ],
