@@ -76,9 +76,6 @@ class people::n0ts::applications {
      # GNU version of the tar archiving utility
      # https://www.gnu.org/software/tar/
      'gnu-tar',
-     # Multi-threaded malloc() and performance analysis tools
-     # https://code.google.com/p/gperftools/
-     'gperftools',
      # git-secrets
      # https://github.com/awslabs/git-secrets
      'git-secrets',
