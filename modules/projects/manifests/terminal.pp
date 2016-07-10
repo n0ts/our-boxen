@@ -234,7 +234,7 @@ class projects::terminal {
     user    => $::boxen_user,
     domain  => 'com.apple.Terminal',
     key     => 'TotalTerminalVisorHideOnEscape',
-    value   => 1,
+    value   => 0,
   }
 
   boxen::osx_defaults { 'TotalTerminalVisorAnimationSpeed':
