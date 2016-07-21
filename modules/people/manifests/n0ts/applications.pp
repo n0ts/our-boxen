@@ -234,6 +234,9 @@ class people::n0ts::applications {
     require => Package['openssh'],
   }
 
+  # Homebrew/services
+  homebrew::tap { 'homebrew/services': }
+
   # Homebrew-cask packages
   include brewcask
 
@@ -280,9 +283,6 @@ class people::n0ts::applications {
      # Dropbox
      # https://www.dropbox.com/
      'dropbox',
-     # Adobe Flash Player
-     # https://www.adobe.com/products/flashplayer/distribution3.html
-     'flash',
      # Flickr Uploadr
      # https://www.flickr.com/tools/
      'flickr-uploadr',
@@ -394,9 +394,6 @@ class people::n0ts::applications {
      # Sketch
      # http://www.sketchapp.com/
      'sketch',
-     # Silverlight
-     # https://www.microsoft.com/silverlight/
-     'silverlight',
      # Slack
      # https://slack.com/
      'slack',
