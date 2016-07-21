@@ -154,6 +154,9 @@ class people::n0ts::applications {
      # Readline wrapper: adds readline support to tools that lack it
      # http://utopia.knoware.nl/~hlub/rlwrap/
      'rlwrap',
+     # Source-code syntax highlighter
+     # https://www.gnu.org/software/src-highlite/
+     'source-highlight',
      # TCP flow recorder
      # https://github.com/simsong/tcpflow
      'tcpflow',
