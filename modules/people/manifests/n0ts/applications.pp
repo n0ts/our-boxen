@@ -79,9 +79,6 @@ class people::n0ts::applications {
      # git-secrets
      # https://github.com/awslabs/git-secrets
      'git-secrets',
-     # The grep
-     # https://www.gnu.org/software/grep/
-     'grep',
      # GNU Privacy Guard: a free PGP replacement
      # https://www.gnupg.org/
      'gpg2',
@@ -197,25 +194,77 @@ class people::n0ts::applications {
      # https://www.wireshark.org/
      'wireshark',
     ]:
-    ensure => latest,
+       ensure => latest,
   }
 
   # Homebrew-dupes packages
   homebrew::tap { 'homebrew/dupes': }
   package {
     [
-     # Utility that provides fast incremental file transfer
-     # https://rsync.samba.org/
-     'rsync',
+     # FSF Binutils for native development
+     # https://www.gnu.org/software/binutils/binutils.html
+     'binutils',
+     # File comparison utilities
+     # https://www.gnu.org/s/diffutils/
+     'diffutils',
+     # GNU awk utility
+     # https://www.gnu.org/software/gawk/
+     'gawk',
+     # GNU Transport Layer Security (TLS) Library
+     # https://gnutls.org/
+     'gnutls',
+     # Popular GNU data compression program
+     # https://www.gnu.org/software/gzip
+     'gzip',
      # OpenBSD freely-licensed SSH connectivity tools
      # http://www.openssh.com/
      'openssh',
+     # Utility that provides fast incremental file transfer
+     # https://rsync.samba.org/
+     'rsync',
      # GNU screen
      # https://www.gnu.org/software/screen
      'screen',
-     ]:
+     # Executes a program periodically, showing output fullscreen
+     # https://gitlab.com/procps-ng/procps
+     'watch',
+     # Internet file retriever
+     # https://www.gnu.org/software/wget/
+     'wget',
+    ]:
        require => Homebrew::Tap['homebrew/dupes'],
   }
+  package {
+    [
+     # Classic UNIX line editor
+     # https://www.gnu.org/software/ed/ed.html
+     'ed',
+     # Collection of GNU find, xargs, and locate
+     # https://www.gnu.org/software/findutils/
+     'findutils',
+     # C code prettifier
+     # https://www.gnu.org/software/indent/
+     'gnu-indent',
+     # GNU implementation of the famous stream editor
+     # https://www.gnu.org/software/sed/
+     'gnu-sed',
+     # GNU version of the tar archiving utility
+     # https://www.gnu.org/software/tar/
+     'gnu-tar',
+     # GNU implementation of which utility
+     # https://savannah.gnu.org/projects/which/
+     'gnu-which',
+     # The grep
+     # https://www.gnu.org/software/grep/
+     'grep',
+     # Display word differences between text files
+     # https://www.gnu.org/software/wdiff/
+     'wdiff',
+    ]:
+      install_options => '--with-default-names',
+      require => Homebrew::Tap['homebrew/dupes'],
+  }
+
 
   # Homebrew/completions
   homebrew::tap { 'homebrew/completions': }
@@ -224,7 +273,7 @@ class people::n0ts::applications {
      # Bash & Fish completion for brew-cask
      # https://github.com/xyb/homebrew-cask-completion
      'homebrew/completions/brew-cask-completion',
-     ]:
+    ]:
        require => Homebrew::Tap['homebrew/completions'],
   }
 
@@ -441,7 +490,7 @@ class people::n0ts::applications {
      # Zoom.us
      # https://zoom.us
      'zoomus',
-     ]:
+    ]:
        provider => 'brewcask',
        require  => [ Homebrew::Tap['caskroom/cask'], Sudoers['installer'] ],
   }
@@ -449,25 +498,25 @@ class people::n0ts::applications {
   if versioncmp($::macosx_productversion_major, '10.10') < 0 {
     package {
       [
-        # Arranger
-        # http://bucketomac.de/arranger/arranger/
-        'arranger',
-        # MenuMeters
-        # http://www.ragingmenace.com/software/menumeters/
-        'menumeters',
-       ]:
+       # Arranger
+       # http://bucketomac.de/arranger/arranger/
+       'arranger',
+       # MenuMeters
+       # http://www.ragingmenace.com/software/menumeters/
+       'menumeters',
+      ]:
        provider => 'brewcask',
        require  => [ Homebrew::Tap['caskroom/cask'], Sudoers['installer'] ],
     }
   } else {
     package {
       [
-        # Flashlight
-        # http://flashlight.nateparrott.com/
-        'flashlight',
-        # MenuMeters, MenuMeters El Capitan Port
-        # http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/
-        'yujitach-menumeters',
+       # Flashlight
+       # http://flashlight.nateparrott.com/
+       'flashlight',
+       # MenuMeters, MenuMeters El Capitan Port
+       # http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/
+       'yujitach-menumeters',
       ]:
        provider => 'brewcask',
        require  => [ Homebrew::Tap['caskroom/cask'], Sudoers['installer'] ],
@@ -478,10 +527,10 @@ class people::n0ts::applications {
   homebrew::tap { 'caskroom/versions': }
   package {
     [
-      # quicktime-player7
-      # http://support.apple.com/kb/dl923
-      'quicktime-player7',
-     ]:
+     # quicktime-player7
+     # http://support.apple.com/kb/dl923
+     'quicktime-player7',
+    ]:
        provider => 'brewcask',
        require  => [
                     Homebrew::Tap['caskroom/cask'],
@@ -493,10 +542,10 @@ class people::n0ts::applications {
   homebrew::tap { 'sonots/mycask': }
   package {
     [
-      # Gyazo, Gyazo GIF
-      # https://gyazo.com/
-      'gyazo',
-     ]:
+     # Gyazo, Gyazo GIF
+     # https://gyazo.com/
+     'gyazo',
+    ]:
        provider => 'brewcask',
        require  => [
                     Homebrew::Tap['caskroom/cask'],
@@ -514,7 +563,7 @@ class people::n0ts::applications {
      # UnRarX
      # http://www.unrarx.com
      'unrarx',
-     ]:
+    ]:
        provider => 'brewcask',
        require  => [
                     Homebrew::Tap['caskroom/cask'],
