@@ -4,7 +4,10 @@ pid-file = <%= scope.lookupvar "boxen::config::homebrewdir" %>/var/run/mysql.pid
 socket = <%= scope.lookupvar "boxen::config::homebrewdir" %>/var/run/mysql.sock
 port = 3306
 datadir = <%= scope.lookupvar "boxen::config::homebrewdir" %>/var/mysql
-character-set-server = utf8mb4
+
+collation_server = utf8mb4_unicode_ci
+character_set_server = utf8mb4
+skip-character-set-client-handshake
 
 default_password_lifetime = 0
 
@@ -22,8 +25,8 @@ lower_case_table_names = 2
 #skip_name_resolve
 skip_external_locking
 default_storage_engine = InnoDB
-transaction_isolation = READ-COMMITTED
-secure_file_priv = NULL
+transaction_isolation = REPEATABLE-READ	
+secure_file_priv = /tmp
 
 sql_mode = TRADITIONAL,NO_AUTO_VALUE_ON_ZERO,ONLY_FULL_GROUP_BY
 
@@ -44,7 +47,6 @@ tmp_table_size = 16M
 sort_buffer_size = 4M
 wait_timeout = 180
 
-default_password_lifetime = 0
 show_compatibility_56 = 1
 
 performance_schema = ON

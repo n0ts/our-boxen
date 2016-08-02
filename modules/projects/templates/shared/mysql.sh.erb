@@ -7,8 +7,8 @@ MYSQL_LOG=${MYSQL_ROOT_DIR}/var/log/mysql/mysql.log
 MYSQL_SOCK=${MYSQL_ROOT_DIR}/var/run/mysql.sock
 MYSQL_SQL=${MYSQL_ROOT_DIR}/opt/mysql/bin/mysql.sql
 
-# unload mysql
-launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+# stop mysql service
+brew services stop mysql
 rm -f ${MYSQL_LOG}
 
 # remove mysql data directory
@@ -17,8 +17,8 @@ rm -fr ${MYSQL_DIR}
 # initialize mysql data directory
 mysqld --defaults-file=${MYSQL_CONF} --initialize
 
-# load mysql
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+# start mysql service
+brew services start mysql
 
 # reset mysql root password
 while [ true ]; do
