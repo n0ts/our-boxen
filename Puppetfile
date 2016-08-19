@@ -43,14 +43,14 @@ github "module_data", "0.0.4", :repo => "ripienaar/puppet-module-data"
 # Core modules for a basic development environment. You can replace
 # some/most of these if you want, but it's not recommended.
 
-github "brewcask",    "0.0.6c",  :repo => "n0ts/puppet-brewcask"
+github "brewcask",    "0.0.7a",  :repo => "n0ts/puppet-brewcask"
 github "dnsmasq",     "2.0.1a",  :repo => "n0ts/puppet-dnsmasq"
 github "foreman",     "1.2.0"
 github "gcc",         "3.0.2"
 github "git",         "2.8.1d",  :repo => "n0ts/puppet-git"
 github "go",          "2.1.0"
 github "homebrew",    "2.0.2b",  :repo => "n0ts/puppet-homebrew"
-github "hub",         "1.4.2"
+github "hub",         "1.4.3a",  :repo => "n0ts/puppet-hub"
 github "inifile",     "1.4.3a",  :repo => "n0ts/puppetlabs-inifile"
 github "nginx",       "1.7.0d",  :repo => "n0ts/puppet-nginx"
 github "nodejs",      "5.0.5"
