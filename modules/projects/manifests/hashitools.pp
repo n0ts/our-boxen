@@ -45,11 +45,17 @@ class projects::hashitools {
       'packer',
       'serf',
       'terraform',
-      'vagrant',
       'vault',
      ]:
-    provider => 'brewcask',
-    require  => Homebrew::Tap['caskroom/cask'],
+       ensure => latest,
+  }
+
+  package {
+    [
+     'vagrant',
+     ]:
+       provider => 'brewcask',
+       require  => Homebrew::Tap['caskroom/cask'],
   }
 
   file { "/Users/${::boxen_user}/.vagrant.d":
