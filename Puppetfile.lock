@@ -66,7 +66,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-brewcask
   specs:
-    brewcask (0.0.7a)
+    brewcask (0.0.7b)
 
 GITHUBTARBALL
   remote: n0ts/puppet-dnsmasq
@@ -130,7 +130,7 @@ GITHUBTARBALL
 
 DEPENDENCIES
   boxen (= 3.11.0a)
-  brewcask (= 0.0.7a)
+  brewcask (= 0.0.7b)
   dnsmasq (= 2.0.1a)
   foreman (= 1.2.0)
   gcc (= 3.0.2)
