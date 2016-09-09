@@ -490,6 +490,9 @@ class people::n0ts::applications {
      # Zoom.us
      # https://zoom.us
      'zoomus',
+     # whatsapp
+     # https://www.whatsapp.com/
+     'whatsapp',
     ]:
        provider => 'brewcask',
        require  => [ Homebrew::Tap['caskroom/cask'], Sudoers['installer'] ],
