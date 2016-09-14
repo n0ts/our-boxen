@@ -54,11 +54,6 @@ GITHUBTARBALL
     wget (1.0.1)
 
 GITHUBTARBALL
-  remote: boxen/puppet-xquartz
-  specs:
-    xquartz (1.2.1)
-
-GITHUBTARBALL
   remote: n0ts/puppet-boxen
   specs:
     boxen (3.11.0a)
@@ -81,7 +76,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-homebrew
   specs:
-    homebrew (2.0.2b)
+    homebrew (2.0.2c)
 
 GITHUBTARBALL
   remote: n0ts/puppet-hub
@@ -114,6 +109,11 @@ GITHUBTARBALL
     ruby (8.5.5b)
 
 GITHUBTARBALL
+  remote: n0ts/puppet-xquartz
+  specs:
+    xquartz (1.2.1a)
+
+GITHUBTARBALL
   remote: n0ts/puppetlabs-inifile
   specs:
     inifile (1.4.3a)
@@ -136,7 +136,7 @@ DEPENDENCIES
   gcc (= 3.0.2)
   git (= 2.8.1d)
   go (= 2.1.0)
-  homebrew (= 2.0.2b)
+  homebrew (= 2.0.2c)
   hub (= 1.4.3a)
   inifile (= 1.4.3a)
   java (= 1.8.4d)
@@ -154,5 +154,5 @@ DEPENDENCIES
   stdlib (= 4.7.0)
   sudo (= 1.0.0)
   wget (= 1.0.1)
-  xquartz (= 1.2.1)
+  xquartz (= 1.2.1a)
 
