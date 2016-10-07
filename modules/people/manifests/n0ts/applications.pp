@@ -6,8 +6,8 @@ class people::n0ts::applications {
 
   # java
   class { 'java':
-    update_version => '92',
-    minor_version  => 'b14',
+    update_version => '101',
+    minor_version  => 'b13',
   }
 
   # Homebrew packages
@@ -31,6 +31,9 @@ class people::n0ts::applications {
      # Programmable bash completion
      # https://bash-completion.alioth.debian.org/
      'bash-completion',
+     # FSF Binutils for native development
+     # https://www.gnu.org/software/binutils/binutils.html
+     'binutils',
      # Code converter on tty
      # http://vmi.jp/software/cygwin/cocot.html
      'cocot',
@@ -52,6 +55,9 @@ class people::n0ts::applications {
      # Fuzzy finder for your shell
      # https://github.com/junegunn/fzf
      'fzf',
+     # GNU awk utility
+     # https://www.gnu.org/software/gawk/
+     'gawk',
      # GeoIP databases in a number of formats
      # https://github.com/maxmind/geoip-api-c
      'geoip',
@@ -70,15 +76,15 @@ class people::n0ts::applications {
      # Git extension for versioning large files
      # https://github.com/github/git-lfs
      'git-lfs',
-     # Source code tag system
-     # https://www.gnu.org/software/global/
-     'global',
-     # GNU version of the tar archiving utility
-     # https://www.gnu.org/software/tar/
-     'gnu-tar',
      # git-secrets
      # https://github.com/awslabs/git-secrets
      'git-secrets',
+     # Source code tag system
+     # https://www.gnu.org/software/global/
+     'global',
+     # GNU Transport Layer Security (TLS) Library
+     # https://gnutls.org/
+     'gnutls',
      # GNU Privacy Guard: a free PGP replacement
      # https://www.gnupg.org/
      'gpg2',
@@ -103,15 +109,15 @@ class people::n0ts::applications {
      # Powerful multi-lingual file viewer/grep
      # http://www.ff.iij4u.or.jp/~nrt/lv/
      'lv',
+     # Mac App Store command-line interface
+     # https://github.com/argon/mas
+     'mas',
      # Text-to-HTML conversion tool
      # https://daringfireball.net/projects/markdown/
      'markdown',
      # mercurial
      # http://mercurial.selenic.com/
      'mercurial',
-     # Remote terminal application
-     # https://mosh.mit.edu/
-     'mobile-shell',
      # Network Kanji code conversion Filter (NKF)
      # https://osdn.jp/projects/nkf/
      'nkf',
@@ -148,6 +154,9 @@ class people::n0ts::applications {
      # Perl-powered file rename script with many helpful built-ins
      # http://plasmasturm.org/code/rename
      'rename',
+     # ripgrep
+     # https://github.com/BurntSushi/ripgrep
+     'ripgrep',
      # Readline wrapper: adds readline support to tools that lack it
      # http://utopia.knoware.nl/~hlub/rlwrap/
      'rlwrap',
@@ -190,55 +199,17 @@ class people::n0ts::applications {
      # Additional completion definitions for zsh
      # https://github.com/zsh-users/zsh-completions
      'zsh-completions',
+     # Display word differences between text files
+     # https://www.gnu.org/software/wdiff/
+     'wdiff',
      # Wireshark
      # https://www.wireshark.org/
      'wireshark',
     ]:
        ensure => latest,
   }
-
-  # Homebrew-dupes packages
-  homebrew::tap { 'homebrew/dupes': }
   package {
     [
-     # FSF Binutils for native development
-     # https://www.gnu.org/software/binutils/binutils.html
-     'binutils',
-     # File comparison utilities
-     # https://www.gnu.org/s/diffutils/
-     'diffutils',
-     # GNU awk utility
-     # https://www.gnu.org/software/gawk/
-     'gawk',
-     # GNU Transport Layer Security (TLS) Library
-     # https://gnutls.org/
-     'gnutls',
-     # Popular GNU data compression program
-     # https://www.gnu.org/software/gzip
-     'gzip',
-     # OpenBSD freely-licensed SSH connectivity tools
-     # http://www.openssh.com/
-     'openssh',
-     # Utility that provides fast incremental file transfer
-     # https://rsync.samba.org/
-     'rsync',
-     # GNU screen
-     # https://www.gnu.org/software/screen
-     'screen',
-     # Executes a program periodically, showing output fullscreen
-     # https://gitlab.com/procps-ng/procps
-     'watch',
-     # Internet file retriever
-     # https://www.gnu.org/software/wget/
-     'wget',
-    ]:
-       require => Homebrew::Tap['homebrew/dupes'],
-  }
-  package {
-    [
-     # Classic UNIX line editor
-     # https://www.gnu.org/software/ed/ed.html
-     'ed',
      # Collection of GNU find, xargs, and locate
      # https://www.gnu.org/software/findutils/
      'findutils',
@@ -254,17 +225,50 @@ class people::n0ts::applications {
      # GNU implementation of which utility
      # https://savannah.gnu.org/projects/which/
      'gnu-which',
+    ]:
+       install_options => '--with-default-names',
+       ensure => latest,
+  }
+
+  # Homebrew-dupes packages
+  homebrew::tap { 'homebrew/dupes': }
+  package {
+    [
+     # File comparison utilities
+     # https://www.gnu.org/s/diffutils/
+     'diffutils',
+     # Popular GNU data compression program
+     # https://www.gnu.org/software/gzip
+     'gzip',
+     # OpenBSD freely-licensed SSH connectivity tools
+     # http://www.openssh.com/
+     'openssh',
+     # Utility that provides fast incremental file transfer
+     # https://rsync.samba.org/
+     'rsync',
+     # GNU screen
+     # https://www.gnu.org/software/screen
+     'screen',
+    ]:
+       require => Homebrew::Tap['homebrew/dupes'],
+  }
+  package {
+    [
+     # Classic UNIX line editor
+     # https://www.gnu.org/software/ed/ed.html
+     'ed',
      # The grep
      # https://www.gnu.org/software/grep/
      'grep',
-     # Display word differences between text files
-     # https://www.gnu.org/software/wdiff/
-     'wdiff',
     ]:
-      install_options => '--with-default-names',
-      require => Homebrew::Tap['homebrew/dupes'],
+       install_options => '--with-default-names',
+       require => Homebrew::Tap['homebrew/dupes'],
   }
-
+  exec { 'unload built-in ssh-agent':
+    command => 'launchctl unload -w /System/Library/LaunchAgents/org.openbsd.ssh-agent.plist',
+    unless  => 'test `launchctl list | grep org.openbsd.ssh-agent | cut -f 1` = "-"',
+    require => Package['openssh'],
+  }
 
   # Homebrew/completions
   homebrew::tap { 'homebrew/completions': }
@@ -277,18 +281,11 @@ class people::n0ts::applications {
        require => Homebrew::Tap['homebrew/completions'],
   }
 
-  exec { 'unload built-in ssh-agent':
-    command => 'launchctl unload -w /System/Library/LaunchAgents/org.openbsd.ssh-agent.plist',
-    unless  => 'test `launchctl list | grep org.openbsd.ssh-agent | cut -f 1` = "-"',
-    require => Package['openssh'],
-  }
-
   # Homebrew/services
   homebrew::tap { 'homebrew/services': }
 
   # Homebrew-cask packages
   include brewcask
-
   package {
     [
      # AppCleaner
@@ -326,6 +323,9 @@ class people::n0ts::applications {
      # CloudApp
      # https://getcloudapp.com/
      'cloud',
+     # Dash
+     # https://kapeli.com/dash
+     'dash',
      # Docker
      # https://www.docker.com/products/docker
      'docker',
@@ -422,9 +422,9 @@ class people::n0ts::applications {
      # Mi
      # http://www.mimikaki.net/en/index.html
      'mi',
-     # UNetbootin
-     # http://unetbootin.github.io/
-     'unetbootin',
+     # Remote terminal application
+     # https://mosh.mit.edu/
+     'mobile-shell',
      # UnRarX - temporary 403
      # http://www.unrarx.com
      #'unrarx',
@@ -475,6 +475,9 @@ class people::n0ts::applications {
      # Transmission
      # https://www.transmissionbt.com/
      'transmission',
+     # UNetbootin
+     # http://unetbootin.github.io/
+     'unetbootin',
      # VirtualBox
      # https://www.virtualbox.org
      'virtualbox',
@@ -592,6 +595,6 @@ class people::n0ts::applications {
     [
       'my-emacs',
     ]:
-      require => Homebrew::Tap['n0ts/myformula'],;
+       require => Homebrew::Tap['n0ts/myformula'],;
   }
 }

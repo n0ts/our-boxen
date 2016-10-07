@@ -76,7 +76,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-homebrew
   specs:
-    homebrew (2.0.2d)
+    homebrew (2.0.2e)
 
 GITHUBTARBALL
   remote: n0ts/puppet-hub
@@ -136,7 +136,7 @@ DEPENDENCIES
   gcc (= 3.0.2)
   git (= 2.8.1d)
   go (= 2.1.0)
-  homebrew (= 2.0.2d)
+  homebrew (= 2.0.2e)
   hub (= 1.4.3a)
   inifile (= 1.4.3a)
   java (= 1.8.4d)
