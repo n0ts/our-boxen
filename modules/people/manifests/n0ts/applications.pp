@@ -309,9 +309,6 @@ class people::n0ts::applications {
      # BetterTouchTool
      # http://boastr.net/
      'bettertouchtool',
-     # BitTorrent Sync
-     # https://www.getsync.com/
-     'bittorrent-sync',
      # Brave
      # https://brave.com/
      'brave',
@@ -434,6 +431,9 @@ class people::n0ts::applications {
      # Paparazzi!
      # https://derailer.org/paparazzi/
      'paparazzi',
+     # Resilio-sync
+     # https://www.getsync.com/
+     'resilio-sync',
      # Safari Technology Preview
      # https://developer.apple.com/safari/technology-preview/
      'safari-technology-preview',
