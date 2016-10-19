@@ -57,7 +57,7 @@ set -e
 (/usr/bin/gem spec bundler -v '~> 1.12.5' >/dev/null 2>&1) || {
     log "====> Installing bundler to system ruby"
     /usr/bin/sudo -p "Password for sudo to install bundler: " \
-        /usr/bin/gem install bundler -v '~> 1.12.5' --no-rdoc --no-ri
+        /usr/bin/gem install bundler -v '~> 1.12.5' --no-document
 }
 PATH="/Library/Ruby/bin:$(gem which bundler | sed -e 's!lib/bundler.rb!bin!'):$PATH"
 # Use checksums to quickly determine if we need to re-bundle
