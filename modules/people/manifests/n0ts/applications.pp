@@ -421,7 +421,7 @@ class people::n0ts::applications {
      'mi',
      # Remote terminal application
      # https://mosh.mit.edu/
-     'mobile-shell',
+     'mosh',
      # UnRarX - temporary 403
      # http://www.unrarx.com
      #'unrarx',
