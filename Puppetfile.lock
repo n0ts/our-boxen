@@ -21,7 +21,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-nodejs
   specs:
-    nodejs (5.0.5)
+    nodejs (5.0.8)
 
 GITHUBTARBALL
   remote: boxen/puppet-openssl
@@ -71,12 +71,12 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-git
   specs:
-    git (2.8.1d)
+    git (2.10.0a)
 
 GITHUBTARBALL
   remote: n0ts/puppet-homebrew
   specs:
-    homebrew (2.0.2e)
+    homebrew (2.1.0a)
 
 GITHUBTARBALL
   remote: n0ts/puppet-hub
@@ -134,16 +134,16 @@ DEPENDENCIES
   dnsmasq (= 2.0.1a)
   foreman (= 1.2.0)
   gcc (= 3.0.2)
-  git (= 2.8.1d)
+  git (= 2.10.0a)
   go (= 2.1.0)
-  homebrew (= 2.0.2e)
+  homebrew (= 2.1.0a)
   hub (= 1.4.3a)
   inifile (= 1.4.3a)
   java (= 1.8.4d)
   karabiner (= 1.0.8)
   module_data (= 0.0.4)
   nginx (= 1.7.0d)
-  nodejs (= 5.0.5)
+  nodejs (= 5.0.8)
   openssl (= 1.0.0)
   osx (= 2.8.0e)
   phantomjs (= 3.0.0)
