@@ -50,7 +50,7 @@ github "gcc",         "3.0.2"
 github "git",         "2.10.0a",  :repo => "n0ts/puppet-git"
 github "go",          "2.1.0"
 github "homebrew",    "2.1.0a",  :repo => "n0ts/puppet-homebrew"
-github "hub",         "1.4.3b",  :repo => "n0ts/puppet-hub"
+github "hub",         "1.4.4"
 github "inifile",     "1.4.3a",  :repo => "n0ts/puppetlabs-inifile"
 github "nginx",       "1.7.0d",  :repo => "n0ts/puppet-nginx"
 github "nodejs",      "5.0.8"
@@ -61,7 +61,6 @@ github "repository",  "2.4.1"
 github "ruby",        "8.5.6c",  :repo => "n0ts/puppet-ruby"
 github "stdlib",      "4.7.0",   :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
-github "xquartz",     "1.2.1a",  :repo => "n0ts/puppet-xquartz"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.

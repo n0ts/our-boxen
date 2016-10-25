@@ -1,9 +1,6 @@
 class people::n0ts::applications {
   notify { 'class people::n0ts::applications declared': }
 
-  # xquartz
-  include xquartz
-
   # java
   class { 'java':
    update_version => '111',
@@ -437,6 +434,9 @@ class people::n0ts::applications {
      # Safari Technology Preview
      # https://developer.apple.com/safari/technology-preview/
      'safari-technology-preview',
+     # Simple Comic
+     # https://dancingtortoise.github.io
+     'simple-comic',
      # Skype
      # http://www.skype.com
      'skype',
@@ -458,9 +458,6 @@ class people::n0ts::applications {
      # Sublime Text
      # https://www.sublimetext.com/2
      'sublime-text',
-     # Simple Comic
-     # https://github.com/techstoreclub/Simple-Comic
-     'techstoreclub-simple-comic',
      # TFTP Server
      # http://ww2.unime.it/flr/tftpserver/
      'tftpserver',
@@ -496,6 +493,9 @@ class people::n0ts::applications {
      # whatsapp
      # https://www.whatsapp.com/
      'whatsapp',
+     # xquartz
+     # https://www.xquartz.org
+     'xquartz',
     ]:
        provider => 'brewcask',
        require  => [ Homebrew::Tap['caskroom/cask'], Sudoers['installer'] ],
