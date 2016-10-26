@@ -11,7 +11,7 @@ class projects::mysql {
 
 
   package { 'mysql':
-    ensure => '5.7.14';
+    ensure => '5.7.16';
   }
 
   file { "${boxen::config::homebrewdir}/etc/my.cnf":
