@@ -3,7 +3,7 @@ class people::n0ts::applications {
 
   # java
   class { 'java':
-   update_version => '111',
+    update_version => '111',
     minor_version  => 'b14',
   }
 
