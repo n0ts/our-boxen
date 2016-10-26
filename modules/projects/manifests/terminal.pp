@@ -15,6 +15,16 @@ class projects::terminal {
     }
   }
 
+  define install_code() {
+    exec { "install-iterm2-code-${name}":
+      command => join([
+                       "curl -L https://raw.github.com/gnachman/iTerm2/master/tests/${name} > \"/Users/${::boxen_user}/.iterm2/${name}\"",
+                       "chmod +x \"/Users/${::boxen_user}/.iterm2/${name}\"",
+                     ], "\n"),
+      unless  => "test -x \"/Users/${::boxen_user}/.iterm2/${name}\"",
+      require => Exec["install-shell-integration"],
+    }
+  }
 
   $shell = "${boxen::config::homebrewdir}/bin/zsh"
 
@@ -29,6 +39,12 @@ class projects::terminal {
 
   file { "${::boxen_home}/cache/terminal":
     ensure => directory,
+  }
+
+  # Shell Integratoin
+  exec { "install-shell-integration":
+    command => 'curl -L https://iterm2.com/misc/install_shell_integration_and_utilities.sh | bash',
+    unless  => "test -d \"/Users/${::boxen_user}/.iterm2\"",
   }
 
   # Startup Windows Settings
@@ -48,12 +64,19 @@ class projects::terminal {
     require => Exec['install-theme-n0ts'],
   }
 
+  # Code
+  install_code {
+    [
+       "imgls", "imgcat", "divider",
+     ]: ;
+  }
+
   # Themes
   install_theme {
-   [
+    [
       'n0ts',
       'n0ts-solarized',
-    ]:
+     ]:
       url => 'https://raw.githubusercontent.com/n0ts/osx-terminal.app-n0ts/master';
     [
       '3024 Day',
