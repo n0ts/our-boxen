@@ -181,7 +181,9 @@ class people::n0ts::config {
     include osx::itunes::automatic_sync
   }
 
-  include osx::keyboard::capslock_to_control
+  if versioncmp($::macosx_productversion_major, '10.11') <= 0 {
+    include osx::keyboard::capslock_to_control
+  }
   include osx::keyboard::enable_keyboard_control_access
   include osx::keyboard::disable_smart
   include osx::keyboard::key_repeat_rate
