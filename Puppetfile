@@ -44,7 +44,7 @@ github "module_data", "0.0.4", :repo => "ripienaar/puppet-module-data"
 # some/most of these if you want, but it's not recommended.
 
 github "brewcask",    "0.0.7b",  :repo => "n0ts/puppet-brewcask"
-github "dnsmasq",     "2.0.1a",  :repo => "n0ts/puppet-dnsmasq"
+github "dnsmasq",     "2.0.2"
 github "foreman",     "1.2.0"
 github "gcc",         "3.0.2"
 github "git",         "2.10.0a",  :repo => "n0ts/puppet-git"
@@ -58,7 +58,7 @@ github "openssl",     "1.0.0"
 github "phantomjs",   "3.0.0"
 github "pkgconfig",   "1.0.0"
 github "repository",  "2.4.1"
-github "ruby",        "8.5.6c",  :repo => "n0ts/puppet-ruby"
+github "ruby",        "8.5.6d",  :repo => "n0ts/puppet-ruby"
 github "stdlib",      "4.7.0",   :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
 
