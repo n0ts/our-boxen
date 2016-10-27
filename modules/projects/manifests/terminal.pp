@@ -60,7 +60,7 @@ class projects::terminal {
   install_integration {
     [
      "bash",
-     "tsch"
+     "tsch",
      "fish",
      "zsh",
      ]: ;

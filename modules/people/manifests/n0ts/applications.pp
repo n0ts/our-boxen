@@ -314,9 +314,9 @@ class people::n0ts::applications {
      # CheatSheet
      # http://www.cheatsheetapp.com/CheatSheet/
      'cheatsheet',
-     # CloudApp
-     # https://getcloudapp.com/
-     'cloud',
+     # Caffeine
+     # http://lightheadsw.com/caffeine/
+     'caffeine',
      # Dash
      # https://kapeli.com/dash
      'dash',
