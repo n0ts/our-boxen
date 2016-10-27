@@ -28,8 +28,6 @@ class people::n0ts::applications::widgets {
       source =>  'http://dashkards.com/widget-data/dashkards.zip';
     'Delivery Status':
       source => 'https://junecloud.com/get/delivery-status-widget?6.2.1';
-    'JorudanTransfer':
-      source => 'http://www.adamrocker.com/blog/wp-content/uploads/2007/10/JorudanTransfer.wdgt.zip';
     'Minutes':
       source => 'https://dl.dropboxusercontent.com/u/1341171/Minutes.zip';
     'QR Code Generator':
