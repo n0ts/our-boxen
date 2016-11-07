@@ -310,7 +310,11 @@ class people::n0ts::applications {
      # https://brave.com/
      'brave',
      # Box Sync
+     # https://sites.box.com/sync4/
      'box-sync',
+     # Blisk
+     # https://blisk.io
+     'blisk',
      # CheatSheet
      # http://www.cheatsheetapp.com/CheatSheet/
      'cheatsheet',
