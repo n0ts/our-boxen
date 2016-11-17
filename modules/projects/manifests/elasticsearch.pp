@@ -7,9 +7,9 @@ class projects::elasticsearch {
     } else {
       $_plugin = $plugin
     }
-    $unless = "plugin --list | grep \"${_plugin}\""
+    $unless = "elasticsearch-plugin list | grep \"${_plugin}\""
     exec { "install-plugin-${name}":
-      command => "plugin install ${name}",
+      command => "elasticsearch-plugin install --batch ${name}",
       unless  => $unless,
       require => Package['elasticsearch'],
     }
@@ -19,19 +19,16 @@ class projects::elasticsearch {
     [
       'elasticsearch',
       'kibana',
+      'logstash',
+      'filebeat',
+      'metricbeat',
      ]: ;
   }
 
   install_plugin {
-    'elasticsearch/marvel/latest':
-      plugin => 'marvel';
-    'elasticsearch/elasticsearch-analysis-kuromoji/2.7.0':
-      plugin => 'analysis-kuromoji';
-    'mobz/elasticsearch-head':
-      plugin => 'head';
-    'lmenezes/elasticsearch-kopf/2.0.1':
-      plugin => 'kopf';
-    'polyfractal/elasticsearch-inquisitor':
-      plugin => 'inquisitor';
+    [
+      'x-pack',
+      'analysis-kuromoji',
+    ]: ;
   }
 }

@@ -41,7 +41,6 @@ class projects::hashitools {
     [
       'consul',
       'nomad',
-      'otto',
       'packer',
       'serf',
       'terraform',
@@ -56,6 +55,11 @@ class projects::hashitools {
      ]:
        provider => 'brewcask',
        require  => Homebrew::Tap['caskroom/cask'],
+  }
+
+  file { "/opt/vagrant/embedded/bin/curl":
+    ensure => absent,
+    require => Package["vagrant"],
   }
 
   file { "/Users/${::boxen_user}/.vagrant.d":

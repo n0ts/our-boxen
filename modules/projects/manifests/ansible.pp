@@ -29,7 +29,7 @@ retry_files_enabled = False
   require wget
 
   exec { 'get human_log.py':
-    command => "wget -q https://raw.githubusercontent.com/redhat-openstack/khaleesi/master/plugins/callbacks/human_log.py -O /Users/${::boxen_user}/.ansible/plugins/callback_plugins",
+    command => "wget -q https://raw.githubusercontent.com/n0ts/ansible-human_log/master/human_log.py -P /Users/${::boxen_user}/.ansible/plugins/callback_plugins/",
     creates => "/Users/${::boxen_user}/.ansible/plugins/callback_plugins/human_log.py",
   }
 }

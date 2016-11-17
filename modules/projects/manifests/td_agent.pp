@@ -32,7 +32,7 @@ class projects::td_agent {
   }
 
   sudoers { 'td-agent-gem':
-    users    => $::boxen_user,
+    users    => root,
     hosts    => 'ALL',
     commands => [
       '(ALL) NOPASSWD : /opt/td-agent/usr/sbin/td-agent-gem',
