@@ -30,6 +30,9 @@ class projects::web {
       # Parallel bzip2
       # http://compression.ca/pbzip2/
       'pbzip2',
+      # Rust
+      # https://www.rust-lang.org/
+      'rust',
     ]:
       ensure => latest,
   }
