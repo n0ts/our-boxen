@@ -342,9 +342,6 @@ class people::n0ts::applications {
      # firefoxdeveloperedition
      # https://www.mozilla.org/en-US/firefox/developer/
      'firefoxdeveloperedition',
-     # Fluid
-     # http://fluidapp.com/
-     'fluid',
      # f.lux
      # https://justgetflux.com/
      'flux',
