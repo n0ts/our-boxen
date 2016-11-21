@@ -11,6 +11,11 @@ class people::n0ts::base {
     unless  => 'test -f /var/db/locate.database',
   }
 
+  exec { 'Visible /opt':
+    command => 'SetFile -a v /opt',
+    user    => 'root',
+  }
+
   include homebrew
   include brewcask
 
