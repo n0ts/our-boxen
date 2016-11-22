@@ -53,5 +53,7 @@ class people::n0ts::applications::login_items {
 
   if versioncmp($::macosx_productversion_major, '10.11') < 0 {
     login_item { 'BetterSnapTool': }
+  } else {
+    login_item { 'Karabiner-Elements': }
   }
 }
