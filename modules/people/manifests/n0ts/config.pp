@@ -186,8 +186,20 @@ class people::n0ts::config {
   }
   include osx::keyboard::enable_keyboard_control_access
   include osx::keyboard::disable_smart
-  include osx::keyboard::key_repeat_rate
-  include osx::keyboard::key_repeat_delay
+  if versioncmp($::macosx_productversion_major, '10.11') <= 0 {
+    include osx::keyboard::key_repeat_rate
+    include osx::keyboard::key_repeat_delay
+  } else {
+    # https://github.com/markandrewj/Karabiner-Elements/blob/391b860aa4e4091c2617024ef2afef4da75fcefe/examples/key_repeat.md
+    # normal minimum is 2 (30 ms)
+    class { 'osx::keyboard::key_repeat_rate':
+      rate => 1,
+    }
+    # normal minimum is 15 (225 ms)
+    class { 'osx::keyboard::key_repeat_delay':
+      delay => 10,
+    }
+  }
   if $is_macbook {
     class { 'osx::keyboard::enable_illuminate':
       turn_off_sec => 300,

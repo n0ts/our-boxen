@@ -257,46 +257,47 @@ class projects::terminal {
   }
 
 
-  # TotalTerminal
-  # 10.11 Not compatible http://totalterminal.binaryage.com/#sip
-  include brewcask
+  # TotalTerminal is no longer support
+  if versioncmp($::macosx_productversion_major, '10.11') <= 0 {
+    include brewcask
 
-  package { 'totalterminal':
-    provider => 'brewcask',
-    require  => Homebrew::Tap['caskroom/cask'],
-  }
+      package { 'totalterminal':
+      provider => 'brewcask',
+      require  => Homebrew::Tap['caskroom/cask'],
+    }
 
-  osx_login_item { 'TotalTerminal':
-    ensure  => 'present',
-    path    => '/Applications/TotalTerminal.app',
-    require => Package['totalterminal'],
-  }
+    osx_login_item { 'TotalTerminal':
+      ensure  => 'present',
+      path    => '/Applications/TotalTerminal.app',
+      require => Package['totalterminal'],
+    }
 
-  boxen::osx_defaults { 'TotalTerminalVisorHideOnEscape':
-    user    => $::boxen_user,
-    domain  => 'com.apple.Terminal',
-    key     => 'TotalTerminalVisorHideOnEscape',
-    value   => 0,
-  }
+    boxen::osx_defaults { 'TotalTerminalVisorHideOnEscape':
+      user    => $::boxen_user,
+      domain  => 'com.apple.Terminal',
+      key     => 'TotalTerminalVisorHideOnEscape',
+      value   => 0,
+    }
 
-  boxen::osx_defaults { 'TotalTerminalVisorAnimationSpeed':
-    user    => $::boxen_user,
-    domain  => 'com.apple.Terminal',
-    key     => 'TotalTerminalVisorAnimationSpeed',
-    value   => '0.1',
-  }
+    boxen::osx_defaults { 'TotalTerminalVisorAnimationSpeed':
+      user    => $::boxen_user,
+      domain  => 'com.apple.Terminal',
+      key     => 'TotalTerminalVisorAnimationSpeed',
+      value   => '0.1',
+    }
 
-  boxen::osx_defaults { 'TotalTerminalCopyOnSelect':
-    user    => $::boxen_user,
-    domain  => 'com.apple.Terminal',
-    key     => 'TotalTerminalCopyOnSelect',
-    value   => 1,
-  }
+    boxen::osx_defaults { 'TotalTerminalCopyOnSelect':
+      user    => $::boxen_user,
+      domain  => 'com.apple.Terminal',
+      key     => 'TotalTerminalCopyOnSelect',
+      value   => 1,
+    }
 
-  boxen::osx_defaults { 'TotalTerminalPasteOnRightClick':
-    user    => $::boxen_user,
-    domain  => 'com.apple.Terminal',
-    key     => 'TotalTerminalPasteOnRightClick',
-    value   => 1,
+    boxen::osx_defaults { 'TotalTerminalPasteOnRightClick':
+      user    => $::boxen_user,
+      domain  => 'com.apple.Terminal',
+      key     => 'TotalTerminalPasteOnRightClick',
+      value   => 1,
+    }
   }
 }
