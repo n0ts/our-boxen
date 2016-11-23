@@ -58,7 +58,7 @@ github "openssl",     "1.0.0"
 github "phantomjs",   "3.0.0"
 github "pkgconfig",   "1.0.0"
 github "repository",  "2.4.1"
-github "ruby",        "8.5.6d",  :repo => "n0ts/puppet-ruby"
+github "ruby",        "8.5.6e",  :repo => "n0ts/puppet-ruby"
 github "stdlib",      "4.7.0",   :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
 

@@ -1,7 +1,7 @@
 class projects::ruby {
   notify { 'class project::ruby declared': }
 
-  $version_latest = '2.3.1'
+  $version_latest = '2.3.3'
   $version_boxen = '2.0.0-p647'
 
   define install_latest_package($ruby_version = $projects::ruby::version_latest) {
@@ -11,18 +11,10 @@ class projects::ruby {
     }
   }
 
-
-  file { "${boxen::config::home}/bin/brew-ruby-update.sh":
-    content => "#!/bin/bash
-brew install ruby-build --force --HEAD
-",
-    mode    => 0755,
-  }
-
   # rbenv plugins
   file { "${::boxen_home}/rbenv/plugins":
     ensure  => directory,
-    require => $require
+    require => $require,
   }
   ruby::rbenv::plugin { 'rbenv-vars':
     ensure  => 'v1.2.0',

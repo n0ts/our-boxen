@@ -7,6 +7,7 @@ class projects::all {
   include projects::docker
   include projects::elasticsearch
   include projects::golang
+  include projects::google_cloud
   include projects::hashitools
   include projects::memcached
   include projects::mysql
@@ -21,4 +22,5 @@ class projects::all {
   include projects::terminal
   include projects::vpn
   include projects::web
+  include projects::yubico
 }

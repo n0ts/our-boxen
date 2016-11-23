@@ -106,7 +106,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-ruby
   specs:
-    ruby (8.5.6d)
+    ruby (8.5.6e)
 
 GITHUBTARBALL
   remote: n0ts/puppetlabs-inifile
@@ -145,7 +145,7 @@ DEPENDENCIES
   pkgconfig (= 1.0.0)
   python (= 3.0.1b)
   repository (= 2.4.1)
-  ruby (= 8.5.6d)
+  ruby (= 8.5.6e)
   stdlib (= 4.7.0)
   sudo (= 1.0.0)
   wget (= 1.0.1)

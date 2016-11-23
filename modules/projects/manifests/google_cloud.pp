@@ -1,4 +1,4 @@
-class projects::google-cloud {
+class projects::google_cloud {
   notify { 'class project::google-cloud declared': }
 
   exec { 'install-google-cloud-sdk':
