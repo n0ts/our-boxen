@@ -435,6 +435,9 @@ class people::n0ts::applications {
      # Resilio-sync
      # https://www.getsync.com/
      'resilio-sync',
+     # Servo
+     # https://servo.org
+     'servo',
      # Safari Technology Preview
      # https://developer.apple.com/safari/technology-preview/
      'safari-technology-preview',
