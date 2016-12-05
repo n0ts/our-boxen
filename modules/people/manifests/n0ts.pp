@@ -27,6 +27,7 @@ class people::n0ts {
     include people::n0ts::applications::flux
     include people::n0ts::applications::divvy
     include people::n0ts::applications::jumpcut
+    include people::n0ts::applications::hammerspoon
     include people::n0ts::applications::iterm2
     include people::n0ts::applications::totalfinder
     include people::n0ts::applications::totalspaces
