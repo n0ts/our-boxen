@@ -378,6 +378,9 @@ class people::n0ts::applications {
      # kindle-jp
      # http://www.amazon.co.jp/gp/feature.html/?ie=UTF8&docId=3077089416
      'kindle-jp',
+     # Hammerspoon
+     # http://www.hammerspoon.org/
+     'hammerspoon',
      # HandBrake
      # https://handbrake.fr
      'handbrake',

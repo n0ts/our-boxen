@@ -15,7 +15,7 @@ class people::n0ts::applications::login_items {
 
     if file_exists($application) {
       exec { "n0ts-applications-login_items-open-${name}":
-        command   => "open '${application}'",
+        command     => "open '${application}'",
         refreshonly => true,
       }
 
@@ -35,7 +35,7 @@ class people::n0ts::applications::login_items {
 
   login_item {
       [
-       'Alfred 2',
+       'Alfred 3',
        'Bartender 2',
        'BetterTouchTool',
        'BitTorrent Sync',
