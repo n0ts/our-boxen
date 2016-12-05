@@ -5,8 +5,12 @@ class people::n0ts::applications::hammerspoon {
     exec { "get-hammerspoon-${name}.lua":
       command => "curl -L https://raw.githubusercontent.com/n0ts/hammerspoon-init/my-dev/${name}.lua > /Users/${::boxen_user}/.hammerspoon/${name}.lua",
       creates => "/Users/${::boxen_user}/.hammerspoon/${name}.lua",
-      require => Package["hammerspoon"],
+      require => [ Package["hammerspoon"], File["/Users/${::boxen_user}/.hammerspoon"] ],
     }
+  }
+
+  file { "/Users/${::boxen_user}/.hammerspoon":
+    ensure => directory,
   }
 
   install_init {
