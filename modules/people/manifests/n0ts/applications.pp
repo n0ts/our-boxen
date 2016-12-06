@@ -488,6 +488,9 @@ class people::n0ts::applications {
      # VirtualBox
      # https://www.virtualbox.org
      'virtualbox',
+     # VirtualBox Extenstion Pack
+     # https://www.virtualbox.org
+     'virtualbox-extension-pack',
      # VMware Fusion
      # https://www.vmware.com/products/fusion/
      'vmware-fusion',
