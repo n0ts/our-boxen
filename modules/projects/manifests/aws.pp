@@ -2,13 +2,22 @@ class projects::aws {
   notify { 'class project::aws declared': }
 
   include python
+  include brewcask
 
   package {
     [
       'ec2-ami-tools',
       'ec2-api-tools',
+      'amazon-ecs-cli',
      ]:
-    ensure => latest,
+       ensure => latest,
+  }
+
+  package {
+    [
+      'amazon-workspaces',
+    ]:
+      provider => 'brewcask',
   }
 
   python::install_package {
