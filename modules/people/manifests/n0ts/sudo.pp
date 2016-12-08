@@ -1,7 +1,7 @@
 class people::n0ts::sudo {
   notify { 'class people::n0ts::sudo declared': }
 
-  # Require for brewcask
+  # Required for brewcask
   sudoers { 'installer':
     users    => $::boxen_user,
     hosts    => 'ALL',
@@ -9,6 +9,16 @@ class people::n0ts::sudo {
       '(ALL) NOPASSWD:SETENV: /usr/sbin/installer',
       # /usr/bin/sqlite3 required for alfred
       '/usr/bin/sqlite3',
+    ],
+    type     => 'user_spec',
+  }
+
+  # Required for virtualbox-extension-pack
+  sudoers { 'vboxmanage':
+    users    => $::boxen_user,
+    hosts    => 'ALL',
+    commands => [
+      '(ALL) SETENV:NOPASSWD: /usr/local/bin/VBoxManage',
     ],
     type     => 'user_spec',
   }

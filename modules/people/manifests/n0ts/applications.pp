@@ -488,9 +488,6 @@ class people::n0ts::applications {
      # VirtualBox
      # https://www.virtualbox.org
      'virtualbox',
-     # VirtualBox Extenstion Pack
-     # https://www.virtualbox.org
-     'virtualbox-extension-pack',
      # VMware Fusion
      # https://www.vmware.com/products/fusion/
      'vmware-fusion',
@@ -512,6 +509,12 @@ class people::n0ts::applications {
     ]:
        provider => 'brewcask',
        require  => [ Homebrew::Tap['caskroom/cask'], Sudoers['installer'] ],
+  }
+
+  package {
+    'virtualbox-extension-pack':
+      provider => 'brewcask',
+      require  => Sudoers['vboxmanage'],
   }
 
   if versioncmp($::macosx_productversion_major, '10.10') < 0 {
