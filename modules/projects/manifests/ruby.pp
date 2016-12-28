@@ -1,8 +1,8 @@
 class projects::ruby {
   notify { 'class project::ruby declared': }
 
-  $version_latest = '2.3.3'
-  $version_boxen = '2.0.0-p647'
+  $version_latest = '2.4.0'
+  $version_boxen = '2.0.0-p648'
 
   define install_latest_package($ruby_version = $projects::ruby::version_latest) {
     ruby_gem { "${name} for ${ruby_version}":
@@ -22,10 +22,6 @@ class projects::ruby {
   }
   ruby::rbenv::plugin { 'rbenv-gem-rehash':
     source  => 'sstephenson/rbenv-gem-rehash',
-    ensure  => 'master',
-  }
-  ruby::rbenv::plugin { 'rbenv-gem-update':
-    source  => 'nicknovitski/rbenv-gem-update',
     ensure  => 'master',
   }
 
