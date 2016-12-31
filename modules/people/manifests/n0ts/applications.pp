@@ -417,6 +417,15 @@ class people::n0ts::applications {
      # MacZip4Win
      # http://ynomura.com/home/?page_id=116
      'maczip4win',
+     # Mac DVDRipper Pro
+     # https://www.macdvdripperpro.com/
+     'mdrp',
+     # MacX DVD Ripper Pro
+     # https://www.macxdvd.com/mac-dvd-ripper-pro/
+     'macx-dvd-ripper-pro',
+     # MacX Video Converter Pro
+     # https://www.macxdvd.com/mac-video-converter-pro/
+     'macx-video-converter-pro',
      # MindNode Pro
      # https://mindnode.com/
      'mindnode-pro',
