@@ -520,7 +520,7 @@ class people::n0ts::applications {
   package {
     'virtualbox-extension-pack':
       provider => 'brewcask',
-      require  => Sudoers['vboxmanage'],
+      require  => [ Package['virtualbox'], Sudoers['vboxmanage'] ],
   }
 
   if versioncmp($::macosx_productversion_major, '10.10') < 0 {
