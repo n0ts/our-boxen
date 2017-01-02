@@ -17,12 +17,16 @@ class projects::ruby {
     require => $require,
   }
   ruby::rbenv::plugin { 'rbenv-vars':
-    ensure  => 'v1.2.0',
     source  => 'sstephenson/rbenv-vars',
+    ensure  => 'v1.2.0',
   }
   ruby::rbenv::plugin { 'rbenv-gem-rehash':
     source  => 'sstephenson/rbenv-gem-rehash',
-    ensure  => 'master',
+    ensure  => 'v1.0.0',
+  }
+  ruby::rbenv::plugin { 'rbenv-gem-update':
+    source  => 'n0ts/rbenv-gem-update',
+    ensure  => 'v1.0.0a',
   }
 
   # latest stable
