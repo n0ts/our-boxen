@@ -4,6 +4,7 @@ class projects::scala {
   package {
     [
       'scala',
+      'skinny',
       'sbt',
       'typesafe-activator',
      ]:
