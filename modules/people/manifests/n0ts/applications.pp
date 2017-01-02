@@ -420,9 +420,6 @@ class people::n0ts::applications {
      # Mac DVDRipper Pro
      # https://www.macdvdripperpro.com/
      'mdrp',
-     # MacX DVD Ripper Pro
-     # https://www.macxdvd.com/mac-dvd-ripper-pro/
-     'macx-dvd-ripper-pro',
      # MacX Video Converter Pro
      # https://www.macxdvd.com/mac-video-converter-pro/
      'macx-video-converter-pro',
@@ -558,6 +555,9 @@ class people::n0ts::applications {
   homebrew::tap { 'caskroom/versions': }
   package {
     [
+     # MacX DVD Ripper Pro
+     # https://www.macxdvd.com/mac-dvd-ripper-pro/
+     'macx-dvd-ripper-pro',
      # quicktime-player7
      # http://support.apple.com/kb/dl923
      'quicktime-player7',
