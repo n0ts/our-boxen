@@ -321,6 +321,9 @@ class people::n0ts::applications {
      # Caffeine
      # http://lightheadsw.com/caffeine/
      'caffeine',
+     # Choosy
+     # https://www.choosyosx.com/
+     'choosy',
      # Dash
      # https://kapeli.com/dash
      'dash',
