@@ -408,6 +408,9 @@ class people::n0ts::applications {
      # iTerm2
      # https://www.iterm2.com/
      'iterm2',
+     # jid
+     # https://github.com/simeji/jid
+     'jid',
      # Jumpcut
      # http://jumpcut.sourceforge.net/
      'jumpcut',
