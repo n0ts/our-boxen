@@ -17,6 +17,7 @@ class projects::python {
   install_package {
     [
       'supervisor',
+      'virtualenv',
     ]: ;
   }
 }
