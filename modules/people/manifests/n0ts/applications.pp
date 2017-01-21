@@ -408,6 +408,9 @@ class people::n0ts::applications {
      # iTerm2
      # https://www.iterm2.com/
      'iterm2',
+     # jasper
+     # https://jasperapp.io/
+     'jasper',
      # jid
      # https://github.com/simeji/jid
      'jid',
