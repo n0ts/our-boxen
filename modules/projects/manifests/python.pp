@@ -2,22 +2,21 @@ class projects::python {
   notify { 'class project::python declared': }
 
   $version_latest = '3.6.0'
+  $version_lambda = '2.7.12'
 
-  define install_package($url = undef) {
-    python::package { "${name} for 2.7.10":
+  define install_package($python_version = $projects::python::version_latest, $url = undef) {
+    python::package { "${name} for ${python_version}":
       package => $name,
-      python  => '2.7.10',
+      python  => $python_version,
       url     => $url,
     }
   }
 
-  # lambda use python 2.7.10
   class { 'python::global':
-    version => '2.7.10',
+    version => $version_latest,
   }
 
-  # latest stable
-  python::version { $version_latest: }
+  python::version { $version_lambda: }
 
   install_package {
     [

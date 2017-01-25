@@ -4,7 +4,7 @@ class projects::ruby {
   $version_latest = '2.4.0'
   $version_boxen = '2.0.0-p648'
 
-  define install_latest_package($ruby_version = $projects::ruby::version_latest) {
+  define install_package($ruby_version = $projects::ruby::version_latest) {
     ruby_gem { "${name} for ${ruby_version}":
       gem          => $name,
       ruby_version => $ruby_version,
@@ -34,7 +34,7 @@ class projects::ruby {
      version => $version_latest,
   }
 
-  install_latest_package {
+  install_package {
     [
       'bundler',
       'tmuxinator',
