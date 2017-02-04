@@ -190,6 +190,9 @@ class people::n0ts::applications {
      # Tracks most-used directories to make cd smarter
      # https://github.com/rupa/z
      'z',
+     # Zstandard is a real-time compression algorithm
+     # http://zstd.net/
+     'zstd',
      # UNIX shell (command interpreter)
      # http://www.zsh.org/
      'zsh',
