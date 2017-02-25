@@ -151,9 +151,6 @@ class people::n0ts::applications {
      # Perl-powered file rename script with many helpful built-ins
      # http://plasmasturm.org/code/rename
      'rename',
-     # ripgrep
-     # https://github.com/BurntSushi/ripgrep
-     'ripgrep',
      # Readline wrapper: adds readline support to tools that lack it
      # http://utopia.knoware.nl/~hlub/rlwrap/
      'rlwrap',
@@ -279,6 +276,18 @@ class people::n0ts::applications {
      'homebrew/completions/brew-cask-completion',
     ]:
        require => Homebrew::Tap['homebrew/completions'],
+  }
+
+  # Homebrew/simeji/jid
+  homebrew::tap { 'simeji/jid': }
+
+  package {
+    [
+     # jid
+     # https://github.com/simeji/jid
+     'jid'
+    ]:
+       require => Homebrew::Tap['simeji/jid'],
   }
 
   # Homebrew/services
@@ -414,9 +423,6 @@ class people::n0ts::applications {
      # jasper
      # https://jasperapp.io/
      'jasper',
-     # jid
-     # https://github.com/simeji/jid
-     'jid',
      # Jumpcut
      # http://jumpcut.sourceforge.net/
      'jumpcut',

@@ -30,9 +30,15 @@ class projects::web {
       # Parallel bzip2
       # http://compression.ca/pbzip2/
       'pbzip2',
+      # ripgrep
+      # https://github.com/BurntSushi/ripgrep
+      'ripgrep',
       # Rust
       # https://www.rust-lang.org/
       'rust',
+      # webp
+      # https://developers.google.com/speed/webp/
+      'webp',
     ]:
       ensure => latest,
   }
