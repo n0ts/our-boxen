@@ -9,16 +9,12 @@ class people::n0ts::git {
   }
 
   git::config::global {
-    'alias.graph':
-      value => "log --graph --pretty='format:%h %Cgreen%an%Creset | %s %Cred%d%Creset'";
     'alias.ad':
       value => 'add';
     'alias.br':
       value => 'branch';
     'alias.ci':
       value => 'commit -a';
-    'alias.kc':
-      value => 'commit';
     'alias.co':
       value => 'checkout';
     'alias.cm':
@@ -29,8 +25,16 @@ class people::n0ts::git {
       value => 'fetch origin';
     'alias.ft':
       value => 'fetch';
+    'alias.graph':
+      value => "log --graph --pretty='format:%h %Cgreen%an%Creset | %s %Cred%d%Creset'";
+    'alias.kc':
+      value => 'commit';
     'alias.lg':
       value => 'log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches';
+    'alias.pb':
+      value => '!git push origin \"$(git rev-parse --abbrev-ref HEAD)\"';
+    'alias.pbf':
+      value => '!git push --force origin \"$(git rev-parse --abbrev-ref HEAD)\"';
     'alias.pr':
       value => 'pull --rebase';
     'alias.rc':
@@ -43,6 +47,10 @@ class people::n0ts::git {
       value => 'remote show origin';
     'alias.st':
       value => 'status';
+    'alias.su':
+      value => '!git branch -u origin/\"$(git rev-parse --abbrev-ref HEAD)\"';
+    'alias.up':
+      value => '!git pull origin \"$(git rev-parse --abbrev-ref HEAD)\"';
     'alias.wd':
       value => 'diff --word-diff';
   }
