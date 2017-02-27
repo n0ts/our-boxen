@@ -29,7 +29,7 @@ class people::n0ts::applications::evernote {
     value  => false,
   }
 
-  boxen::osx_defaults { 'Don\'t Auto Format';
+  boxen::osx_defaults { 'Don\'t Auto Format':
     user   => $::boxen_user,
     domain => 'com.evernote.Evernote',
     key    => 'ENCommonEditorAutoFormattingEnabled',
