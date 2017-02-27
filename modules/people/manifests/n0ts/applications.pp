@@ -351,9 +351,6 @@ class people::n0ts::applications {
      # Mozilla Firefox
      # https://www.mozilla.org/en-US/firefox/
      'firefox',
-     # Mozilla Firefox beta
-     # https://www.mozilla.org/en-US/firefox/channel/#beta
-     'firefox-beta',
      # firefoxdeveloperedition
      # https://www.mozilla.org/en-US/firefox/developer/
      'firefoxdeveloperedition',
