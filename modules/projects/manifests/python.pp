@@ -1,6 +1,7 @@
 class projects::python {
   notify { 'class project::python declared': }
 
+  $version_stable = '2.7.13'
   $version_latest = '3.6.0'
   $version_lambda = '2.7.12'
 
@@ -13,9 +14,10 @@ class projects::python {
   }
 
   class { 'python::global':
-    version => $version_latest,
+    version => $version_stable,
   }
 
+  python::version { $version_latest: }
   python::version { $version_lambda: }
 
   install_package {
