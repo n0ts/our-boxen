@@ -408,9 +408,6 @@ class people::n0ts::applications {
      # iExplorer
      # https://www.macroplant.com/iexplorer/
      'iexplorer',
-     # IntelliJ IDEA Community Edition
-     # https://www.jetbrains.com/idea
-     'intellij-idea-ce',
      # iStats Menus
      # http://bjango.com/mac/istatmenus/
      'istat-menus',
