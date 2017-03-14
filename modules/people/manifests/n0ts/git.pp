@@ -3,7 +3,7 @@ class people::n0ts::git {
 
   git::config::global {
     'user.name':
-      value => 'n0ts';
+      value => $::boxen_user;
     'user.email':
       value => 'me@n0ts.org';
   }
@@ -32,9 +32,13 @@ class people::n0ts::git {
     'alias.lg':
       value => 'log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches';
     'alias.pb':
-      value => '!git push origin \"$(git rev-parse --abbrev-ref HEAD)\"';
+      value => '!git push origin $(git rev-parse --abbrev-ref HEAD)';
+    'alias.pbu':
+      value => "!git push ${::boxen_user} $(git rev-parse --abbrev-ref HEAD)";
     'alias.pbf':
-      value => '!git push --force origin \"$(git rev-parse --abbrev-ref HEAD)\"';
+      value => '!git push --force origin $(git rev-parse --abbrev-ref HEAD)';
+    'alias.pbfu':
+      value => "!git push --force ${::boxen_user} $(git rev-parse --abbrev-ref HEAD)";
     'alias.pr':
       value => 'pull --rebase';
     'alias.rc':
@@ -48,9 +52,11 @@ class people::n0ts::git {
     'alias.st':
       value => 'status';
     'alias.su':
-      value => '!git branch -u origin/\"$(git rev-parse --abbrev-ref HEAD)\"';
+      value => '!git branch -u origin $(git rev-parse --abbrev-ref HEAD)';
     'alias.up':
-      value => '!git pull origin \"$(git rev-parse --abbrev-ref HEAD)\"';
+      value => '!git pull origin $(git rev-parse --abbrev-ref HEAD)';
+    'alias.upu':
+      value => "!git pull ${::boxen_user} $(git rev-parse --abbrev-ref HEAD)";
     'alias.wd':
       value => 'diff --word-diff';
   }
