@@ -28,6 +28,7 @@ class projects::python {
 
   file { "${boxen::config::home}/bin/pip-update":
     content => "#!/bin/bash
+pip install -U pip
 pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U
 ",
     mode    => 0755,
