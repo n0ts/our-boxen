@@ -1,7 +1,7 @@
 class projects::ruby {
   notify { 'class project::ruby declared': }
 
-  $version_latest = '2.4.0'
+  $version_latest = '2.4.1'
   $version_boxen = '2.0.0-p648'
 
   define install_package($ruby_version = $projects::ruby::version_latest) {
@@ -37,6 +37,7 @@ class projects::ruby {
   install_package {
     [
       'bundler',
+      'pry',
       'tmuxinator',
     ]: ;
   }
