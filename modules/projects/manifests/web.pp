@@ -3,6 +3,9 @@ class projects::web {
 
   package {
     [
+      # chromedriver
+      # Tool for automated testing of webapps across many browsers
+      'chromedriver',
       # Collection of tools for managing UNIX services
       # http://cr.yp.to/daemontools.html
       'daemontools',
