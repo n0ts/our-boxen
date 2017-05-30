@@ -43,6 +43,9 @@ class people::n0ts::applications {
      # Get a file from an HTTP, HTTPS or FTP server
      # http://curl.haxx.se/
      'curl',
+     # Load/unload environment variables based on $PWD
+     # https://direnv.net/
+     'direnv',
      # Secure your credentials in environment variables
      # https://github.com/sorah/envchain
      'envchain',
@@ -453,6 +456,9 @@ class people::n0ts::applications {
      # Paparazzi!
      # https://derailer.org/paparazzi/
      'paparazzi',
+     # Powershell
+     # https://msdn.microsoft.com/en-us/powershell/mt173057.aspx
+     'powershell',
      # Resilio-sync
      # https://www.getsync.com/
      'resilio-sync',
