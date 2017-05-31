@@ -449,7 +449,10 @@ class people::n0ts::applications {
      'mosh',
      # UnRarX - temporary 403
      # http://www.unrarx.com
-     #'unrarx',
+     'unrarx',
+     # MultiFirefox
+     # http://davemartorana.com/multifirefox/
+     'multifirefox',
      # Opera
      # http://www.opera.com/
      'opera',
