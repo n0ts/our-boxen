@@ -447,9 +447,6 @@ class people::n0ts::applications {
      # Remote terminal application
      # https://mosh.mit.edu/
      'mosh',
-     # UnRarX - temporary 403
-     # http://www.unrarx.com
-     'unrarx',
      # MultiFirefox
      # http://davemartorana.com/multifirefox/
      'multifirefox',
