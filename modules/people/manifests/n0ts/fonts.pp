@@ -10,8 +10,8 @@ class people::n0ts::fonts {
     [
      'font-dejavu-sans',
      'font-inconsolata',
-     'font-noto-color-emoji.rb',
-     'font-noto-emoji.rb',
+     'font-noto-color-emoji',
+     'font-noto-emoji',
      'font-noto-sans',
      'font-noto-sans-cjk-jp',
      'font-noto-sans-cjk-kr',
