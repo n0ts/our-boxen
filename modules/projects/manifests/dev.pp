@@ -8,6 +8,9 @@ class projects::dev {
       # IntelliJ IDEA Community Edition
       # https://www.jetbrains.com/idea
       'intellij-idea-ce',
+      # Microsoft Visual Studio Code
+      # https://code.visualstudio.com/
+      'visual-studio-code',
     ]:
       provider => 'brewcask',
       require  => Homebrew::Tap['caskroom/cask'],
