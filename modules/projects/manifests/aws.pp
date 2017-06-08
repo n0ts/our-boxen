@@ -16,7 +16,7 @@ class projects::aws {
   package {
     [
       'amazon-workspaces',
-    ]:
+     ]:
       provider => 'brewcask',
   }
 
