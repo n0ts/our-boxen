@@ -23,7 +23,7 @@ class people::n0ts::git {
       value => 'config';
     'alias.fo':
       value => 'fetch origin';
-    'alias.ft':
+    'alias.f':
       value => 'fetch';
     'alias.graph':
       value => "log --graph --pretty='format:%h %Cgreen%an%Creset | %s %Cred%d%Creset'";
@@ -59,6 +59,8 @@ class people::n0ts::git {
       value => "!git pull ${::boxen_user} $(git rev-parse --abbrev-ref HEAD)";
     'alias.wd':
       value => 'diff --word-diff';
+    'alias.cleanup':
+      value => "!git branch --merged | grep  -v '\\\\*\\\\|master\\\\|develop' | xargs -n 1 git branch -d";
   }
 
   git::config::global { 'branch.autosetupmerge':
