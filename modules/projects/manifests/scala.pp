@@ -6,7 +6,6 @@ class projects::scala {
       'scala',
       'skinny',
       'sbt',
-      'typesafe-activator',
      ]:
     ensure => latest,
   }
