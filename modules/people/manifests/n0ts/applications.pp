@@ -3,8 +3,8 @@ class people::n0ts::applications {
 
   # java
   class { 'java':
-    update_version => '111',
-    minor_version  => 'b14',
+    update_version => '131',
+    minor_version  => 'b11',
   }
 
   # Homebrew packages
