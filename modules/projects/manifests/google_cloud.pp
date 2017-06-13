@@ -14,4 +14,11 @@ class projects::google_cloud {
     user    => root,
     unless => 'test -d /opt/google-cloud-sdk',
   }
+
+  file { "${boxen::config::home}/bin/gcloud-update":
+    content => "#!/bin/bash
+sudo gcloud components update
+",
+    mode    => 0755,
+  }
 }
