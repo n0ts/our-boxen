@@ -2,6 +2,7 @@ class projects::python {
   notify { 'class project::python declared': }
 
   $version_latest = '3.6.1'
+  $version_stable = '2.7.13'
   $version_lambda = '2.7.12'
 
   define install_package($python_version = $projects::python::version_latest, $url = undef) {
@@ -16,6 +17,7 @@ class projects::python {
     version => $version_latest,
   }
 
+  python::version { $version_stable: }
   python::version { $version_lambda: }
 
   file { "${boxen::config::home}/bin/pip-update":

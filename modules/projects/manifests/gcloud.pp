@@ -1,5 +1,5 @@
-class projects::google_cloud {
-  notify { 'class project::google-cloud declared': }
+class projects::gcloud {
+  notify { 'class project::gcloud declared': }
 
   exec { 'install-google-cloud-sdk':
     command => join([
@@ -15,10 +15,17 @@ class projects::google_cloud {
     unless => 'test -d /opt/google-cloud-sdk',
   }
 
+  include python
+
   file { "${boxen::config::home}/bin/gcloud-update":
     content => "#!/bin/bash
-sudo gcloud components update
+export PATH=${::boxen_home}/pyenv/versions/${projects::python::version_stable}/bin:\$PATH
+gcloud components update
 ",
     mode    => 0755,
+  }
+
+  file { '/opt/google-cloud-sdk/bin/.python-version':
+    content => $projects::python::version_stable,
   }
 }
