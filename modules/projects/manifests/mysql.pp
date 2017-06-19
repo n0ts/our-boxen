@@ -10,13 +10,16 @@ class projects::mysql {
   }
 
 
-  package { 'mysql':
-    ensure => '5.7.17';
+  package {
+    'mysql':
+      ensure => '5.7.18';
+    'percona-toolkit':
+      require => Package['mysql'];
   }
 
   file { "${boxen::config::homebrewdir}/etc/my.cnf":
     content => template("projects/shared/my.cnf.erb"),
-    require => Package["mysql"],
+    require => Package['mysql'],
   }
 
   file { "${boxen::config::homebrewdir}/etc/my.cnf.d":
