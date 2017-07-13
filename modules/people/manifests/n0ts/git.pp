@@ -21,10 +21,12 @@ class people::n0ts::git {
       value => 'checkout master';
     'alias.conf':
       value => 'config';
-    'alias.fo':
-      value => 'fetch origin';
     'alias.f':
       value => 'fetch';
+    'alias.fo':
+      value => 'fetch origin';
+    'alias.ftp':
+      value => 'fetch --tags --prune';
     'alias.graph':
       value => "log --graph --pretty='format:%h %Cgreen%an%Creset | %s %Cred%d%Creset'";
     'alias.kc':
