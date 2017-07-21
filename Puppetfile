@@ -72,6 +72,6 @@ github "sudo",        "1.0.0"
 
 github "osx",         "2.8.0e",  :repo => "n0ts/puppet-osx"
 github "wget",        "1.0.1"
-github "java",        "1.8.4d",  :repo => "n0ts/puppet-java"
+github "java",        "1.8.4e",  :repo => "n0ts/puppet-java"
 github "karabiner",   "1.0.8"
 github "python",      "3.0.1d",  :repo => "n0ts/puppet-python"

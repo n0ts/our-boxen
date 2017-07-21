@@ -2,10 +2,7 @@ class people::n0ts::applications {
   notify { 'class people::n0ts::applications declared': }
 
   # java
-  class { 'java':
-    update_version => '131',
-    minor_version  => 'b11',
-  }
+  class { 'java': }
 
   # Homebrew packages
   package {
