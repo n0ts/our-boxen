@@ -7,7 +7,7 @@ class projects::all {
   include projects::docker
   include projects::elasticsearch
   include projects::golang
-  include projects::google_cloud
+  include projects::gcloud
   include projects::hashitools
   include projects::memcached
   include projects::mysql
