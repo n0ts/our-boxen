@@ -55,6 +55,5 @@ class projects::web {
       'charles',
     ]:
       provider => 'brewcask',
-      require  => Homebrew::Tap['caskroom/cask'],
   }
 }

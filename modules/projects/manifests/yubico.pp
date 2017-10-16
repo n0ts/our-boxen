@@ -14,7 +14,6 @@ class projects::yubico {
       'yubikey-neo-manager',
      ]:
     provider => 'brewcask',
-    require  => Homebrew::Tap['caskroom/cask'],
   }
 
   file { "/Users/${::boxen_user}/.yubico":

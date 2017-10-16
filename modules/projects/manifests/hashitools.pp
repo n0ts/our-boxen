@@ -54,7 +54,6 @@ class projects::hashitools {
      'vagrant',
      ]:
        provider => 'brewcask',
-       require  => Homebrew::Tap['caskroom/cask'],
   }
 
   file { "/opt/vagrant/embedded/bin/curl":

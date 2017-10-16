@@ -21,7 +21,7 @@ class people::n0ts::base {
 
   file { "${boxen::config::home}/bin/brew-update":
     content => "#!/bin/bash
-brew update
+brew update --force
 brew upgrade
 for c in \$(brew cask list); do
     info=\$(brew cask info \$c)

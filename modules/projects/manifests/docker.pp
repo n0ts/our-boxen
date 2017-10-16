@@ -27,6 +27,5 @@ class projects::docker {
      'kitematic',
     ]:
     provider => 'brewcask',
-    require  => Homebrew::Tap['caskroom/cask'],
   }
 }

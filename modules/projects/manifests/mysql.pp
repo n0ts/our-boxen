@@ -12,7 +12,7 @@ class projects::mysql {
 
   package {
     'mysql':
-      ensure => '5.7.18';
+      ensure => '5.7.19';
     'percona-toolkit':
       require => Package['mysql'];
   }

@@ -22,7 +22,6 @@ class projects::td_agent {
   include brewcask
   package { 'td-agent':
     provider => 'brewcask',
-    require  => Homebrew::Tap['caskroom/cask'],
   }
 
   $td_agent_root = '/opt/td-agent'

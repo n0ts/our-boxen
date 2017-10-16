@@ -1,7 +1,12 @@
 GITHUBTARBALL
+  remote: boxen/puppet-brewcask
+  specs:
+    brewcask (0.0.11)
+
+GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
-    dnsmasq (2.0.2)
+    dnsmasq (2.0.4)
 
 GITHUBTARBALL
   remote: boxen/puppet-foreman
@@ -11,17 +16,12 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-gcc
   specs:
-    gcc (3.0.2)
-
-GITHUBTARBALL
-  remote: boxen/puppet-go
-  specs:
-    go (2.1.0)
+    gcc (3.0.4)
 
 GITHUBTARBALL
   remote: boxen/puppet-hub
   specs:
-    hub (1.4.4)
+    hub (1.4.5)
 
 GITHUBTARBALL
   remote: boxen/puppet-karabiner
@@ -31,7 +31,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-nodejs
   specs:
-    nodejs (5.0.8)
+    nodejs (5.0.9)
 
 GITHUBTARBALL
   remote: boxen/puppet-openssl
@@ -66,17 +66,12 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-boxen
   specs:
-    boxen (3.11.0a)
-
-GITHUBTARBALL
-  remote: n0ts/puppet-brewcask
-  specs:
-    brewcask (0.0.7c)
+    boxen (3.13.0.a)
 
 GITHUBTARBALL
   remote: n0ts/puppet-git
   specs:
-    git (2.10.0a)
+    git (2.14.1.1b)
 
 GITHUBTARBALL
   remote: n0ts/puppet-homebrew
@@ -91,12 +86,12 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-nginx
   specs:
-    nginx (1.7.0d)
+    nginx (1.9.0a)
 
 GITHUBTARBALL
   remote: n0ts/puppet-osx
   specs:
-    osx (2.8.0e)
+    osx (2.8.0f)
 
 GITHUBTARBALL
   remote: n0ts/puppet-python
@@ -106,7 +101,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-ruby
   specs:
-    ruby (8.5.6f)
+    ruby (8.5.7a)
 
 GITHUBTARBALL
   remote: n0ts/puppetlabs-inifile
@@ -124,28 +119,27 @@ GITHUBTARBALL
     module_data (0.0.4)
 
 DEPENDENCIES
-  boxen (= 3.11.0a)
-  brewcask (= 0.0.7c)
-  dnsmasq (= 2.0.2)
+  boxen (= 3.13.0a)
+  brewcask (= 0.0.11)
+  dnsmasq (= 2.0.4)
   foreman (= 1.2.0)
-  gcc (= 3.0.2)
-  git (= 2.10.0a)
-  go (= 2.1.0)
+  gcc (= 3.0.4)
+  git (= 2.14.1.1b)
   homebrew (= 2.1.0e)
-  hub (= 1.4.4)
+  hub (= 1.4.5)
   inifile (= 1.4.3a)
   java (= 1.8.4e)
   karabiner (= 1.0.8)
   module_data (= 0.0.4)
-  nginx (= 1.7.0d)
-  nodejs (= 5.0.8)
+  nginx (= 1.9.0a)
+  nodejs (= 5.0.9)
   openssl (= 1.0.0)
-  osx (= 2.8.0e)
+  osx (= 2.8.0f)
   phantomjs (= 3.0.0)
   pkgconfig (= 1.0.0)
   python (= 3.0.1d)
   repository (= 2.4.1)
-  ruby (= 8.5.6f)
+  ruby (= 8.5.7a)
   stdlib (= 4.7.0)
   sudo (= 1.0.0)
   wget (= 1.0.1)

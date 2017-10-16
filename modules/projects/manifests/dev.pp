@@ -13,7 +13,6 @@ class projects::dev {
       'visual-studio-code',
     ]:
       provider => 'brewcask',
-      require  => Homebrew::Tap['caskroom/cask'],
   }
 
   # Visual Studio
@@ -21,7 +20,6 @@ class projects::dev {
   package { 'visual-studio':
     notify  => Exec['install-visual-studio'],
     provider => 'brewcask',
-    require  => Homebrew::Tap['caskroom/cask'],
   }
 
   # Visual Studio for Mac PREVIEW

@@ -263,7 +263,6 @@ class projects::terminal {
 
       package { 'totalterminal':
       provider => 'brewcask',
-      require  => Homebrew::Tap['caskroom/cask'],
     }
 
     osx_login_item { 'TotalTerminal':

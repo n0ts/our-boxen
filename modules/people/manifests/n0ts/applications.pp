@@ -2,7 +2,11 @@ class people::n0ts::applications {
   notify { 'class people::n0ts::applications declared': }
 
   # java
-  class { 'java': }
+  class { 'java':
+    update_version => '144',
+    minor_version  => 'b01',
+    hash_version => '090f390dda5b47b9b721c7dfaa008135',
+  }
 
   # Homebrew packages
   package {
@@ -84,7 +88,7 @@ class people::n0ts::applications {
      'gnutls',
      # GNU Privacy Guard: a free PGP replacement
      # https://www.gnupg.org/
-     'gpg2',
+     'gpg',
      # Improved top (interactive process viewer) for OS X
      # https://github.com/max-horvath/htop-osx
      'htop-osx',
@@ -327,9 +331,6 @@ class people::n0ts::applications {
      # Blisk
      # https://blisk.io
      'blisk',
-     # CheatSheet
-     # http://www.cheatsheetapp.com/CheatSheet/
-     'cheatsheet',
      # Caffeine
      # http://lightheadsw.com/caffeine/
      'caffeine',
@@ -529,7 +530,7 @@ class people::n0ts::applications {
      'xquartz',
     ]:
        provider => 'brewcask',
-       require  => [ Homebrew::Tap['caskroom/cask'], Sudoers['installer'] ],
+       require  => Sudoers['installer'],
   }
 
   package {
@@ -549,7 +550,7 @@ class people::n0ts::applications {
        'menumeters',
       ]:
        provider => 'brewcask',
-       require  => [ Homebrew::Tap['caskroom/cask'], Sudoers['installer'] ],
+       require  => Sudoers['installer'],
     }
   } else {
     package {
@@ -562,7 +563,7 @@ class people::n0ts::applications {
        'yujitach-menumeters',
       ]:
        provider => 'brewcask',
-       require  => [ Homebrew::Tap['caskroom/cask'], Sudoers['installer'] ],
+       require  => Sudoers['installer'],
     }
   }
 
@@ -579,7 +580,6 @@ class people::n0ts::applications {
     ]:
        provider => 'brewcask',
        require  => [
-                    Homebrew::Tap['caskroom/cask'],
                     Homebrew::Tap['caskroom/versions'],
                     ],
   }
@@ -594,7 +594,6 @@ class people::n0ts::applications {
     ]:
        provider => 'brewcask',
        require  => [
-                    Homebrew::Tap['caskroom/cask'],
                     Homebrew::Tap['sonots/mycask'],
                     ],
   }
@@ -612,7 +611,6 @@ class people::n0ts::applications {
     ]:
        provider => 'brewcask',
        require  => [
-                    Homebrew::Tap['caskroom/cask'],
                     Homebrew::Tap['n0ts/mycask'],
                     ],
   }
@@ -623,7 +621,6 @@ class people::n0ts::applications {
     package { 'intel-power-gadget':
        provider => 'brewcask',
        require  => [
-                    Homebrew::Tap['caskroom/cask'],
                     Homebrew::Tap['n0ts/mycask'],
                     ],
     }
