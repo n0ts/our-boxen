@@ -5,7 +5,7 @@ class people::n0ts::git {
     'user.name':
       value => $::boxen_user;
     'user.email':
-      value => 'me@n0ts.org';
+      value => 'n0ts@users.noreply.github.com';
   }
 
   git::config::global {
