@@ -88,7 +88,7 @@ class people::n0ts::applications {
      'gnutls',
      # GNU Privacy Guard: a free PGP replacement
      # https://www.gnupg.org/
-     'gpg',
+     'gnupg',
      # Improved top (interactive process viewer) for OS X
      # https://github.com/max-horvath/htop-osx
      'htop-osx',
