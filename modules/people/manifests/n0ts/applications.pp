@@ -340,6 +340,9 @@ class people::n0ts::applications {
      # Dash
      # https://kapeli.com/dash
      'dash',
+     # Discord
+     # https://discordapp.com/
+     'discord',
      # Docker
      # https://www.docker.com/products/docker
      'docker',
