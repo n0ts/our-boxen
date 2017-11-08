@@ -1,6 +1,7 @@
 class people::n0ts::applications::login_items {
+  notify { 'class people::n0ts::applications::login_items declared': }
 
-  define login_item() {
+  define login_item($hidden = false) {
     $global_application = "/Applications/${name}.app"
     $user_application = "/Users/${::boxen_user}/Applications/${name}.app"
     if file_exists($global_application) {
@@ -14,38 +15,32 @@ class people::n0ts::applications::login_items {
     }
 
     if file_exists($application) {
-      exec { "n0ts-applications-login_items-open-${name}":
-        command     => "open '${application}'",
-        refreshonly => true,
-      }
-
       osx_login_item { $name:
         ensure  => 'present',
         path    => $application,
-        notify  => Exec["n0ts-applications-login_items-open-${name}"],
+        hidden  => $hidden,
       }
-
     }
     else {
       notify { "${application} is not exists.": }
     }
   }
 
-  notify { 'class people::n0ts::applications::login_items declared': }
-
   login_item {
       [
        'Alfred 3',
-       'Bartender 2',
+       'Bartender 3',
        'BetterTouchTool',
-       'BitTorrent Sync',
+       'Box Sync',
        'Caffeine',
        'Display Menu',
        'Dropbox',
        'Flux',
        'Growl',
+       'Hammerspoon',
        'HyperSwitch',
        'Plain Text - Remove Text Format',
+       'Resilio Sync',
        'TotalFinder',
        'TotalSpaces2',
        ]:
@@ -54,6 +49,19 @@ class people::n0ts::applications::login_items {
   if versioncmp($::macosx_productversion_major, '10.11') < 0 {
     login_item { 'BetterSnapTool': }
   } else {
-    login_item { 'Karabiner-Elements': }
+    login_item { 'Karabiner-Elements':
+      hidden => true,
+    }
+  }
+
+  $is_macbook = $sp_machine_name ? {
+    /^MacBook.*/ => true,
+    default      => false,
+  }
+
+  if $is_macbook {
+    osx_login_item { 'iTunesHelper':
+      ensure  => 'absent',
+    }
   }
 }
