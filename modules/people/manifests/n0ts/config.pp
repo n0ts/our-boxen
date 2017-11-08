@@ -283,6 +283,7 @@ class people::n0ts::config {
   }
 
   include osx::text_edit::disable_rich_text
+  include osx::text_edit::disable_smart
   include osx::text_edit::encoding
 
   include osx::time_machine::disable_local_backups

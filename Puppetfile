@@ -68,7 +68,7 @@ github "sudo",        "1.0.0"
 # github "redis",         "3.1.0"
 # github "sysctl",        "1.0.1"
 
-github "osx",         "2.8.0f",  :repo => "n0ts/puppet-osx"
+github "osx",         "2.8.0g",  :repo => "n0ts/puppet-osx"
 github "wget",        "1.0.1"
 github "java",        "1.8.4e",  :repo => "n0ts/puppet-java"
 github "karabiner",   "1.0.8"
