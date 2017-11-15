@@ -56,6 +56,7 @@ github "openssl",     "1.0.0"
 github "phantomjs",   "3.0.0"
 github "pkgconfig",   "1.0.0"
 github "repository",  "2.4.1"
+## TODO me upgrade 8.6.0 base
 github "ruby",        "8.5.7a",  :repo => "n0ts/puppet-ruby"
 github "stdlib",      "4.7.0",   :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
