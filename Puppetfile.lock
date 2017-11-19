@@ -18,9 +18,15 @@ GITHUBTARBALL
   specs:
     repository (2.4.1a)
 
+GITHUBTARBALL
+  remote: puppetlabs/puppetlabs-stdlib
+  specs:
+    stdlib (4.17.1)
+
 DEPENDENCIES
   boxen (= 3.13.0c)
   git (= 2.14.1.1c)
   homebrew (= 2.1.0g)
   repository (= 2.4.1a)
+  stdlib (= 4.17.1)
 
