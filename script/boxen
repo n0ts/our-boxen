@@ -163,3 +163,4 @@ require "boxen/cli"
 # Okay, let's run this thing.
 
 exit Boxen::CLI.run ARGV
+

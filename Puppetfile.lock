@@ -1,146 +1,26 @@
-GITHUBTARBALL
-  remote: boxen/puppet-brewcask
+PATH
+  remote: /Users/n0ts/src/boxen/puppet-repository
   specs:
-    brewcask (0.0.11)
-
-GITHUBTARBALL
-  remote: boxen/puppet-dnsmasq
-  specs:
-    dnsmasq (2.0.4)
-
-GITHUBTARBALL
-  remote: boxen/puppet-foreman
-  specs:
-    foreman (1.2.0)
-
-GITHUBTARBALL
-  remote: boxen/puppet-gcc
-  specs:
-    gcc (3.0.4)
-
-GITHUBTARBALL
-  remote: boxen/puppet-hub
-  specs:
-    hub (1.4.5)
-
-GITHUBTARBALL
-  remote: boxen/puppet-karabiner
-  specs:
-    karabiner (1.0.8)
-
-GITHUBTARBALL
-  remote: boxen/puppet-nodejs
-  specs:
-    nodejs (5.0.9)
-
-GITHUBTARBALL
-  remote: boxen/puppet-openssl
-  specs:
-    openssl (1.0.0)
-
-GITHUBTARBALL
-  remote: boxen/puppet-phantomjs
-  specs:
-    phantomjs (3.0.0)
-
-GITHUBTARBALL
-  remote: boxen/puppet-pkgconfig
-  specs:
-    pkgconfig (1.0.0)
-
-GITHUBTARBALL
-  remote: boxen/puppet-repository
-  specs:
-    repository (2.4.1)
-
-GITHUBTARBALL
-  remote: boxen/puppet-sudo
-  specs:
-    sudo (1.0.0)
-
-GITHUBTARBALL
-  remote: boxen/puppet-wget
-  specs:
-    wget (1.0.1)
+    puppet-repository (0.0.1)
 
 GITHUBTARBALL
   remote: n0ts/puppet-boxen
   specs:
-    boxen (3.13.0.a)
+    boxen (3.13.0c)
 
 GITHUBTARBALL
   remote: n0ts/puppet-git
   specs:
-    git (2.14.1.1b)
+    git (2.14.1.1c)
 
 GITHUBTARBALL
   remote: n0ts/puppet-homebrew
   specs:
-    homebrew (2.1.0e)
-
-GITHUBTARBALL
-  remote: n0ts/puppet-java
-  specs:
-    java (1.8.4e)
-
-GITHUBTARBALL
-  remote: n0ts/puppet-nginx
-  specs:
-    nginx (1.9.0b)
-
-GITHUBTARBALL
-  remote: n0ts/puppet-osx
-  specs:
-    osx (2.8.0g)
-
-GITHUBTARBALL
-  remote: n0ts/puppet-python
-  specs:
-    python (3.0.1d)
-
-GITHUBTARBALL
-  remote: n0ts/puppet-ruby
-  specs:
-    ruby (8.5.7a)
-
-GITHUBTARBALL
-  remote: n0ts/puppetlabs-inifile
-  specs:
-    inifile (1.4.3a)
-
-GITHUBTARBALL
-  remote: puppetlabs/puppetlabs-stdlib
-  specs:
-    stdlib (4.7.0)
-
-GITHUBTARBALL
-  remote: ripienaar/puppet-module-data
-  specs:
-    module_data (0.0.4)
+    homebrew (2.1.0g)
 
 DEPENDENCIES
-  boxen (= 3.13.0a)
-  brewcask (= 0.0.11)
-  dnsmasq (= 2.0.4)
-  foreman (= 1.2.0)
-  gcc (= 3.0.4)
-  git (= 2.14.1.1b)
-  homebrew (= 2.1.0e)
-  hub (= 1.4.5)
-  inifile (= 1.4.3a)
-  java (= 1.8.4e)
-  karabiner (= 1.0.8)
-  module_data (= 0.0.4)
-  nginx (= 1.9.0b)
-  nodejs (= 5.0.9)
-  openssl (= 1.0.0)
-  osx (= 2.8.0g)
-  phantomjs (= 3.0.0)
-  pkgconfig (= 1.0.0)
-  python (= 3.0.1d)
-  repository (= 2.4.1)
-  ruby (= 8.5.7a)
-  stdlib (= 4.7.0)
-  sudo (= 1.0.0)
-  wget (= 1.0.1)
+  boxen (= 3.13.0c)
+  git (= 2.14.1.1c)
+  homebrew (= 2.1.0g)
+  puppet-repository (>= 0)
 

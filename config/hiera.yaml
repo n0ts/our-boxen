@@ -7,18 +7,12 @@
 # a file named hiera/common.yaml, and individuals can supplement and/or override
 # them in hiera/{github_login}.yaml
 
-:backends:
-  - yaml
-:yaml:
-  :datadir: "%{::boxen_home}/repo/hiera"
-:hierarchy:
-  - "users/%{github_login}"
-  - common
-
-# Many modules make their own hiera data available through the use of
-# puppet-module-data. Some depend on the 'deeper' merge_behavior setting, so
-# remove it at your own risk!
-# ...
-# besides the modules that use it, you might want to override deeply nested hash
-# values, too!
-:merge_behavior: deeper
+version: 5
+defaults:
+  datadir: "%{::boxen_home}/repo/hiera"
+  data_hash: yaml_data
+hierarchy:
+  - name: "github login"
+    path: "users/%{github_login}.yaml"
+  - name: "common"
+    path: "common.yaml"

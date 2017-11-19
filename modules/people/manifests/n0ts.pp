@@ -1,14 +1,7 @@
 class people::n0ts {
   notify { "class people::n0ts declared - ${::macosx_productversion_major}": }
 
-  #
-  # This manifest support only OS X 10.9(Mavericks) or later
-  #
-  if versioncmp($::macosx_productversion_major, '10.9') < 0 {
-    fail("This manifest support only OS X 10.9 or later - ${::macosx_productversion}")
-  }
-
-  if $::boxen_projects == '' {
+  if $::boxen_projects == '-' {
     include people::n0ts::base
     include people::n0ts::boxen
     include people::n0ts::config
@@ -20,7 +13,7 @@ class people::n0ts {
     include people::n0ts::fonts
 
     include people::n0ts::applications
-    include people::n0ts::applications::1password
+##    include people::n0ts::applications::1password
     include people::n0ts::applications::caffeine
     include people::n0ts::applications::evernote
     include people::n0ts::applications::karabiner
