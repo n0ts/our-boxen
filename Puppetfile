@@ -35,9 +35,6 @@ end
 
 github "boxen", "3.13.0c", :repo => "n0ts/puppet-boxen"
 
-## Support for default hiera data in modules
-##github "module_data", "0.0.4", :repo => "ripienaar/puppet-module-data"
-
 # Core modules for a basic development environment. You can replace
 # some/most of these if you want, but it's not recommended.
 
@@ -46,7 +43,7 @@ github "boxen", "3.13.0c", :repo => "n0ts/puppet-boxen"
 ##github "foreman",     "1.2.0"
 ##github "gcc",         "3.0.4"
 github "git",         "2.14.1.1c", :repo => "n0ts/puppet-git"
-github "homebrew",    "2.1.0g",  :repo => "n0ts/puppet-homebrew"
+github "homebrew",    "2.1.0g",    :repo => "n0ts/puppet-homebrew"
 ##github "hub",         "1.4.5"
 ##github "inifile",     "1.4.3a",  :repo => "n0ts/puppetlabs-inifile"
 ##github "nginx",       "1.9.0b",  :repo => "n0ts/puppet-nginx"
@@ -54,8 +51,7 @@ github "homebrew",    "2.1.0g",  :repo => "n0ts/puppet-homebrew"
 ##github "openssl",     "1.0.0"
 ##github "phantomjs",   "3.0.0"
 ##github "pkgconfig",   "1.0.0"
-##github "repository",  "2.4.1"
-dev "repository"
+github "repository",  "2.4.1a",    :repo => "n0ts/puppet-repository"
 ## TODO me upgrade 8.6.0 base
 ##github "ruby",        "8.5.7a",  :repo => "n0ts/puppet-ruby"
 ##github "stdlib",      "4.7.0",   :repo => "puppetlabs/puppetlabs-stdlib"

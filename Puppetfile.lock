@@ -1,8 +1,3 @@
-PATH
-  remote: /Users/n0ts/src/boxen/puppet-repository
-  specs:
-    puppet-repository (0.0.1)
-
 GITHUBTARBALL
   remote: n0ts/puppet-boxen
   specs:
@@ -18,9 +13,14 @@ GITHUBTARBALL
   specs:
     homebrew (2.1.0g)
 
+GITHUBTARBALL
+  remote: n0ts/puppet-repository
+  specs:
+    repository (2.4.1a)
+
 DEPENDENCIES
   boxen (= 3.13.0c)
   git (= 2.14.1.1c)
   homebrew (= 2.1.0g)
-  puppet-repository (>= 0)
+  repository (= 2.4.1a)
 
