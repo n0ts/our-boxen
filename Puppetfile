@@ -55,7 +55,7 @@ github "repository",  "2.4.1a",    :repo => "n0ts/puppet-repository"
 ## TODO me upgrade 8.6.0 base
 ##github "ruby",        "8.5.7a",  :repo => "n0ts/puppet-ruby"
 github "stdlib",      "4.17.1",   :repo => "puppetlabs/puppetlabs-stdlib"
-##github "sudo",        "1.0.0"
+github "sudo",        "1.0.0a", :repo => "n0ts/puppet-sudo"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.

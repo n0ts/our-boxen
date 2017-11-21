@@ -19,6 +19,11 @@ GITHUBTARBALL
     repository (2.4.1a)
 
 GITHUBTARBALL
+  remote: n0ts/puppet-sudo
+  specs:
+    sudo (1.0.0a)
+
+GITHUBTARBALL
   remote: puppetlabs/puppetlabs-stdlib
   specs:
     stdlib (4.17.1)
@@ -29,4 +34,5 @@ DEPENDENCIES
   homebrew (= 2.1.0g)
   repository (= 2.4.1a)
   stdlib (= 4.17.1)
+  sudo (= 1.0.0a)
 
