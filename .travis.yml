@@ -3,14 +3,15 @@ os:
 os_image: xcode9.2
 script:
   - 'if [ -n "$BOXEN_GITHUB_TOKEN" ]; then
+      echo "boxen github token..."
       ./script/boxen --no-fde --stealth --no-pull --debug --profile --login $BOXEN_GITHUB_LOGIN --token $BOXEN_GITHUB_TOKEN || test $? -eq 2;
     else
+      echo "boxen github token..."
       ./script/boxen --no-fde --stealth --no-pull --debug --profile || test $? -eq 2;
   fi'
   - source /opt/boxen/env.sh
   - bundle exec rspec spec
 before_install:
-  - rvm list rubies
   - rvm install 2.0.0
   - rvm use 2.0.0
   - gem install bundler -v '~> 1.10.5'
