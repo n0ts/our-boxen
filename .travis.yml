@@ -3,7 +3,7 @@ os:
 osx_image:
   - xcoode9.2
 script:
-  - 'if [ -z "$BOXEN_GITHUB_TOKEN" ]; then
+  - 'if [ -n "$BOXEN_GITHUB_TOKEN" ]; then
       ./script/boxen --no-fde --stealth --no-pull --debug --profile --login $BOXEN_GITHUB_LOGIN --token $BOXEN_GITHUB_TOKEN || test $? -eq 2;
     else
       ./script/boxen --no-fde --stealth --no-pull --debug --profile || test $? -eq 2;
