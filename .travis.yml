@@ -1,5 +1,6 @@
 os:
   - osx
+os_image: xcode9.2
 script:
   - 'if [ -n "$BOXEN_GITHUB_TOKEN" ]; then
       ./script/boxen --no-fde --stealth --no-pull --debug --profile --login $BOXEN_GITHUB_LOGIN --token $BOXEN_GITHUB_TOKEN || test $? -eq 2;
