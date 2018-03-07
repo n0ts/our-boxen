@@ -1,7 +1,5 @@
 os:
-  - osx
-osx_image:
-  - xcoode9.2
+  - linux
 script:
   - 'if [ -n "$BOXEN_GITHUB_TOKEN" ]; then
       ./script/boxen --no-fde --stealth --no-pull --debug --profile --login $BOXEN_GITHUB_LOGIN --token $BOXEN_GITHUB_TOKEN || test $? -eq 2;
