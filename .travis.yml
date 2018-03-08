@@ -1,6 +1,5 @@
 os:
   - osx
-os_image: xcode8.3
 rvm:
   - 2.4
 script:
