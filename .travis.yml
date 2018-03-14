@@ -5,6 +5,9 @@ rvm:
   - 2.4
 script:
   - '
+echo 'test';
+'
+  - '
     cmd=
     if [ -n "$BOXEN_GITHUB_TOKEN" ]; then
       echo "boxen github token...";
@@ -15,8 +18,8 @@ script:
   fi
   $cmd || test $? -eq 2;
 '
-  - source /opt/boxen/env.sh
-  - bundle exec rspec spec
+  #- source /opt/boxen/env.sh
+  #- bundle exec rspec spec
 #before_install:
 #  - rvm install 2.0.0
 #  - rvm use 2.0.0
