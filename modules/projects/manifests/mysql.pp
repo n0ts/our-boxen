@@ -1,18 +1,10 @@
+# Public: mysql
 class projects::mysql {
   notify { 'class projects::mysql declared': }
 
-  define install_conf() {
-    $confdir = "${boxen::config::homebrewdir}/etc/my.cnf.d"
-    file { "${confdir}/${name}.cnf":
-      content => template("projects/shared/mysql-${name}.cnf.erb"),
-      require => File["${boxen::config::homebrewdir}/etc/my.cnf.d"],
-    }
-  }
-
-
   package {
     'mysql':
-      ensure => '5.7.19';
+      ensure  => '5.7.21';
     'percona-toolkit':
       require => Package['mysql'];
   }
@@ -27,7 +19,7 @@ class projects::mysql {
     require => File["${boxen::config::homebrewdir}/etc/my.cnf"],
   }
 
-  install_conf {
+  projects::mysql::conf {
     [
      'client',
      'mysqld',
@@ -49,18 +41,18 @@ class projects::mysql {
 
   file { "${boxen::config::homebrewdir}/opt/mysql/bin/mysql.sh":
     content => template("projects/shared/mysql.sh.erb"),
-    mode    => 0775,
-    require => Package["mysql"],
+    mode    => '0775',
+    require => Package['mysql'],
   }
 
   file { "${boxen::config::homebrewdir}/opt/mysql/bin/mysql.sql":
     content => template("projects/shared/mysql.sql.erb"),
-    require => Package["mysql"],
+    require => Package['mysql'],
   }
 
   exec { 'mysql':
     command     => "${boxen::config::homebrewdir}/opt/mysql/bin/mysql.sh",
-    require     => Package["mysql"],
+    require     => Package['mysql'],
     refreshonly => true,
   }
 }

@@ -167,7 +167,6 @@ class people::n0ts::config {
   }
   # use iStat
   include osx::menu_bar::hide_date_time
-  include osx::menu_bar::toolbar
 
   include osx::global::disable_autocorrect
   if $is_macbook {
@@ -190,14 +189,11 @@ class people::n0ts::config {
     include osx::keyboard::key_repeat_rate
     include osx::keyboard::key_repeat_delay
   } else {
-    # https://github.com/markandrewj/Karabiner-Elements/blob/391b860aa4e4091c2617024ef2afef4da75fcefe/examples/key_repeat.md
-    # normal minimum is 2 (30 ms)
     class { 'osx::keyboard::key_repeat_rate':
       rate => 1,
     }
-    # normal minimum is 15 (225 ms)
     class { 'osx::keyboard::key_repeat_delay':
-      delay => 10,
+      delay => 15,
     }
   }
   if $is_macbook {
@@ -272,7 +268,9 @@ class people::n0ts::config {
   class { 'osx::sound::bluetooth':
     audio_bitpool => 40,
   }
-  include osx::sound::disable_boot
+  if versioncmp($::macosx_productversion_major, '10.13') < 0 {
+    include osx::sound::disable_boot
+  }
   include osx::sound::disable_volume_feedback
 
   include osx::system::disable_app_quarantine
@@ -286,8 +284,11 @@ class people::n0ts::config {
   include osx::text_edit::disable_smart
   include osx::text_edit::encoding
 
-  include osx::time_machine::disable_local_backups
-  include osx::time_machine::enable_unsupported_network_volumes
+
+  if versioncmp($::macosx_productversion_major, '10.12') <= 0 {
+    include osx::time_machine::disable_local_backups
+    include osx::time_machine::enable_unsupported_network_volumes
+  }
 
   include osx::system_preferences::all_mode
 

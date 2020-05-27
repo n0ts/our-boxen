@@ -1,3 +1,4 @@
+# Public: caffeine
 class people::n0ts::applications::caffeine {
   notify { 'class people::n0ts::applications::caffeine declared': }
 

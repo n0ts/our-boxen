@@ -1,3 +1,4 @@
+# Public: sudo
 class people::n0ts::sudo {
   notify { 'class people::n0ts::sudo declared': }
 
@@ -6,20 +7,30 @@ class people::n0ts::sudo {
     users    => $::boxen_user,
     hosts    => 'ALL',
     commands => [
-      '(ALL) NOPASSWD:SETENV: /usr/sbin/installer',
-      # /usr/bin/sqlite3 required for alfred
+      '(ALL) NOPASSWD:SETENV : /usr/sbin/installer',
+    ],
+    type     => 'user_spec',
+  }
+
+  # /usr/bin/sqlite3 required for alfred
+  sudoers { 'sqlite3':
+    users    => $::boxen_user,
+    hosts    => 'ALL',
+    commands => [
       '/usr/bin/sqlite3',
     ],
     type     => 'user_spec',
   }
 
-  # Required for virtualbox-extension-pack
-  sudoers { 'vboxmanage':
-    users    => $::boxen_user,
-    hosts    => 'ALL',
-    commands => [
-      '(ALL) SETENV:NOPASSWD: /usr/local/bin/VBoxManage',
-    ],
-    type     => 'user_spec',
+  if versioncmp($::macosx_productversion_major, '10.12') <= 0 {
+    # Required for virtualbox-extension-pack
+    sudoers { 'vboxmanage':
+      users    => $::boxen_user,
+      hosts    => 'ALL',
+      commands => [
+        '(ALL) NOPASSWD : /usr/local/bin/VBoxManage',
+      ],
+      type     => 'user_spec',
+    }
   }
 }

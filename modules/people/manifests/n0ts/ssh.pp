@@ -1,9 +1,10 @@
+# Public: ssh
 class people::n0ts::ssh {
   notify { 'class people::n0ts::ssh declared': }
 
   file { "/Users/${::boxen_user}/.ssh":
     ensure => directory,
-    mode   => 700,
+    mode   => '0700',
   }
 
   file {
@@ -11,8 +12,8 @@ class people::n0ts::ssh {
      "/Users/${::boxen_user}/.ssh/authorized_keys",
      "/Users/${::boxen_user}/.ssh/known_hosts",
      ]:
-      content => "",
-      mode    => 400,
+      content => '',
+      mode    => '0400',
       replace => false,
   }
 
@@ -30,7 +31,7 @@ class people::n0ts::ssh {
   #ControlPath ~/.ssh/master-%r@%h:%p
   #ControlPersist 10
 ',
-    mode    => 400,
+    mode    => '0400',
     replace => false,
   }
 }

@@ -1,9 +1,9 @@
 [mysqld]
-user = <%= scope.lookupvar "::boxen_user" %>
-pid-file = <%= scope.lookupvar "boxen::config::homebrewdir" %>/var/run/mysql.pid
-socket = <%= scope.lookupvar "boxen::config::homebrewdir" %>/var/run/mysql.sock
+user = <%= scope.lookupvar('::boxen_user') %>
+pid-file = <%= scope.lookupvar('boxen::config::homebrewdir') %>/var/run/mysql.pid
+socket = <%= scope.lookupvar('boxen::config::homebrewdir') %>/var/run/mysql.sock
 port = 3306
-datadir = <%= scope.lookupvar "boxen::config::homebrewdir" %>/var/mysql
+datadir = <%= scope.lookupvar('boxen::config::homebrewdir') %>/var/mysql
 
 collation_server = utf8mb4_unicode_ci
 character_set_server = utf8mb4
@@ -11,13 +11,13 @@ skip-character-set-client-handshake
 
 default_password_lifetime = 0
 
-log-error = <%= scope.lookupvar "boxen::config::homebrewdir" %>/var/log/mysql/mysql.log
+log-error = <%= scope.lookupvar('boxen::config::homebrewdir') %>/var/log/mysql/mysql.log
 log_timestamps = SYSTEM
 log_slow_admin_statements
 log_slow_slave_statements
 long_query_time = 0.1
 slow_query_log
-slow_query_log_file = <%= scope.lookupvar "boxen::config::homebrewdir" %>/var/log/mysql/mysql-slow.log
+slow_query_log_file = <%= scope.lookupvar('boxen::config::homebrewdir') %>/var/log/mysql/mysql-slow.log
 
 explicit_defaults_for_timestamp
 lower_case_table_names = 2

@@ -1,11 +1,14 @@
+# Public: aws
 class projects::aws {
-  notify { 'class project::aws declared': }
+  notify { 'class projects::aws declared': }
 
-  include python
+  $python_version = '2.7.14'
+
   include brewcask
 
   package {
     [
+      'awslogs',
       'ec2-ami-tools',
       'ec2-api-tools',
       'amazon-ecs-cli',
@@ -20,17 +23,34 @@ class projects::aws {
       provider => 'brewcask',
   }
 
-  python::install_package {
-    'awscli': ;
-    'awsebcli': ;
-    'aws-shell': ;
+  # Homebrew n0ts
+  ensure_resource('homebrew::tap', 'n0ts/myformula')
+
+  package {
+    [
+      'athenai',
+    ]:
+       require => Homebrew::Tap['n0ts/myformula'],
+  }
+
+  require projects::python
+
+  projects::python::package {
+    [
+     'awscli',
+     'awsebcli',
+     'aws-shell'
+     ]:
+       python => $python_version;
+
     'ec2-ssh':
+      python => $python_version,
       url => 'https://github.com/n0ts/ec2-ssh/archive/my-develop.zip';
   }
 
   file { "/Users/${::boxen_user}/.aws":
     ensure => directory,
-    mode   => 0750,
+    mode   => '0750',
   }
 
   file { "/Users/${::boxen_user}/.aws/config":
@@ -39,7 +59,7 @@ class projects::aws {
 ;region=
 output=json
 ',
-    mode    => 0640,
+    mode    => '0640',
     replace => false,
     require => File["/Users/${::boxen_user}/.aws"],
   }
@@ -50,7 +70,7 @@ output=json
 aws_access_key_id=
 aws_secret_access_key=
 ',
-    mode    => 0640,
+    mode    => '0640',
     replace => false,
     require => File["/Users/${::boxen_user}/.aws"],
   }

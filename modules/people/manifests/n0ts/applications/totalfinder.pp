@@ -1,3 +1,4 @@
+# Public: totalfinder
 class people::n0ts::applications::totalfinder {
   notify { 'class people::n0ts::applications::totalfinder declared': }
 

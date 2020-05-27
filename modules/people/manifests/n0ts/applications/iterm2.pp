@@ -1,26 +1,12 @@
+# Public: iterm2
 class people::n0ts::applications::iterm2 {
   notify { 'class people::n0ts::applications::iterm2 declared': }
-
-  define install_theme($url) {
-    $theme = "${name}.itermcolors"
-    $download_url = uriescape("${url}/${theme}")
-    $unless = "defaults read com.googlecode.iterm2 \"Custom Color Presets\" | grep \"${name}\""
-    exec { "install-theme-${name}":
-      command => join([
-                       "curl -L \"${download_url}\" > \"${::boxen_home}/cache/iterm2/${theme}\"",
-                       "open \"${::boxen_home}/cache/iterm2/${theme}\"",
-                       ], "\n"),
-      unless  => $unless,
-      require => [ Package['iterm2'], File["${::boxen_home}/cache/iterm2"] ],
-    }
-  }
-
 
   file { "${::boxen_home}/cache/iterm2":
     ensure => directory,
   }
 
-  install_theme {
+  people::n0ts::applications::iterm2::theme {
     [
       '3024 Day',
       '3024 Night',

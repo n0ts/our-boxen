@@ -1,3 +1,4 @@
+# Public: fonts
 class people::n0ts::fonts {
   notify { 'class people::n0ts::fonts declared': }
 
@@ -5,10 +6,10 @@ class people::n0ts::fonts {
   include brewcask
 
   # Homebrew-cask fonts
-  homebrew::tap { 'caskroom/fonts': }
+  homebrew::tap { 'homebrew/cask-fonts': }
   package {
     [
-     'font-dejavu-sans',
+     'font-dejavu',
      'font-inconsolata',
      'font-noto-color-emoji',
      'font-noto-emoji',
@@ -20,7 +21,7 @@ class people::n0ts::fonts {
      'font-source-code-pro',
      ]:
        provider => 'brewcask',
-       require  => Homebrew::Tap['caskroom/fonts'],
+       require  => Homebrew::Tap['homebrew/cask-fonts'],
   }
 
   # Ricty font

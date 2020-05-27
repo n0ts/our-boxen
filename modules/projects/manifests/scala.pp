@@ -1,5 +1,6 @@
+# Public: scala
 class projects::scala {
-  notify { 'class project::scala declared': }
+  notify { 'class projects::scala declared': }
 
   package {
     [

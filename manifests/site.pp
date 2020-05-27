@@ -1,11 +1,10 @@
 require boxen::environment
 require homebrew
-/* require gcc */
 
 Exec {
-  group       => 'staff',
-  logoutput   => on_failure,
-  user        => $boxen_user,
+  group     => 'staff',
+  logoutput => on_failure,
+  user      => $boxen_user,
 
   path => [
     "${boxen::config::homebrewdir}/bin",
@@ -50,10 +49,10 @@ Homebrew::Formula <| |> -> Package <| |>
 
 node default {
   # core modules, needed for most things
-##  include dnsmasq
+  include dnsmasq
   include git
-##  include hub
-##  include nginx
+  include hub
+  include nginx
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
@@ -61,12 +60,11 @@ node default {
   }
 
   # node versions
-  ##nodejs::version { '0.8': }
-  ##nodejs::version { '0.10': }
-  ##nodejs::version { '0.12': }
+  ##nodejs::version { '12.17.0': }
+  ##nodejs::version { '14.3.0': }
 
   # default ruby versions
-  ##ruby::version { '2.4.2': }
+  ##ruby::version { '2.7.1': }
 
   # common, useful packages
   ##package {
@@ -77,8 +75,9 @@ node default {
   ##  ]:
   ##}
 
-##  file { "${boxen::config::srcdir}/.our-boxen":
-##    ensure => link,
-##    target => "${boxen::config::repodir}/our-boxen",
-##  }
+  file { "${boxen::config::srcdir}/.our-boxen":
+    ensure => link,
+    target => "${boxen::config::repodir}/our-boxen",
+  }
 }
+

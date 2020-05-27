@@ -1,5 +1,6 @@
+# Public: circleci
 class projects::circleci {
-  notify { 'class project::circleci declared': }
+  notify { 'class projects::circleci declared': }
 
   $download_url = uriescape("https://circle-downloads.s3.amazonaws.com/releases/build_agent_wrapper/circleci")
   exec { "install-circleci":

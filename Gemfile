@@ -1,12 +1,19 @@
 source "https://rubygems.org"
 
-gem "boxen23",                "~> 3.1"
+# https://tickets.puppetlabs.com/browse/FACT-804
+case RUBY_PLATFORM
+when /darwin/
+  gem "CFPropertyList"
+end
+
+#gem "boxen23",                "~> 4.0.0a"
+gem "boxen23", path: "/Users/n/prj/github/boxen"
 gem "hiera",                  "~> 3.4"
 gem "librarian-puppet",       "~> 2.2"
-gem "puppet",                 "~> 4.10"
 gem "librarianp",
   git: "https://github.com/voxpupuli/librarian.git",
-  branch: "librarianp"
+  tag: "v0.6.4"
+gem "puppet",                 "~> 4.10"
 gem "puppet-lint",            "~> 2.3"
 gem "puppetlabs_spec_helper", "~> 2.4"
 gem "open4",                  "~> 1.3.4"

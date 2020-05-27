@@ -1,3 +1,4 @@
+# Public: git
 class people::n0ts::git {
   notify { 'class people::n0ts::git declared': }
 

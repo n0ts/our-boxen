@@ -1,3 +1,4 @@
+# Public: evernote
 class people::n0ts::applications::evernote {
   notify { 'class people::n0ts::applications::evernote declared': }
 

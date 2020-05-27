@@ -1,11 +1,12 @@
+# Public: applications
 class people::n0ts::applications {
   notify { 'class people::n0ts::applications declared': }
 
   # java
   class { 'java':
-    update_version => '144',
-    minor_version  => 'b01',
-    hash_version => '090f390dda5b47b9b721c7dfaa008135',
+    update_version => '162',
+    minor_version  => 'b12',
+    hash_version   => '0da788060d494f5095bf8624735fa2f1',
   }
 
   # Homebrew packages
@@ -14,6 +15,9 @@ class people::n0ts::applications {
      # Search tool like grep, but optimized for programmers
      # http://beyondgrep.com/
      'ack',
+     # All in one for **env
+     # https://anyenv.github.io/
+     'anyenv',
      # Shell extension to jump to frequently used directories
      # https://github.com/wting/autojump
      'autojump',
@@ -32,6 +36,9 @@ class people::n0ts::applications {
      # FSF Binutils for native development
      # https://www.gnu.org/software/binutils/binutils.html
      'binutils',
+     # Bash & Fish completion for brew-cask
+     # https://github.com/xyb/homebrew-cask-completion
+     'brew-cask-completion',
      # Code converter on tty
      # http://vmi.jp/software/cygwin/cocot.html
      'cocot',
@@ -44,6 +51,9 @@ class people::n0ts::applications {
      # Get a file from an HTTP, HTTPS or FTP server
      # http://curl.haxx.se/
      'curl',
+     # File comparison utilities
+     # https://www.gnu.org/s/diffutils/
+     'diffutils',
      # Load/unload environment variables based on $PWD
      # https://direnv.net/
      'direnv',
@@ -56,9 +66,9 @@ class people::n0ts::applications {
      # Fuzzy finder for your shell
      # https://github.com/junegunn/fzf
      'fzf',
-     # GNU awk utility
-     # https://www.gnu.org/software/gawk/
-     'gawk',
+     # Alternative to top/htop
+     # https://nicolargo.github.io/glances/
+     'glances',
      # GeoIP databases in a number of formats
      # https://github.com/maxmind/geoip-api-c
      'geoip',
@@ -89,6 +99,9 @@ class people::n0ts::applications {
      # GNU Privacy Guard: a free PGP replacement
      # https://www.gnupg.org/
      'gnupg',
+     # Popular GNU data compression program
+     # https://www.gnu.org/software/gzip
+     'gzip',
      # Improved top (interactive process viewer) for OS X
      # https://github.com/max-horvath/htop-osx
      'htop-osx',
@@ -119,12 +132,18 @@ class people::n0ts::applications {
      # mercurial
      # http://mercurial.selenic.com/
      'mercurial',
+     # Remote terminal application
+     # https://mosh.mit.edu/
+     'mosh',
      # Network Kanji code conversion Filter (NKF)
      # https://osdn.jp/projects/nkf/
      'nkf',
      # Port scanning utility for large networks
      # https://nmap.org/
      'nmap',
+     # OpenBSD freely-licensed SSH connectivity tools
+     # http://www.openssh.com/
+     'openssh',
      # GNU parallel shell command
      # https://savannah.gnu.org/projects/parallel/
      'parallel',
@@ -158,6 +177,12 @@ class people::n0ts::applications {
      # Readline wrapper: adds readline support to tools that lack it
      # http://utopia.knoware.nl/~hlub/rlwrap/
      'rlwrap',
+     # Utility that provides fast incremental file transfer
+     # https://rsync.samba.org/
+     'rsync',
+     # GNU screen
+     # https://www.gnu.org/software/screen
+     'screen',
      # Source-code syntax highlighter
      # https://www.gnu.org/software/src-highlite/
      'source-highlight',
@@ -207,10 +232,13 @@ class people::n0ts::applications {
      # https://www.wireshark.org/
      'wireshark',
     ]:
-       ensure => latest,
+       ensure  => latest,
   }
   package {
     [
+     # Classic UNIX line editor
+     # https://www.gnu.org/software/ed/ed.html
+     'ed', 
      # Collection of GNU find, xargs, and locate
      # https://www.gnu.org/software/findutils/
      'findutils',
@@ -226,60 +254,17 @@ class people::n0ts::applications {
      # GNU implementation of which utility
      # https://savannah.gnu.org/projects/which/
      'gnu-which',
-    ]:
-       install_options => '--with-default-names',
-       ensure => latest,
-  }
-
-  # Homebrew-dupes packages
-  homebrew::tap { 'homebrew/dupes': }
-  package {
-    [
-     # File comparison utilities
-     # https://www.gnu.org/s/diffutils/
-     'diffutils',
-     # Popular GNU data compression program
-     # https://www.gnu.org/software/gzip
-     'gzip',
-     # OpenBSD freely-licensed SSH connectivity tools
-     # http://www.openssh.com/
-     'openssh',
-     # Utility that provides fast incremental file transfer
-     # https://rsync.samba.org/
-     'rsync',
-     # GNU screen
-     # https://www.gnu.org/software/screen
-     'screen',
-    ]:
-       require => Homebrew::Tap['homebrew/dupes'],
-  }
-  package {
-    [
-     # Classic UNIX line editor
-     # https://www.gnu.org/software/ed/ed.html
-     'ed',
      # The grep
      # https://www.gnu.org/software/grep/
      'grep',
     ]:
-       install_options => '--with-default-names',
-       require => Homebrew::Tap['homebrew/dupes'],
+       ensure => latest,
   }
+
   exec { 'unload built-in ssh-agent':
     command => 'launchctl unload -w /System/Library/LaunchAgents/org.openbsd.ssh-agent.plist',
     unless  => 'test `launchctl list | grep org.openbsd.ssh-agent | cut -f 1` = "-"',
     require => Package['openssh'],
-  }
-
-  # Homebrew/completions
-  homebrew::tap { 'homebrew/completions': }
-  package {
-    [
-     # Bash & Fish completion for brew-cask
-     # https://github.com/xyb/homebrew-cask-completion
-     'homebrew/completions/brew-cask-completion',
-    ]:
-       require => Homebrew::Tap['homebrew/completions'],
   }
 
   # Homebrew/simeji/jid
@@ -319,9 +304,6 @@ class people::n0ts::applications {
      # BathyScaphe
      # http://bathyscaphe.bitbucket.org/
      'bathyscaphe',
-     # BetterTouchTool
-     # http://boastr.net/
-     'bettertouchtool',
      # Brave
      # https://brave.com/
      'brave',
@@ -343,9 +325,6 @@ class people::n0ts::applications {
      # Discord
      # https://discordapp.com/
      'discord',
-     # Docker
-     # https://www.docker.com/products/docker
-     'docker',
      # Dropbox
      # https://www.dropbox.com/
      'dropbox',
@@ -355,30 +334,24 @@ class people::n0ts::applications {
      # Mozilla Firefox
      # https://www.mozilla.org/en-US/firefox/
      'firefox',
-     # firefoxdeveloperedition
-     # https://www.mozilla.org/en-US/firefox/developer/
-     'firefoxdeveloperedition',
      # f.lux
      # https://justgetflux.com/
      'flux',
-     # GitHub Desktop
+     # Gyazo, Gyazo GIF
+     # https://gyazo.com/
+     'gyazo',
+     # GitHub
      # https://desktop.github.com/
-     'github-desktop',
-     # Genymotion
-     # https://www.genymotion.com/
-     'genymotion',
+     'github',
+     # Google Backup and Sync
+     # https://www.google.com/drive/download/
+     'google-backup-and-sync',
      # Google Chrome
      # https://www.google.com/chrome/
      'google-chrome',
-     # google-chrome-canary
-     # https://www.google.com/chrome/browser/canary.html?platform=mac
-     'google-chrome-canary',
-     # Google Drive
-     # https://drive.google.com/
-     'google-drive',
      # Google Earth
      # https://www.google.com/earth/
-     'google-earth',
+     'google-earth-web-plugin',
      # Google Hangouts
      # https://www.google.com/tools/dlpage/hangoutplugin
      'google-hangouts',
@@ -391,12 +364,6 @@ class people::n0ts::applications {
      # Keyboard Cleaner
      # http://jan.prima.de/~jan/plok/archives/48-Keyboard-Cleaner.html
      'keyboard-cleaner',
-     # kindle-jp
-     # http://www.amazon.co.jp/gp/feature.html/?ie=UTF8&docId=3077089416
-     'kindle-jp',
-     # Hammerspoon
-     # http://www.hammerspoon.org/
-     'hammerspoon',
      # HandBrake
      # https://handbrake.fr
      'handbrake',
@@ -423,7 +390,7 @@ class people::n0ts::applications {
      'jasper',
      # Jumpcut
      # http://jumpcut.sourceforge.net/
-     'jumpcut',
+     #'jumpcut',
      # LICEcap
      # http://www.cockos.com/licecap/
      'licecap',
@@ -436,6 +403,9 @@ class people::n0ts::applications {
      # Mac DVDRipper Pro
      # https://www.macdvdripperpro.com/
      'mdrp',
+     # MacX DVD Ripper Pro
+     # https://www.macxdvd.com/mac-dvd-ripper-pro/
+     'macx-dvd-ripper-pro',
      # MacX Video Converter Pro
      # https://www.macxdvd.com/mac-video-converter-pro/
      'macx-video-converter-pro',
@@ -445,9 +415,6 @@ class people::n0ts::applications {
      # Mi
      # http://www.mimikaki.net/en/index.html
      'mi',
-     # Remote terminal application
-     # https://mosh.mit.edu/
-     'mosh',
      # MultiFirefox
      # http://davemartorana.com/multifirefox/
      'multifirefox',
@@ -496,29 +463,24 @@ class people::n0ts::applications {
      # TFTP Server
      # http://ww2.unime.it/flr/tftpserver/
      'tftpserver',
-     # TotalFinder
-     # http://totalfinder.binaryage.com
-     # 10.11 SIP http://totalfinder.binaryage.com/system-integrity-protection
-     'totalfinder',
-     # TotalSpaces
-     # http://totalspaces.binaryage.com/
-     # 10.11 SIP http://totalspaces.binaryage.com/elcapitan
-     'totalspaces',
      # Transmission
      # https://www.transmissionbt.com/
      'transmission',
      # UNetbootin
      # http://unetbootin.github.io/
      'unetbootin',
-     # VirtualBox
-     # https://www.virtualbox.org
-     'virtualbox',
-     # VMware Fusion
-     # https://www.vmware.com/products/fusion/
-     'vmware-fusion',
+     # Vivaldi
+     # https://vivaldi.com/
+     'vivaldi',
+     # Microsoft Visual Studio Code
+     # https://code.visualstudio.com/
+     'visual-studio-code',
      # VLC, VLC media player
      # https://www.videolan.org/vlc/
      'vlc',
+     # VMware Fusion
+     # https://www.vmware.com/products/fusion/
+     ##'vmware-fusion',
      # Wondershare Player
      # http://www.wondershare.com/video-player/
      'wondershare-player',
@@ -536,10 +498,20 @@ class people::n0ts::applications {
        require  => Sudoers['installer'],
   }
 
-  package {
-    'virtualbox-extension-pack':
-      provider => 'brewcask',
-      require  => [ Package['virtualbox'], Sudoers['vboxmanage'] ],
+  # Cannot install virtualbox on 10.13...
+  # https://github.com/caskroom/homebrew-cask/issues/39369
+  if versioncmp($::macosx_productversion_major, '10.12') <= 0 {
+     package {
+       # Genymotion (requier virtualbox)
+       # https://www.genymotion.com/
+       'genymotion': ;
+       # Virtualbox & Extension Pack
+       # https://www.virtualbox.org/
+       'virtualbox': ;
+       'virtualbox-extension-pack':
+         provider => 'brewcask',
+         require  => [ Package['virtualbox'], Sudoers['vboxmanage'] ];
+     }
   }
 
   if versioncmp($::macosx_productversion_major, '10.10') < 0 {
@@ -559,8 +531,8 @@ class people::n0ts::applications {
     package {
       [
        # Flashlight
-       # http://flashlight.nateparrott.com/
-       'flashlight',
+       # http://flashlighttool.42pag.es/
+       'flashlighttool',
        # MenuMeters, MenuMeters El Capitan Port
        # http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/
        'yujitach-menumeters',
@@ -571,40 +543,35 @@ class people::n0ts::applications {
   }
 
   # Homebrew-cask versions
-  homebrew::tap { 'caskroom/versions': }
+  homebrew::tap { 'homebrew/cask-versions': }
   package {
     [
-     # MacX DVD Ripper Pro
-     # https://www.macxdvd.com/mac-dvd-ripper-pro/
-     'macx-dvd-ripper-pro',
-     # quicktime-player7
-     # http://support.apple.com/kb/dl923
-     'quicktime-player7',
+     # firefoxdeveloperedition
+     # https://www.mozilla.org/en-US/firefox/developer/
+     'firefox-developer-edition',
+     # google-chrome-canary
+     # https://www.google.com/chrome/browser/canary.html?platform=mac
+     'google-chrome-canary',
     ]:
        provider => 'brewcask',
-       require  => [
-                    Homebrew::Tap['caskroom/versions'],
-                    ],
-  }
-
-  # Homebrew-cask sonots packages
-  homebrew::tap { 'sonots/mycask': }
-  package {
-    [
-     # Gyazo, Gyazo GIF
-     # https://gyazo.com/
-     'gyazo',
-    ]:
-       provider => 'brewcask',
-       require  => [
-                    Homebrew::Tap['sonots/mycask'],
-                    ],
+       require  => Homebrew::Tap['homebrew/cask-versions'],
   }
 
   # Homebrew-cask n0ts packages
   homebrew::tap { 'n0ts/mycask': }
   package {
     [
+     # kindle-jp
+     # http://www.amazon.co.jp/gp/feature.html/?ie=UTF8&docId=3077089416
+     'kindle-jp',
+     # TotalFinder
+     # http://totalfinder.binaryage.com
+     # 10.11 SIP http://totalfinder.binaryage.com/system-integrity-protection
+     'totalfinder',
+     # TotalSpaces
+     # http://totalspaces.binaryage.com/
+     # 10.11 SIP http://totalspaces.binaryage.com/elcapitan
+     'totalspaces',
      # uqwifi-connect
      # http://wi2.co.jp/jp/uq/connect/
      'uqwifi-connect',
@@ -613,9 +580,7 @@ class people::n0ts::applications {
      'unrarx',
     ]:
        provider => 'brewcask',
-       require  => [
-                    Homebrew::Tap['n0ts/mycask'],
-                    ],
+       require  => Homebrew::Tap['n0ts/mycask'],
   }
 
   if $sp_cpu_type != '' {
@@ -623,9 +588,7 @@ class people::n0ts::applications {
     # https://software.intel.com/en-us/articles/intel-power-gadget-20
     package { 'intel-power-gadget':
        provider => 'brewcask',
-       require  => [
-                    Homebrew::Tap['n0ts/mycask'],
-                    ],
+       require  => Homebrew::Tap['n0ts/mycask'],
     }
   }
 
@@ -636,5 +599,14 @@ class people::n0ts::applications {
       'my-emacs',
     ]:
        require => Homebrew::Tap['n0ts/myformula'],;
+  }
+
+  class { 'people::n0ts::applications::anyenv':
+    envs => [ 'goenv', 'nodenv', 'phpenv', 'pyenv', 'plenv', 'rbenv' ],
+  }
+
+  boxen::env_script { 'anyenv':
+    content  => template('people/anyenv.sh.erb'),
+    priority => 'higher',
   }
 }

@@ -33,40 +33,41 @@ end
 # Includes many of our custom types and providers, as well as global
 # config. Required.
 
-github "boxen", "3.13.0c", :repo => "n0ts/puppet-boxen"
+github "boxen", "4.0.0a", :repo => "n0ts/puppet-boxen"
 
 # Core modules for a basic development environment. You can replace
 # some/most of these if you want, but it's not recommended.
 
-##github "brewcask",    "0.0.11"
-##github "dnsmasq",     "2.0.4"
-##github "foreman",     "1.2.0"
+github "brewcask",    "0.0.11e", :repo => "n0ts/puppet-brewcask"
+github "dnsmasq",     "3.0.0a",  :repo => "n0ts/puppet-dnsmasq"
+github "foreman",     "1.2.0c",  :repo => "n0ts/puppet-foreman"
 ##github "gcc",         "3.0.4"
-github "git",         "2.14.1.1c", :repo => "n0ts/puppet-git"
-github "homebrew",    "2.1.0g",    :repo => "n0ts/puppet-homebrew"
-##github "hub",         "1.4.5"
-##github "inifile",     "1.4.3a",  :repo => "n0ts/puppetlabs-inifile"
-##github "nginx",       "1.9.0b",  :repo => "n0ts/puppet-nginx"
+github "git",         "3.0.0b",  :repo => "n0ts/puppet-git"
+github "homebrew",    "3.0.0c",  :repo => "n0ts/puppet-homebrew"
+github "hub",         "1.4.5c",  :repo => "n0ts/puppet-hub"
+github "inifile",     "1.4.3c",  :repo => "n0ts/puppetlabs-inifile"
+github "nginx",       "1.9.0f",  :repo => "n0ts/puppet-nginx"
 ##github "nodejs",      "5.0.9"
 ##github "openssl",     "1.0.0"
-##github "phantomjs",   "3.0.0"
-##github "pkgconfig",   "1.0.0"
-github "repository",  "2.4.1a",    :repo => "n0ts/puppet-repository"
-## TODO me upgrade 8.6.0 base
-##github "ruby",        "8.5.7a",  :repo => "n0ts/puppet-ruby"
-github "stdlib",      "4.17.1",   :repo => "puppetlabs/puppetlabs-stdlib"
-github "sudo",        "1.0.0a", :repo => "n0ts/puppet-sudo"
+github "openssl",     "1.0.0b",  :repo => "n0ts/puppet-openssl"
+github "pkgconfig",   "1.0.0a",  :repo => "n0ts/puppet-pkgconfig"
+github "repository",  "2.4.1c",  :repo => "n0ts/puppet-repository"
+##github "ruby"
+
+github "stdlib",      "4.17.1",  :repo => "puppetlabs/puppetlabs-stdlib"
+github "sudo",        "1.0.0c",  :repo => "n0ts/puppet-sudo"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 # github "elasticsearch", "2.8.0"
 # github "mysql",         "2.0.1"
 # github "postgresql",    "4.0.1"
+# github "phantomjs",   "3.0.0"
 # github "redis",         "3.1.0"
 # github "sysctl",        "1.0.1"
 
-##github "osx",         "2.8.0g",  :repo => "n0ts/puppet-osx"
-##github "wget",        "1.0.1"
-##github "java",        "1.8.4e",  :repo => "n0ts/puppet-java"
+github "osx",         "2.8.1a",  :repo => "n0ts/puppet-osx"
+github "wget"
+github "java",        "1.8.4f",  :repo => "n0ts/puppet-java"
 ##github "karabiner",   "1.0.8"
-##github "python",      "3.0.1d",  :repo => "n0ts/puppet-python"
+##github "python"

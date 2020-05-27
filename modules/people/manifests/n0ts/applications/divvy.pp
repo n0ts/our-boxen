@@ -1,3 +1,4 @@
+# Public: divvy
 class people::n0ts::applications::divvy {
   if file_exists("/Applications/Divvy.app") == false {
     notify { 'Divvy is available at AppStore': }

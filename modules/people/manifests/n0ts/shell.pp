@@ -1,3 +1,4 @@
+# Public: shell
 class people::n0ts::shell {
   notify { 'class people::n0ts::shell declared': }
 
@@ -12,8 +13,8 @@ class people::n0ts::shell {
   }
 
   exec { 'n0ts-shell-chsh':
-    user       => 'root',
-    command    => "chsh -s ${shell} ${::boxen_user}",
+    user        => 'root',
+    command     => "chsh -s ${shell} ${::boxen_user}",
     refreshonly => true,
   }
 }

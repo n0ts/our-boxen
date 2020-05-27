@@ -1,21 +1,16 @@
+# Public: karabiner
 class people::n0ts::applications::karabiner {
   notify { 'class people::n0ts::applications::karabiner declared': }
 
-  define myset($value) {
-    karabiner::set { $name:
-      value   => $value,
-      profile => $::boxen_user
-    }
-  }
-
-
-  # Now, Karabiner is not support Sierra 10.12
+  #  Karabiner is not support 10.12 or later...
   if versioncmp($::macosx_productversion_major, '10.11') <= 0 {
     include karabiner
 
     karabiner::profile { $::boxen_user: }
 
-    myset {
+    include karabiner_myset
+
+    people::n0ts::applications::karabiner::myset {
       'notsave.automatically_enable_keyboard_device':
         value => 1;
       'repeat.initial_wait':
@@ -42,14 +37,27 @@ class people::n0ts::applications::karabiner {
         value => 1;
     }
   } else {
-    class { '::karabiner':
-      launch_on_login => false,
-    }
-
     include brewcask
 
+    # Karabiner-Elements
+    # https://github.com/tekezo/Karabiner-Elements
     package { 'karabiner-elements':
-       provider => 'brewcask',
+      provider => 'brewcask',
+    }
+
+    file { "/Users/${::boxen_user}/.config":
+      ensure => directory,
+    }
+
+    repository { "/Users/${::boxen_user}/.config/karabiner":
+      source => 'n0ts/karabiner-config',
+      notify => Exec['open karabiner-elements.app'],
+    }
+
+    exec { 'open karabiner-elements.app':
+      command     => 'open /Applications/Karabiner-Elements.app',
+      require     => Package['karabiner-elements'],
+      refreshonly => true,
     }
   }
 }

@@ -1,22 +1,20 @@
+# Public: hammerspoon
 class people::n0ts::applications::hammerspoon {
   notify { 'class people::n0ts::applications::hammerspoon declared': }
 
-  define install_init() {
-    exec { "get-hammerspoon-${name}.lua":
-      command => "curl -L https://raw.githubusercontent.com/n0ts/hammerspoon-init/my-dev/${name}.lua > /Users/${::boxen_user}/.hammerspoon/${name}.lua",
-      creates => "/Users/${::boxen_user}/.hammerspoon/${name}.lua",
-      require => [ Package["hammerspoon"], File["/Users/${::boxen_user}/.hammerspoon"] ],
-    }
+  package { 'hammerspoon':
+    provider => 'brewcask',
   }
 
-  file { "/Users/${::boxen_user}/.hammerspoon":
-    ensure => directory,
+  repository {  "/Users/${::boxen_user}/.hammerspoon":
+    source => 'n0ts/hammerspoon-init',
+    extra  => [ '-b', 'my-dev' ],
+    notify => Exec['open hammerspoon.app'],
   }
 
-  install_init {
-    [
-     'init',
-     'watcher',
-    ]: ;
+  exec { 'open hammerspoon.app':
+    command     => 'open /Applications/Hammerspoon.app',
+    require     => Package['hammerspoon'],
+    refreshonly => true,
   }
 }

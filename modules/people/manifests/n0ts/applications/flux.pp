@@ -1,3 +1,4 @@
+# Public: flux
 class people::n0ts::applications::flux {
   notify { 'class people::n0ts::applications::flux declared': }
 

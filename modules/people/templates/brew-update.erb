@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -eo pipefail
+
+brew update --force
+brew upgrade
+for c in $(brew cask list); do
+    info=$(brew cask info $c)
+    installed_ver=$(echo "$info" | cut -d$'n' -f1 | tr -d ' ' | cut -d':' -f 2)
+    current_ver=$(echo "$info" | cut -d$'n' -f3 | cut -d' ' -f 1 | rev | cut -d'/' -f 1 | rev)
+    if [ "$installed_ver" != "$current_ver" ]; then
+        brew cask reinstall $c
+    fi
+done
+brew cleanup
+brew cask cleanup

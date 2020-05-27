@@ -1,3 +1,4 @@
+# Public: boxen
 class people::n0ts::boxen {
   notify { 'class people::n0ts::boxen declared': }
 

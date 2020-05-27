@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export PATH=<%= scope.lookupvar('::boxen_home') %>/pyenv/versions/<%= scope.lookupvar('projects::python::version_stable') %>/bin:$PATH
+gcloud components update

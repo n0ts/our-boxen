@@ -54,10 +54,10 @@ fi
 set -e
 
 # FIX: only sudo if gem home isn't writable
-(/usr/bin/gem spec bundler -v '~> 1.16.0' >/dev/null 2>&1) || {
+(/usr/bin/gem spec bundler -v '~> 2.1.4' >/dev/null 2>&1) || {
     log "====> Installing bundler to system ruby"
     /usr/bin/sudo -p "Password for sudo to install bundler: " \
-        /usr/bin/gem install bundler -v '~> 1.16.0' --no-document
+        /usr/bin/gem install bundler -v '~> 2.1.4' --no-document
 }
 PATH="/Library/Ruby/bin:$(gem which bundler | sed -e 's!lib/bundler.rb!bin!'):$PATH"
 # Use checksums to quickly determine if we need to re-bundle
@@ -89,7 +89,12 @@ else
     fi
 
     log "====> Installing gem dependencies"
-    bundle install --binstubs bin --path .bundle --quiet "$@" && write_checksum
+    bundle config --local path '.bundle'
+    bundle config --local deployment true
+    bundle config --local without 'deployment'
+    bundle config --local no-cache true
+    bundle install --binstubs bin --quiet "$@" && write_checksum
+    bundle check
 fi
 
 # Fix the binstubs to use system ruby

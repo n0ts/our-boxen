@@ -1,5 +1,6 @@
+# Public: ansible
 class projects::ansible {
-  notify { 'class project::ansible declared': }
+  notify { 'class projects::ansible declared': }
 
   package { 'ansible':
     ensure => latest,
@@ -7,7 +8,7 @@ class projects::ansible {
 
   include projects::python
 
-  python::install_package { 'ansible-lint': }
+  projects::python::package { 'ansible-lint': }
 
   file {
     [
@@ -25,8 +26,6 @@ retry_files_enabled = False
 ",
       require => File["/Users/${::boxen_user}/.ansible"],
   }
-
-  require wget
 
   exec { 'get human_log.py':
     command => "wget -q https://raw.githubusercontent.com/n0ts/ansible-human_log/master/human_log.py -P /Users/${::boxen_user}/.ansible/plugins/callback_plugins/",

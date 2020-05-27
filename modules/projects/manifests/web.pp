@@ -1,5 +1,6 @@
+# Public: web
 class projects::web {
-  notify { 'class project::web declared': }
+  notify { 'class projects::web declared': }
 
   package {
     [

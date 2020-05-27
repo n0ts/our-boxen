@@ -1,19 +1,6 @@
+# Public: elasticsearch
 class projects::elasticsearch {
-  notify { 'class project::elasticsearch declared': }
-
-  define install_plugin($plugin = undef) {
-    if $plugin == unfef {
-      $_plugin = $name
-    } else {
-      $_plugin = $plugin
-    }
-    $unless = "elasticsearch-plugin list | grep \"${_plugin}\""
-    exec { "install-plugin-${name}":
-      command => "elasticsearch-plugin install --batch ${name}",
-      unless  => $unless,
-      require => Package['elasticsearch'],
-    }
-  }
+  notify { 'class projects::elasticsearch declared': }
 
   package {
     [
@@ -25,7 +12,7 @@ class projects::elasticsearch {
      ]: ;
   }
 
-  install_plugin {
+  projects::elasticsearch::plugin {
     [
       'x-pack',
       'analysis-kuromoji',

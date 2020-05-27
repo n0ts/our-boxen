@@ -150,9 +150,11 @@ else
   puts "\e[0;32m--> Updated successfully to #{ref}!\e[0m"
 end
 
+
 # Make sure our local dependencies are up to date.
 
-strap = %w(script/bootstrap --quiet --deployment --local --without development --no-cache)
+## deployment, no-cache, without
+strap = %w(script/bootstrap --local)
 abort "Can't bootstrap, dependencies are outdated." unless system *strap
 
 # Set up our local configuration, deps, and load path.

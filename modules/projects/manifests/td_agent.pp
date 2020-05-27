@@ -1,23 +1,6 @@
+# Public: td-agent
 class projects::td_agent {
-  notify { 'class project::td_agent declared': }
-
-  define install_plugin() {
-    $td_agent_root = '/opt/td-agent'
-    $td_agent_gems = "${td_agent_root}/embedded/lib/ruby/gems/2.1.0/gems"
-    $gem = "${td_agent_root}/usr/sbin/td-agent-gem"
-    $unless = "ls ${td_agent_gems}/fluent-plugin-${name}-*"
-    exec { "install-pluguin-${name}":
-      command     => "${gem} install --no-document fluent-plugin-${name}",
-      cwd         => $td_agent_root,
-      environment =>
-        [
-         "BUNDLE_GEMFILE=${td_agent_root}/Gemfile"
-         ],
-      user        => 'root',
-      unless      => "${unless} >/dev/null 2>&1",
-      require     => [ Package['td-agent'], Sudoers['td-agent-gem'], File["${td_agent_root}/Gemfile"] ],
-    }
-  }
+  notify { 'class projects::td_agent declared': }
 
   include brewcask
   package { 'td-agent':
@@ -39,7 +22,7 @@ class projects::td_agent {
     type     => 'user_spec',
   }
 
-  install_plugin {
+  projects::td_agent::plugin {
     [
       'elasticsearch',
       'datadog_event',
@@ -63,6 +46,6 @@ for i in \$(\$GEM list | cut -d ' ' -f 1 | grep fluent); do
   \$GEM install --no-document \$i
 done
 ",
-    mode    => 0755,
+    mode    => '0755',
   }
 }

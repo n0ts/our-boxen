@@ -1,3 +1,4 @@
+# Public: jumpcut
 class people::n0ts::applications::jumpcut {
   notify { 'class people::n0ts::applications::jumpcut declared': }
 

@@ -1,41 +1,6 @@
+# Public: terminal
 class projects::terminal {
-  notify { 'class project::terminal declared': }
-
-  define install_theme($url) {
-    $theme = "${name}.terminal"
-    $download_url = uriescape("${url}/${theme}")
-    $unless = "defaults read com.apple.Terminal \"Window Settings\" | tr -d '\"' | grep \"name = ${name}\""
-    exec { "install-theme-${name}":
-      command => join([
-                       "curl -L \"${download_url}\" > \"${::boxen_home}/cache/terminal/${theme}\"",
-                       "open \"${::boxen_home}/cache/terminal/${theme}\"",
-                       ], "\n"),
-      unless  => $unless,
-      require => File["${::boxen_home}/cache/terminal"],
-    }
-  }
-
-  define install_integration() {
-    exec { "install-iterm2-integration-${name}":
-      command => join([
-                       "curl -L https://iterm2.com/misc/${name}_startup.in > /Users/${::boxen_user}/.iterm2/shell_integration.${name}",
-                       "chmod +x /Users/${::boxen_user}/.iterm2/shell_integration.${name}",
-                     ], "\n"),
-      unless  => "test -x /Users/${::boxen_user}/.iterm2/shell_integration.${name}",
-      require => File["/Users/${::boxen_user}/.iterm2"],
-    }
-  }
-
-  define install_code() {
-    exec { "install-iterm2-code-${name}":
-      command => join([
-                       "curl -L https://raw.github.com/gnachman/iTerm2/master/tests/${name} > /Users/${::boxen_user}/.iterm2/${name}",
-                       "chmod +x /Users/${::boxen_user}/.iterm2/${name}",
-                     ], "\n"),
-      unless  => "test -x /Users/${::boxen_user}/.iterm2/${name}",
-      require => File["/Users/${::boxen_user}/.iterm2"],
-    }
-  }
+  notify { 'class projects::terminal declared': }
 
   $shell = "${boxen::config::homebrewdir}/bin/zsh"
 
@@ -57,7 +22,7 @@ class projects::terminal {
   }
 
   # Shell integration
-  install_integration {
+  projects::terminal::integration {
     [
      "bash",
      "fish",
@@ -84,14 +49,14 @@ class projects::terminal {
   }
 
   # Code
-  install_code {
+  projects::terminal::code {
     [
        "imgls", "imgcat", "divider",
      ]: ;
   }
 
   # Themes
-  install_theme {
+  projects::terminal::theme {
     [
       'n0ts',
       'n0ts-solarized',
@@ -242,11 +207,11 @@ class projects::terminal {
 
   # Encodings
   $encodings = [
-                4,          # Unicode (UTF-8)
-                2147485224, # Japanese (Shift JIS X0213)
-                21,         # Japannse (ISO 2022-JP)
-                3,          # Japanese (EUC)
-                2147486209, # Japanese (Shift JIS)
+                '4',          # Unicode (UTF-8)
+                '2147485224', # Japanese (Shift JIS X0213)
+                '21',         # Japannse (ISO 2022-JP)
+                '3',          # Japanese (EUC)
+                '2147486209', # Japanese (Shift JIS)
                 ]
   boxen::osx_defaults { 'Terminal - Encodings':
     user    => $::boxen_user,

@@ -1,3 +1,4 @@
+# Public: base
 class people::n0ts::base {
   notify { 'class people::n0ts::base declared': }
 
@@ -9,6 +10,7 @@ class people::n0ts::base {
     command => join($locate_cmds, "\n"),
     user    => 'root',
     unless  => 'test -f /var/db/locate.database',
+    timeout => 600,
   }
 
   exec { 'Visible /opt':
@@ -20,28 +22,13 @@ class people::n0ts::base {
   include brewcask
 
   file { "${boxen::config::home}/bin/brew-update":
-    content => "#!/bin/bash
-brew update --force
-brew upgrade
-for c in \$(brew cask list); do
-    info=\$(brew cask info \$c)
-    installed_ver=\$(echo \"$info\" | cut -d\$'\\n' -f1 | tr -d ' ' | cut -d':' -f 2)
-    current_ver=\$(echo \"$info\" | cut -d\$'\\n' -f3 | cut -d' ' -f 1 | rev | cut -d'/' -f 1 | rev)
-    if [ \"\$installed_ver\" != \"\$current_ver\" ]; then
-        brew cask reinstall \$c
-    fi
-done
-brew cleanup
-brew cask cleanup
-",
-    mode    => 0755,
+    content => template('people/brew-update.erb'),
+    mode    => '0755',
   }
 
   file { "${boxen::config::home}/bin/merge-dup-open-with":
-    content => "#!/bin/bash
-/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system -domain user
-",
-    mode    => 0755,
+    content => template('people/merge-dup-open-with'),
+    mode    => '0755',
   }
 
   file { '/Users/Shared/w':
@@ -63,7 +50,7 @@ brew cask cleanup
      '/w/var/run',
      '/w/sync',
      ]:
-       ensure => directory,
+       ensure  => directory,
        require => File['/w'],
   }
 

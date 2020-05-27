@@ -1,27 +1,82 @@
 GITHUBTARBALL
+  remote: boxen/puppet-wget
+  specs:
+    wget (1.0.1)
+
+GITHUBTARBALL
   remote: n0ts/puppet-boxen
   specs:
-    boxen (3.13.0c)
+    boxen (4.0.0a)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-brewcask
+  specs:
+    brewcask (0.0.11e)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-dnsmasq
+  specs:
+    dnsmasq (3.0.0a)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-foreman
+  specs:
+    foreman (1.2.0c)
 
 GITHUBTARBALL
   remote: n0ts/puppet-git
   specs:
-    git (2.14.1.1c)
+    git (3.0.0b)
 
 GITHUBTARBALL
   remote: n0ts/puppet-homebrew
   specs:
-    homebrew (2.1.0g)
+    homebrew (3.0.0c)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-hub
+  specs:
+    hub (1.4.5c)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-java
+  specs:
+    java (1.8.4f)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-nginx
+  specs:
+    nginx (1.9.0f)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-openssl
+  specs:
+    openssl (1.0.0b)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-osx
+  specs:
+    osx (2.8.1a)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-pkgconfig
+  specs:
+    pkgconfig (1.0.0a)
 
 GITHUBTARBALL
   remote: n0ts/puppet-repository
   specs:
-    repository (2.4.1a)
+    repository (2.4.1c)
 
 GITHUBTARBALL
   remote: n0ts/puppet-sudo
   specs:
-    sudo (1.0.0a)
+    sudo (1.0.0c)
+
+GITHUBTARBALL
+  remote: n0ts/puppetlabs-inifile
+  specs:
+    inifile (1.4.3c)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-stdlib
@@ -29,10 +84,21 @@ GITHUBTARBALL
     stdlib (4.17.1)
 
 DEPENDENCIES
-  boxen (= 3.13.0c)
-  git (= 2.14.1.1c)
-  homebrew (= 2.1.0g)
-  repository (= 2.4.1a)
+  boxen (= 4.0.0a)
+  brewcask (= 0.0.11e)
+  dnsmasq (= 3.0.0a)
+  foreman (= 1.2.0c)
+  git (= 3.0.0b)
+  homebrew (= 3.0.0c)
+  hub (= 1.4.5c)
+  inifile (= 1.4.3c)
+  java (= 1.8.4f)
+  nginx (= 1.9.0f)
+  openssl (= 1.0.0b)
+  osx (= 2.8.1a)
+  pkgconfig (= 1.0.0a)
+  repository (= 2.4.1c)
   stdlib (= 4.17.1)
-  sudo (= 1.0.0a)
+  sudo (= 1.0.0c)
+  wget (>= 0)
 

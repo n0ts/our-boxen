@@ -1,7 +1,8 @@
+# Public: heroku
 class projects::heroku {
-  notify { 'class project::heroku declared': }
+  notify { 'class projects::heroku declared': }
 
-  package {
-    'heroku': ;
+  package { 'heroku':
+    ensure => latest,
   }
 }

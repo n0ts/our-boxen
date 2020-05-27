@@ -1,5 +1,6 @@
+# Public: redis
 class projects::redis {
-  notify { 'class project::redis declared': }
+  notify { 'class projects::redis declared': }
 
   package { 'redis':
     ensure => latest,

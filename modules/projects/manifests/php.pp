@@ -1,5 +1,6 @@
+# Public: php
 class projects::php {
-  notify { 'class project::php declared': }
+  notify { 'class projects::php declared': }
 
   include projects::memcached
   include projects::mysql
@@ -10,7 +11,7 @@ class projects::php {
   homebrew::tap { 'homebrew/php': }
 
   # Homebrew n0ts
-  homebrew::tap { 'n0ts/myformula': }
+  ensure_resource('homebrew::tap', 'n0ts/myformula')
 
   package { 'my-php70':
      require => [

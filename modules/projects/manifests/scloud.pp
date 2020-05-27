@@ -1,5 +1,6 @@
+# Public: scloud
 class projects::scloud {
-  notify { 'class project::scloud declared': }
+  notify { 'class projects::scloud declared': }
 
   homebrew::tap { 'sacloud/usacloud': }
 

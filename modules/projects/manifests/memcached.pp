@@ -1,5 +1,6 @@
+# Public: memcached
 class projects::memcached {
-  notify { 'class project::memcached declared': }
+  notify { 'class projects::memcached declared': }
 
   package {
     [
