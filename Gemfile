@@ -6,8 +6,7 @@ when /darwin/
   gem "CFPropertyList"
 end
 
-#gem "boxen23",                "~> 4.0.0a"
-gem "boxen23", path: "/Users/n/prj/github/boxen"
+gem "boxen23",                "~> 4.0.0a"
 gem "hiera",                  "~> 3.4"
 gem "librarian-puppet",       "~> 2.2"
 gem "librarianp",

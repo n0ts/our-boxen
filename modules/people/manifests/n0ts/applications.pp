@@ -198,9 +198,6 @@ class people::n0ts::applications {
      # Terminal multiplexer
      # https://tmux.github.io/
      'tmux',
-     # TMUX with a "ClusterSSH"-like behavior
-     # https://github.com/dennishafemann/tmux-cssh
-     'tmux-cssh',
      # Display directories as trees (with optional color/HTML output)
      # http://mama.indstate.edu/users/ice/tree/
      'tree',
@@ -306,7 +303,7 @@ class people::n0ts::applications {
      'bathyscaphe',
      # Brave
      # https://brave.com/
-     'brave',
+     'brave-browser',
      # Box Sync
      # https://sites.box.com/sync4/
      'box-sync',

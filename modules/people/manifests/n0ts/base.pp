@@ -31,34 +31,21 @@ class people::n0ts::base {
     mode    => '0755',
   }
 
-  file { '/Users/Shared/w':
-    ensure => directory,
-  }
+  $root_dir = '/Users/Shared'
 
-  file { '/w':
-    ensure  => link,
-    owner   => 'root',
-    target  => '/Users/Shared/w',
-    require => File['/Users/Shared/w'],
+  file { "${root_dir}/w":
+    ensure => directory,
   }
 
   file {
     [
-     '/w/etc',
-     '/w/var',
-     '/w/var/log',
-     '/w/var/run',
-     '/w/sync',
+     "${root_dir}/w/etc",
+     "${root_dir}/w/var",
+     "${root_dir}/w/var/log",
+     "${root_dir}/w/var/run",
+     "${root_dir}/w/sync",
      ]:
-       ensure  => directory,
-       require => File['/w'],
-  }
-
-  file { '/prj':
-    ensure  => link,
-    owner   => 'root',
-    target  => '/Users/Shared/prj',
-    require => File['/Users/Shared/prj'],
+       ensure => directory,
   }
 
   file { "/Users/${::boxen_user}/w":
