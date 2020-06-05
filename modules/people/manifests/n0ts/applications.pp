@@ -186,6 +186,9 @@ class people::n0ts::applications {
      # Source-code syntax highlighter
      # https://www.gnu.org/software/src-highlite/
      'source-highlight',
+     # Subversion
+     # Version control system designed to be a better CVS
+     'subversion',
      # TCP flow recorder
      # https://github.com/simsong/tcpflow
      'tcpflow',
@@ -283,6 +286,9 @@ class people::n0ts::applications {
   include brewcask
   package {
     [
+     # Amazon Chime
+     # https://chime.aws/
+     'amazon-chime',
      # AppCleaner
      # http://www.freemacsoft.net/appcleaner/
      'appcleaner',
@@ -346,9 +352,6 @@ class people::n0ts::applications {
      # Google Chrome
      # https://www.google.com/chrome/
      'google-chrome',
-     # Google Earth
-     # https://www.google.com/earth/
-     'google-earth-web-plugin',
      # Google Hangouts
      # https://www.google.com/tools/dlpage/hangoutplugin
      'google-hangouts',
@@ -445,9 +448,6 @@ class people::n0ts::applications {
      # Sublime Text
      # https://www.sublimetext.com/2
      'sublime-text',
-     # Subversion
-     # Version control system designed to be a better CVS
-     'subversion',
      # Transmission
      # https://www.transmissionbt.com/
      'transmission',
@@ -466,9 +466,6 @@ class people::n0ts::applications {
      # VMware Fusion
      # https://www.vmware.com/products/fusion/
      ##'vmware-fusion',
-     # Wondershare Player
-     # http://www.wondershare.com/video-player/
-     'wondershare-player',
      # Zoom.us
      # https://zoom.us
      'zoomus',
@@ -582,6 +579,7 @@ class people::n0ts::applications {
   # package {
   #   [
   #     'my-emacs',
+  #     'wondershare-player',
   #   ]:
   #      require => Homebrew::Tap['n0ts/myformula'],;
   # }

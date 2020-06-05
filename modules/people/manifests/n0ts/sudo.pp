@@ -9,6 +9,8 @@ class people::n0ts::sudo {
     commands => [
       '(ALL) NOPASSWD:SETENV : /usr/bin/env',
       '(ALL) NOPASSWD:SETENV : /usr/sbin/installer',
+      # for Zoomus
+      '(ALL) NOPASSWD:SETENV : /usr/bin/xargs',
     ],
     type     => 'user_spec',
   }
