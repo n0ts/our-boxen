@@ -4,9 +4,9 @@ class people::n0ts::applications {
 
   # java
   class { 'java':
-    update_version => '162',
-    minor_version  => 'b12',
-    hash_version   => '0da788060d494f5095bf8624735fa2f1',
+    major_version => '14.0.1',
+    minor_version => '7',
+    hash_version  => '664493ef4a6946b186ff29eb326336a2'
   }
 
   # Homebrew packages
@@ -445,6 +445,9 @@ class people::n0ts::applications {
      # Sublime Text
      # https://www.sublimetext.com/2
      'sublime-text',
+     # Subversion
+     # Version control system designed to be a better CVS
+     'subversion',
      # Transmission
      # https://www.transmissionbt.com/
      'transmission',

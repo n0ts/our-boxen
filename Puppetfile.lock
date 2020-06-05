@@ -1,13 +1,3 @@
-PATH
-  remote: /Users/n/src/boxen/puppet-homebrew
-  specs:
-    puppet-homebrew (0.0.1)
-
-PATH
-  remote: /Users/n/src/boxen/puppet-java
-  specs:
-    puppet-java (0.0.1)
-
 GITHUBTARBALL
   remote: boxen/puppet-wget
   specs:
@@ -21,7 +11,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: n0ts/puppet-brewcask
   specs:
-    brewcask (0.0.11e)
+    brewcask (0.0.11f)
 
 GITHUBTARBALL
   remote: n0ts/puppet-dnsmasq
@@ -39,9 +29,19 @@ GITHUBTARBALL
     git (3.0.0b)
 
 GITHUBTARBALL
+  remote: n0ts/puppet-homebrew
+  specs:
+    homebrew (3.0.0e)
+
+GITHUBTARBALL
   remote: n0ts/puppet-hub
   specs:
     hub (1.4.5c)
+
+GITHUBTARBALL
+  remote: n0ts/puppet-java
+  specs:
+    java (1.8.4g)
 
 GITHUBTARBALL
   remote: n0ts/puppet-nginx
@@ -85,18 +85,18 @@ GITHUBTARBALL
 
 DEPENDENCIES
   boxen (= 4.0.0a)
-  brewcask (= 0.0.11e)
+  brewcask (= 0.0.11f)
   dnsmasq (= 3.0.0a)
   foreman (= 1.2.0c)
   git (= 3.0.0b)
+  homebrew (= 3.0.0e)
   hub (= 1.4.5c)
   inifile (= 1.4.3c)
+  java (= 1.8.4g)
   nginx (= 1.9.0f)
   openssl (= 1.0.0b)
   osx (= 2.8.1a)
   pkgconfig (= 1.0.0a)
-  puppet-homebrew (>= 0)
-  puppet-java (>= 0)
   repository (= 2.4.1c)
   stdlib (= 4.17.1)
   sudo (= 1.0.0c)

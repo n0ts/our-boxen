@@ -6,7 +6,7 @@ when /darwin/
   gem "CFPropertyList"
 end
 
-gem "boxen23",                "~> 4.0.0a"
+gem "boxen23",                "~> 4.0.0b"
 gem "hiera",                  "~> 3.4"
 gem "librarian-puppet",       "~> 2.2"
 gem "librarianp",

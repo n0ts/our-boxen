@@ -21,7 +21,7 @@ class people::n0ts::fonts {
      'font-source-code-pro',
      ]:
        provider => 'brewcask',
-       require  => Homebrew::Tap['homebrew/cask-fonts'],
+       require  => [ Homebrew::Tap['homebrew/cask-fonts'], Package['subversion'] ],
   }
 
   # Ricty font
