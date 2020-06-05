@@ -2,7 +2,7 @@
 class people::n0ts {
   notify { "class people::n0ts declared - ${::macosx_productversion_major}": }
 
-  if $::boxen_projects == '1' {
+  if $::boxen_projects == '' {
     include people::n0ts::base
     include people::n0ts::boxen
     include people::n0ts::config

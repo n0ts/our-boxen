@@ -7,6 +7,7 @@ class people::n0ts::sudo {
     users    => $::boxen_user,
     hosts    => 'ALL',
     commands => [
+      '(ALL) NOPASSWD:SETENV : /usr/bin/env',
       '(ALL) NOPASSWD:SETENV : /usr/sbin/installer',
     ],
     type     => 'user_spec',

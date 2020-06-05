@@ -400,15 +400,6 @@ class people::n0ts::applications {
      # Mac DVDRipper Pro
      # https://www.macdvdripperpro.com/
      'mdrp',
-     # MacX DVD Ripper Pro
-     # https://www.macxdvd.com/mac-dvd-ripper-pro/
-     'macx-dvd-ripper-pro',
-     # MacX Video Converter Pro
-     # https://www.macxdvd.com/mac-video-converter-pro/
-     'macx-video-converter-pro',
-     # MindNode Pro
-     # https://mindnode.com/
-     'mindnode-pro',
      # Mi
      # http://www.mimikaki.net/en/index.html
      'mi',
@@ -430,9 +421,6 @@ class people::n0ts::applications {
      # Servo
      # https://servo.org
      'servo',
-     # Safari Technology Preview
-     # https://developer.apple.com/safari/technology-preview/
-     'safari-technology-preview',
      # Simple Comic
      # https://dancingtortoise.github.io
      'simple-comic',
@@ -457,9 +445,6 @@ class people::n0ts::applications {
      # Sublime Text
      # https://www.sublimetext.com/2
      'sublime-text',
-     # TFTP Server
-     # http://ww2.unime.it/flr/tftpserver/
-     'tftpserver',
      # Transmission
      # https://www.transmissionbt.com/
      'transmission',
@@ -530,9 +515,6 @@ class people::n0ts::applications {
        # Flashlight
        # http://flashlighttool.42pag.es/
        'flashlighttool',
-       # MenuMeters, MenuMeters El Capitan Port
-       # http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/
-       'yujitach-menumeters',
       ]:
        provider => 'brewcask',
        require  => Sudoers['installer'],
@@ -549,6 +531,9 @@ class people::n0ts::applications {
      # google-chrome-canary
      # https://www.google.com/chrome/browser/canary.html?platform=mac
      'google-chrome-canary',
+     # Safari Technology Preview
+     # https://developer.apple.com/safari/technology-preview/
+     'safari-technology-preview',
     ]:
        provider => 'brewcask',
        require  => Homebrew::Tap['homebrew/cask-versions'],
@@ -591,12 +576,12 @@ class people::n0ts::applications {
 
   # Homebrew n0ts
   homebrew::tap { 'n0ts/myformula': }
-  package {
-    [
-      'my-emacs',
-    ]:
-       require => Homebrew::Tap['n0ts/myformula'],;
-  }
+  # package {
+  #   [
+  #     'my-emacs',
+  #   ]:
+  #      require => Homebrew::Tap['n0ts/myformula'],;
+  # }
 
   class { 'people::n0ts::applications::anyenv':
     envs => [ 'goenv', 'nodenv', 'phpenv', 'pyenv', 'plenv', 'rbenv' ],
