@@ -29,7 +29,7 @@ class people::n0ts::fonts {
   package { 'ricty':
     # --dz: Use Inconsolata-dz instead of Inconsolata
     install_options => [
-                        '--with--powerline',
+                        '--with-powerline',
                         ],
     require => Homebrew::Tap["sanemat/font"],
   }

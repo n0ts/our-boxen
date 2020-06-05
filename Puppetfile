@@ -38,7 +38,7 @@ github "boxen", "4.0.0a", :repo => "n0ts/puppet-boxen"
 # Core modules for a basic development environment. You can replace
 # some/most of these if you want, but it's not recommended.
 
-github "brewcask",    "0.0.11f", :repo => "n0ts/puppet-brewcask"
+github "brewcask",    "0.0.11g", :repo => "n0ts/puppet-brewcask"
 github "dnsmasq",     "3.0.0a",  :repo => "n0ts/puppet-dnsmasq"
 github "foreman",     "1.2.0c",  :repo => "n0ts/puppet-foreman"
 ##github "gcc",         "3.0.4"
