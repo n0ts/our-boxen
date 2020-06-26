@@ -18,24 +18,10 @@ class people::n0ts::fonts {
      'font-noto-sans-cjk-kr',
      'font-noto-sans-gothic',
      'font-noto-serif',
+     'font-ricty-diminished',
      'font-source-code-pro',
      ]:
        provider => 'brewcask',
        require  => [ Homebrew::Tap['homebrew/cask-fonts'], Package['subversion'] ],
-  }
-
-  # Ricty font
-  homebrew::tap { 'sanemat/font': }
-  package { 'ricty':
-    # --dz: Use Inconsolata-dz instead of Inconsolata
-    install_options => [
-                        '--with-powerline',
-                        ],
-    require => Homebrew::Tap["sanemat/font"],
-  }
-  exec { 'Install Ricty fonts':
-    command => "cp -f ${homebrew::config::installdir}/share/fonts/Ricty*.ttf ~/Library/Fonts/ && fc-cache -vf",
-    require => Package['ricty'],
-    unless  => 'test -f ~/Library/Fonts/Ricty-Regular.ttf',
   }
 }

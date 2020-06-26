@@ -11,6 +11,7 @@ class people::n0ts::sudo {
       '(ALL) NOPASSWD:SETENV : /usr/sbin/installer',
       # for Zoomus
       '(ALL) NOPASSWD:SETENV : /usr/bin/xargs',
+      '(ALL) NOPASSWD:SETENV : /usr/sbin/chown',
     ],
     type     => 'user_spec',
   }

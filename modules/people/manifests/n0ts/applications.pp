@@ -557,9 +557,6 @@ class people::n0ts::applications {
      # uqwifi-connect
      # http://wi2.co.jp/jp/uq/connect/
      'uqwifi-connect',
-     # UnRarX
-     # http://www.unrarx.com
-     'unrarx',
     ]:
        provider => 'brewcask',
        require  => Homebrew::Tap['n0ts/mycask'],
